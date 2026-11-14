@@ -185,4 +185,98 @@
       setTimeout(function () { document.body.classList.remove("imprimiendo-certificado"); }, 800);
     });
   }
+
+  // Copiar prompts
+  document.addEventListener("click", function (e) {
+    var bt = e.target.closest("[data-copiar]");
+    if (!bt) return;
+    var txt = bt.parentNode.querySelector(".prompt-texto").textContent;
+    function hecho() { bt.textContent = "¡Copiado!"; bt.classList.add("copiado"); setTimeout(function () { bt.textContent = "Copiar"; bt.classList.remove("copiado"); }, 1800); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(hecho, function () { copiarViejo(txt); hecho(); });
+    } else { copiarViejo(txt); hecho(); }
+  });
+  function copiarViejo(t) {
+    var a = document.createElement("textarea"); a.value = t; a.style.position = "fixed"; a.style.opacity = "0";
+    document.body.appendChild(a); a.select(); try { document.execCommand("copy"); } catch (e) {} document.body.removeChild(a);
+  }
+
+  // Comparador de asistentes
+  var comp = document.querySelector("[data-comparador]");
+  if (comp) {
+    var datos = JSON.parse(document.getElementById("datos-comparador").textContent);
+    var caja = document.querySelector("[data-recomendacion]");
+    comp.addEventListener("change", function () {
+      var marcadas = [].map.call(comp.querySelectorAll("input:checked"), function (i) { return i.value; });
+      document.querySelectorAll(".tabla-comparador tr[data-nec]").forEach(function (tr) { tr.classList.toggle("marcada", marcadas.indexOf(tr.dataset.nec) >= 0); });
+      if (!marcadas.length) { caja.innerHTML = '<p class="dato">Marca al menos una opción y te diremos qué asistente encaja mejor.</p>'; return; }
+      var pts = {};
+      Object.keys(datos.asis).forEach(function (k) { pts[k] = 0; });
+      marcadas.forEach(function (n) { var p = datos.nec[n]; Object.keys(p).forEach(function (k) { pts[k] += p[k]; }); });
+      var orden = Object.keys(pts).sort(function (a, b) { return pts[b] - pts[a]; }).filter(function (k) { return pts[k] > 0; }).slice(0, 3);
+      if (!orden.length) { caja.innerHTML = '<p class="dato">Ningún asistente destaca en eso.</p>'; return; }
+      var base = document.querySelector("link[rel=stylesheet]").getAttribute("href").replace(/assets\/estilo\.css.*$/, "");
+      caja.innerHTML = '<h2>Te recomendamos</h2><ol class="podio">' + orden.map(function (k, i) {
+        var a = datos.asis[k], guia = base + "guias/" + k + "/" + (location.protocol === "file:" || /index\.html$/.test(location.pathname) ? "index.html" : "");
+        return '<li><img class="logo-ia" src="' + base + 'assets/logos/' + k + '.svg" alt="" width="40" height="40"><div><strong>' + (i + 1) + '. ' + escapar(a.n) + '</strong><span class="dato">' + (i === 0 ? "La mejor opción para lo que buscas" : "También encaja") + '</span></div><a href="' + guia + '">Guía</a><a href="https://' + a.w + '" target="_blank" rel="noopener">Abrir ↗</a></li>';
+      }).join("") + "</ol>";
+    });
+  }
+
+  // Test «¿Qué asistente es para ti?»
+  var testA = document.querySelector("[data-test-asistente]");
+  if (testA) {
+    var res = document.querySelector("[data-resultado]");
+    function mostrar(gan, seg) {
+      res.hidden = false; testA.hidden = true;
+      res.querySelectorAll("[data-r]").forEach(function (d) { d.hidden = d.dataset.r !== gan; });
+      var s2 = res.querySelector("[data-segundo]");
+      var nombre2 = seg ? res.querySelector('[data-r="' + seg + '"] h3') : null;
+      s2.textContent = nombre2 ? "Segunda opción: " + nombre2.textContent + "." : "";
+      res.dataset.gan = gan;
+      try { history.replaceState(null, "", "#resultado=" + gan); } catch (e) {}
+      res.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    testA.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var pts = {};
+      testA.querySelectorAll("input:checked").forEach(function (i) { var p = JSON.parse(i.value); Object.keys(p).forEach(function (k) { pts[k] = (pts[k] || 0) + p[k]; }); });
+      var orden = Object.keys(pts).sort(function (a, b) { return pts[b] - pts[a]; });
+      mostrar(orden[0], orden[1]);
+    });
+    var m = location.hash.match(/resultado=([a-z-]+)/);
+    if (m && res.querySelector('[data-r="' + m[1] + '"]')) mostrar(m[1]);
+    res.querySelector("[data-repetir]").addEventListener("click", function () {
+      testA.reset(); testA.hidden = false; res.hidden = true;
+      try { history.replaceState(null, "", location.pathname); } catch (e) {}
+      testA.scrollIntoView({ behavior: "smooth" });
+    });
+    res.querySelector("[data-compartir]").addEventListener("click", function () {
+      var nombre = res.querySelector('[data-r="' + res.dataset.gan + '"] h3').textContent;
+      var url = location.href, texto = "Según el test de IApedia, mi asistente de IA ideal es " + nombre + ". ¿Y el tuyo?";
+      var aviso2 = res.querySelector("[data-compartido]");
+      if (navigator.share) { navigator.share({ title: "¿Qué asistente de IA es para ti?", text: texto, url: url }).catch(function () {}); }
+      else if (navigator.clipboard) { navigator.clipboard.writeText(texto + " " + url).then(function () { aviso2.textContent = "Enlace copiado. Pégalo donde quieras compartirlo."; }); }
+      else { aviso2.textContent = texto + " " + url; }
+    });
+  }
+
+  // Escuchar términos del diccionario
+  if ("speechSynthesis" in window) {
+    document.querySelectorAll(".termino").forEach(function (t) {
+      var h = t.querySelector("h3"); if (!h) return;
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "escuchar"; b.setAttribute("aria-label", "Escuchar «" + h.textContent + "»"); b.textContent = "🔊 Escuchar";
+      h.appendChild(b);
+      b.addEventListener("click", function () {
+        speechSynthesis.cancel();
+        var texto = h.firstChild.textContent + ". " + [].map.call(t.querySelectorAll("p"), function (p) { return p.textContent; }).join(" ");
+        var u = new SpeechSynthesisUtterance(texto);
+        u.lang = "es-ES"; u.rate = 0.92;
+        var voz = speechSynthesis.getVoices().filter(function (v) { return /^es/i.test(v.lang); })[0];
+        if (voz) u.voice = voz;
+        speechSynthesis.speak(u);
+      });
+    });
+  }
 })();
