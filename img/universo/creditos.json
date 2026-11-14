@@ -1,0 +1,562 @@
+{
+ "aldrin": {
+  "autor": "Neil Armstrong",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Aldrin_Apollo_11_original.jpg",
+  "w": 960,
+  "h": 966
+ },
+ "huella": {
+  "autor": "NASA / Buzz Aldrin",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Apollo_11_bootprint.jpg",
+  "w": 960,
+  "h": 968
+ },
+ "bennu": {
+  "autor": "NASA/Goddard/University of Arizona",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Bennu_mosaic_OSIRIS-REx.jpg",
+  "w": 960,
+  "h": 540
+ },
+ "ceres": {
+  "autor": "Justin Cowart",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Ceres_-_RC3_-_Haulani_Crater_(22381131691)_(cropped).jpg",
+  "w": 852,
+  "h": 836
+ },
+ "hale_bopp": {
+  "autor": "Philipp Salzgeber",
+  "licencia": "CC BY-SA 2.0 at",
+  "url": "https://commons.wikimedia.org/wiki/File:Comet-Hale-Bopp-29-03-1997_hires_adj.jpg",
+  "w": 960,
+  "h": 1252
+ },
+ "cometa_67p": {
+  "autor": "ESA/Rosetta/NAVCAM, CC BY-SA IGO 3.0",
+  "licencia": "CC BY-SA 3.0 igo",
+  "url": "https://commons.wikimedia.org/wiki/File:Comet_67P_on_19_September_2014_NavCam_mosaic.jpg",
+  "w": 960,
+  "h": 764
+ },
+ "europa": {
+  "autor": "NASA/JPL/DLR",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Europa-moon-with-margins.jpg",
+  "w": 960,
+  "h": 960
+ },
+ "luna": {
+  "autor": "Gregory H. Revera",
+  "licencia": "CC BY-SA 3.0",
+  "url": "https://commons.wikimedia.org/wiki/File:FullMoon2010.jpg",
+  "w": 960,
+  "h": 912
+ },
+ "mancha_roja": {
+  "autor": "NASA / SwRI / MSSS / Gerald Eichstädt / Seán Doran",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Great_red_spot_juno_20170712.jpg",
+  "w": 960,
+  "h": 1555
+ },
+ "sol_mancha": {
+  "autor": "ALMA (ESO/NAOJ/NRAO), NASA.",
+  "licencia": "CC BY 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Image_of_the_solar_surface_alongside_a_close-up_view_of_a_sunspot_from_ALMA_(eso1703d).jpg",
+  "w": 960,
+  "h": 749
+ },
+ "io": {
+  "autor": "NASA / JPL / University of Arizona",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Io_highest_resolution_true_color.jpg",
+  "w": 960,
+  "h": 960
+ },
+ "lunas_jupiter": {
+  "autor": "NASA",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Jupiter_System_Montage_-_GPN-2000-000451.jpg",
+  "w": 960,
+  "h": 763
+ },
+ "jupiter": {
+  "autor": "NASA, ESA, and A. Simon (Goddard Space Flight Center)",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Jupiter_and_its_shrunken_Great_Red_Spot.jpg",
+  "w": 940,
+  "h": 940
+ },
+ "sol_eyeccion": {
+  "autor": "NASA Goddard Space Flight Center",
+  "licencia": "CC BY 2.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Magnificent_CME_Erupts_on_the_Sun_-_August_31.jpg",
+  "w": 960,
+  "h": 540
+ },
+ "mercurio_color": {
+  "autor": "NASA/Johns Hopkins University Applied Physics Laboratory/Carnegie Institution of Washington. Edited version of Image:Mercury in color - Proc",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Mercury_in_color_-_Prockter07_centered.jpg",
+  "w": 960,
+  "h": 952
+ },
+ "mercurio": {
+  "autor": "NASA/Johns Hopkins University Applied Physics Laboratory/Arizona State University/Carnegie Institution of Washington",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Mercury_in_true_color.jpg",
+  "w": 960,
+  "h": 960
+ },
+ "salida_tierra": {
+  "autor": "NASA/Bill Anders",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:NASA-Apollo8-Dec24-Earthrise.jpg",
+  "w": 960,
+  "h": 960
+ },
+ "urano_webb": {
+  "autor": "NASA's James Webb Space Telescope from Greenbelt, MD, USA",
+  "licencia": "CC BY 2.0",
+  "url": "https://commons.wikimedia.org/wiki/File:NASA%E2%80%99s_Webb_Scores_Another_Ringed_World_With_New_Image_of_Uranus_-_Flickr_-_James_Webb_Space_Telescope.png",
+  "w": 960,
+  "h": 960
+ },
+ "neptuno": {
+  "autor": "NASA",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Neptune_Full.jpg",
+  "w": 960,
+  "h": 960
+ },
+ "marte": {
+  "autor": "ESA & MPS for OSIRIS Team MPS/UPD/LAM/IAA/RSSD/INTA/UPM/DASP/IDA, CC BY-SA 3.0 IGO",
+  "licencia": "CC BY-SA 3.0 igo",
+  "url": "https://commons.wikimedia.org/wiki/File:OSIRIS_Mars_true_color.jpg",
+  "w": 960,
+  "h": 960
+ },
+ "orion_nebulosa": {
+  "autor": "NASA, ESA, M. Robberto (Space Telescope Science Institute/ESA) and the Hubble Space Telescope Orion Treasury Project Team",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Orion_Nebula_-_Hubble_2006_mosaic_18000.jpg",
+  "w": 960,
+  "h": 960
+ },
+ "venus_relieve": {
+  "autor": "NASA/JPL",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:PIA00268_Venus_-_3-D_Perspective_View_of_Latona_Corona_and_Dali_Chasma.jpg",
+  "w": 960,
+  "h": 720
+ },
+ "encelado": {
+  "autor": "National Aeronautics and Space Administration (NASA) / Jet Propulsion Laboratory (JPL)",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:PIA17202_-_Approaching_Enceladus.jpg",
+  "w": 960,
+  "h": 960
+ },
+ "venus": {
+  "autor": "NASA/JPL-Caltech",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:PIA23791-Venus-RealAndEnhancedContrastViews-20200608_(cropped).jpg",
+  "w": 960,
+  "h": 960
+ },
+ "punto_azul": {
+  "autor": "Voyager 1",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Pale_Blue_Dot.png",
+  "w": 453,
+  "h": 614
+ },
+ "pilares": {
+  "autor": "NASA, ESA, and the Hubble Heritage Team (STScI/AURA)",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Pillars_of_creation_2014_HST_WFC3-UVIS_full-res_denoised.jpg",
+  "w": 960,
+  "h": 1001
+ },
+ "pluton": {
+  "autor": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute/Alex Parker",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Pluto_in_True_Color_-_High-Res.jpg",
+  "w": 960,
+  "h": 960
+ },
+ "curiosity": {
+  "autor": "NASA/JPL-Caltech/MSSS",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Sandy_Selfie_Sent_from_NASA_Mars_Rover.jpg",
+  "w": 960,
+  "h": 1024
+ },
+ "saturno": {
+  "autor": "NASA / JPL / Space Science Institute",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Saturn_during_Equinox.jpg",
+  "w": 960,
+  "h": 465
+ },
+ "sol_eclipse": {
+  "autor": "Luc Viatour",
+  "licencia": "CC BY-SA 3.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Solar_eclipse_1999_4.jpg",
+  "w": 960,
+  "h": 945
+ },
+ "tierra": {
+  "autor": "Harrison Schmitt / Apollo 17",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:The_Blue_Marble,_AS17-148-22727.jpg",
+  "w": 960,
+  "h": 960
+ },
+ "sol": {
+  "autor": "NASA/SDO (AIA)",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:The_Sun_by_the_Atmospheric_Imaging_Assembly_of_NASA%27s_Solar_Dynamics_Observatory_-_20100819.jpg",
+  "w": 960,
+  "h": 916
+ },
+ "olympus": {
+  "autor": "NASA/JPL",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:The_View_of_Olympus_Mons_from_Viking_1.jpg",
+  "w": 960,
+  "h": 638
+ },
+ "titan": {
+  "autor": "NASA/JPL-Caltech/Space Science Institute",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Titan_in_true_color.jpg",
+  "w": 600,
+  "h": 600
+ },
+ "anillos": {
+  "autor": "NASA/JPL-Caltech/SSI/Cornell",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Top_view_of_the_rings_of_Saturn_by_Cassini_-_October_10,_2013.jpg",
+  "w": 960,
+  "h": 720
+ },
+ "triton": {
+  "autor": "NASA / Jet Propulsion Lab / U.S. Geological Survey",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Triton_moon_mosaic_Voyager_2_(large).jpg",
+  "w": 960,
+  "h": 960
+ },
+ "arrokoth": {
+  "autor": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute/Roman Tkachenko.",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:UltimaThule_CA06_color_20190516.png",
+  "w": 960,
+  "h": 672
+ },
+ "urano": {
+  "autor": "NASA",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Uranus_as_seen_by_NASA%27s_Voyager_2.tif",
+  "w": 960,
+  "h": 960
+ },
+ "venus_radar": {
+  "autor": "NASA/JPL",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Venus_globe.jpg",
+  "w": 960,
+  "h": 960
+ },
+ "vesta": {
+  "autor": "NASA/JPL-Caltech/UCAL/MPS/DLR/IDA",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Vesta_full_mosaic.jpg",
+  "w": 894,
+  "h": 767
+ },
+ "bala": {
+  "autor": "NASA/CXC/M. Weiss",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:1e0657_scale.jpg",
+  "w": 960,
+  "h": 694
+ },
+ "andromeda": {
+  "autor": "Adam Evans",
+  "licencia": "CC BY 2.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Andromeda_Galaxy_(with_h-alpha).jpg",
+  "w": 960,
+  "h": 631
+ },
+ "antenas": {
+  "autor": "NASA, ESA, and the Hubble Heritage Team (STScI/AURA)-ESA/Hubble Collaboration",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Antennae_galaxies_xl.jpg",
+  "w": 960,
+  "h": 953
+ },
+ "apolo11_despegue": {
+  "autor": "NASA",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Apollo_11_Launch_-_GPN-2000-000630.jpg",
+  "w": 960,
+  "h": 1200
+ },
+ "agujero_m87": {
+  "autor": "Event Horizon Telescope, uploader cropped and converted TIF to JPG",
+  "licencia": "CC BY 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Black_hole_-_Messier_87_crop_max_res.jpg",
+  "w": 960,
+  "h": 960
+ },
+ "cronologia": {
+  "autor": "NASA/WMAP Science Team",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:CMB_Timeline300_no_WMAP.jpg",
+  "w": 960,
+  "h": 634
+ },
+ "cassiopeia": {
+  "autor": "Oliver Krause (Steward Observatory) George H. Rieke (Steward Observatory) Stephan M. Birkmann (Max-Planck-Institut für Astronomie) Emeric Le",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Cassiopeia_A_Spitzer_Crop.jpg",
+  "w": 960,
+  "h": 731
+ },
+ "cangrejo": {
+  "autor": "NASA, ESA, J. Hester and A. Loll (Arizona State University)",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Crab_Nebula.jpg",
+  "w": 960,
+  "h": 960
+ },
+ "via_lactea": {
+  "autor": "ESO/Y. Beletsky",
+  "licencia": "CC BY 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:ESO-VLT-Laser-phot-33a-07.jpg",
+  "w": 960,
+  "h": 638
+ },
+ "eta_carinae": {
+  "autor": "Jon Morse (University of Colorado) & NASA Hubble Space Telescope",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Eta_Carinae.jpg",
+  "w": 960,
+  "h": 959
+ },
+ "hubble_tel": {
+  "autor": "Ruffnax (Crew of STS-125)",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:HST-SM4.jpeg",
+  "w": 960,
+  "h": 721
+ },
+ "ngc1300": {
+  "autor": "NASA, ESA, and The Hubble Heritage Team STScI/AURA)",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Hubble2005-01-barred-spiral-galaxy-NGC1300.jpg",
+  "w": 960,
+  "h": 548
+ },
+ "campo_hubble": {
+  "autor": "NASA and the European Space Agency. Edited by Noodle snacks",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Hubble_ultra_deep_field_high_rez_edit1.jpg",
+  "w": 960,
+  "h": 960
+ },
+ "fondo_cosmico": {
+  "autor": "NASA / WMAP Science Team",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:WMAP_2012.png",
+  "w": 960,
+  "h": 480
+ },
+ "iss": {
+  "autor": "NASA/Crew of STS-132",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:International_Space_Station_after_undocking_of_STS-132.jpg",
+  "w": 960,
+  "h": 612
+ },
+ "webb_tel": {
+  "autor": "NASA",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:JWST_spacecraft_model_3.png",
+  "w": 775,
+  "h": 664
+ },
+ "lemaitre": {
+  "autor": "unknown photographer, probably a CalTech employee. Cropped by Artistosteles",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Lemaitre.jpg",
+  "w": 497,
+  "h": 540
+ },
+ "sombrero": {
+  "autor": "NASA/ESA and The Hubble Heritage Team (STScI/AURA)",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:M104_ngc4594_sombrero_galaxy_hi-res.jpg",
+  "w": 960,
+  "h": 538
+ },
+ "ingenuity": {
+  "autor": "NASA/JPL-Caltech/ASU/MSSS",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Mastcam-Z_Gives_Ingenuity_a_Close-up.jpg",
+  "w": 960,
+  "h": 716
+ },
+ "remolino": {
+  "autor": "NASA and European Space Agency",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Messier51_sRGB.jpg",
+  "w": 960,
+  "h": 666
+ },
+ "acantilados_carina": {
+  "autor": "Image: National Aeronautics and Space Administration (a U.S. federal government agency; https://www.nasa.gov/) European space agency (https:",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:NASA%E2%80%99s_Webb_Reveals_Cosmic_Cliffs,_Glittering_Landscape_of_Star_Birth.jpg",
+  "w": 960,
+  "h": 556
+ },
+ "ojo_gato": {
+  "autor": "J.P. Harrington and K.J. Borkowski (University of Maryland), and NASA",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:NGC6543.jpg",
+  "w": 960,
+  "h": 960
+ },
+ "pleyades": {
+  "autor": "NASA, ESA, AURA/Caltech, Palomar Observatory The science team consists of: D. Soderblom and E. Nelan (STScI), F. Benedict and B. Arthur (U. ",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Pleiades_large.jpg",
+  "w": 960,
+  "h": 692
+ },
+ "tereshkova": {
+  "autor": "Alexander Mokletsov / Александр Моклецов",
+  "licencia": "CC BY-SA 3.0",
+  "url": "https://commons.wikimedia.org/wiki/File:RIAN_archive_612748_Valentina_Tereshkova.jpg",
+  "w": 960,
+  "h": 969
+ },
+ "sirio": {
+  "autor": "NASA, ESA, H. Bond (STScI), and M. Barstow (University of Leicester)",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Sirius_A_and_B_Hubble_photo.jpg",
+  "w": 369,
+  "h": 403
+ },
+ "transbordador": {
+  "autor": "NASA",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Space_Shuttle_Columbia_launching.jpg",
+  "w": 960,
+  "h": 960
+ },
+ "sputnik": {
+  "autor": "NSSDC, NASA[1]",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Sputnik_asm.jpg",
+  "w": 960,
+  "h": 786
+ },
+ "quinteto": {
+  "autor": "Image: National Aeronautics and Space Administration (a U.S. federal government agency; https://www.nasa.gov/) European space agency (https:",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Stephan%27s_Quintet_taken_by_James_Webb_Space_Telescope.jpg",
+  "w": 960,
+  "h": 920
+ },
+ "hubble_edwin": {
+  "autor": "Johan Hagemeyer",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Studio_portrait_photograph_of_Edwin_Powell_Hubble_(cropped).JPG",
+  "w": 846,
+  "h": 1068
+ },
+ "voyager": {
+  "autor": "NASA/JPL",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Voyager_spacecraft.jpg",
+  "w": 960,
+  "h": 794
+ },
+ "campo_webb": {
+  "autor": "NASA, ESA, CSA, and STScI",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Webb%27s_First_Deep_Field.jpg",
+  "w": 960,
+  "h": 980
+ },
+ "gagarin": {
+  "autor": "Arto Jousi / /Suomen valokuvataiteen museo / Alma Media / Uuden Suomen kokoelma; Restored by Adam Cuerden",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Yuri_Gagarin_(1961)_-_Restoration.jpg",
+  "w": 960,
+  "h": 1200
+ },
+ "contaminacion": {
+  "autor": "Ivtorov",
+  "licencia": "CC BY 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:2024_Light_pollution_in_Moscow.jpg",
+  "w": 960,
+  "h": 633
+ },
+ "artemis": {
+  "autor": "Joel Kowsky",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Artemis_I_Launch_(NHQ202211160017).jpg",
+  "w": 960,
+  "h": 960
+ },
+ "osa_mayor": {
+  "autor": "Arya Anthony/IAU OAE",
+  "licencia": "CC BY 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Big_Dipper_(ann22042ah)_-_increased_contrast_and_brightness.jpg",
+  "w": 960,
+  "h": 960
+ },
+ "orion_constelacion": {
+  "autor": "Zdeněk Bardon/ESO",
+  "licencia": "CC BY 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Orion_constellation_(orion-ch17-bardon-cc).jpg",
+  "w": 960,
+  "h": 621
+ },
+ "perseidas": {
+  "autor": "Kulish Kateryna",
+  "licencia": "CC BY 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Perseid_meteor_shower_over_Odesa.jpg",
+  "w": 960,
+  "h": 640
+ },
+ "via_lactea_cielo": {
+  "autor": "Y. Beletsky/ESO",
+  "licencia": "CC BY 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Rise_of_the_Milky_Way.jpg",
+  "w": 960,
+  "h": 518
+ },
+ "eclipse_lunar": {
+  "autor": "Brucewaters",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Total_Lunar_Eclipse_Totality_-_large_image.jpg",
+  "w": 960,
+  "h": 543
+ },
+ "trappist": {
+  "autor": "Artwork NASA, ESA, CSA, STScI, Joseph Olmsted (STScI)",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Trappist-1_e_(Artist%27s_Concept)_(2025-109).jpg",
+  "w": 960,
+  "h": 540
+ }
+}

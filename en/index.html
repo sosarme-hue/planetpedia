@@ -202,6 +202,11 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .tema span { color: var(--ink-soft); font-size: .92rem; line-height: 1.45; }
 .pronto { display: inline-block; margin-top: 16px; font-size: .85rem; color: var(--ink-soft); }
 .pronto b { color: var(--teal-ink); font-weight: 600; }
+.tema a { display: grid; gap: 4px; color: inherit; text-decoration: none; }
+.tema a:hover strong { color: var(--teal-ink); }
+.tema a strong::after { content: " →"; color: var(--teal-ink); }
+a.ir-uni { font-size: .95rem; color: var(--ink); text-decoration: none; font-weight: 500; }
+a.ir-uni:hover b { text-decoration: underline; }
 
 /* Sobre el proyecto */
 .sobre { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; align-items: start; }
@@ -295,7 +300,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <span>Planet<b>pedia</b></span>
     </a>
     <nav class="nav" aria-label="Main">
-      <a href="#universo">Universe</a>
+      <a href="universe/">Universe</a>
       <a href="#tierra">Planet Earth</a>
       <a href="#enciclopedias">Encyclopedias</a>
       <a href="#guias">Local guides</a>
@@ -335,7 +340,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
         <p>Two areas of Planetpedia's own, to explore through images, fact sheets and reading paths. In-depth explanations stay in the network's encyclopedias.</p>
       </div>
       <div class="mundos">
-        <a class="mundo" href="#universo">
+        <a class="mundo" href="universe/">
           <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
             <defs>
               <radialGradient id="g-esp" cx="70%" cy="30%" r="80%"><stop offset="0" stop-color="#1d3f74"/><stop offset="1" stop-color="#050f22"/></radialGradient>
@@ -385,14 +390,14 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
         <h3>Universe</h3>
         <p>Where to start looking at the sky.</p>
         <ul class="temas">
-          <li class="tema"><strong>Solar system</strong><span>The Sun, the eight planets and their moons, asteroids and comets.</span></li>
-          <li class="tema"><strong>Stars and galaxies</strong><span>How stars are born, change and die, and how they gather in galaxies like the Milky Way.</span></li>
-          <li class="tema"><strong>Cosmology</strong><span>The origin and expansion of the universe, told in an accessible way.</span></li>
-          <li class="tema"><strong>Space exploration</strong><span>Missions, probes, telescopes and the people who made them possible.</span></li>
-          <li class="tema"><strong>Stargazing</strong><span>Constellations, binoculars and telescopes: a guide to get started.</span></li>
-          <li class="tema"><strong>Astronomy news</strong><span>Eclipses, meteor showers and recent discoveries.</span></li>
+          <li class="tema"><a href="universe/solar-system/"><strong>Solar system</strong><span>The Sun, the eight planets and their moons, asteroids and comets.</span></a></li>
+          <li class="tema"><a href="universe/stars/"><strong>Stars and galaxies</strong><span>How stars are born, change and die, and how they gather in galaxies like the Milky Way.</span></a></li>
+          <li class="tema"><a href="universe/cosmology/"><strong>Cosmology</strong><span>The origin and expansion of the universe, told in an accessible way.</span></a></li>
+          <li class="tema"><a href="universe/space-exploration/"><strong>Space exploration</strong><span>Missions, probes, telescopes and the people who made them possible.</span></a></li>
+          <li class="tema"><a href="universe/stargazing/"><strong>Stargazing</strong><span>Constellations, binoculars and telescopes: a guide to get started.</span></a></li>
+          <li class="tema"><a href="universe/curiosities/"><strong>Curiosities and numbers</strong><span>Records, anecdotes, surprising discoveries and interactive simulators.</span></a></li>
         </ul>
-        <span class="pronto">Coming soon at <b>planetpedia.net/en/universe/</b></span>
+        <a class="pronto ir-uni" href="universe/">Enter the <b>Universe</b>: 49 illustrated articles with facts and simulators →</a>
       </div>
       <div class="temas-bloque" id="tierra">
         <h3>Planet Earth</h3>
@@ -816,10 +821,17 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   document.querySelectorAll('.temas-bloque').forEach(function (b) {
     b.querySelectorAll('.tema').forEach(function (t) {
       var nombre = txt(t, 'strong'), desc = txt(t, 'span');
-      items.push({ nombre: nombre, desc: desc, url: '#' + b.id, tipo: T.tema, busca: norm(nombre + ' ' + desc + ' ' + txt(b, 'h3')) });
+      var ta = t.querySelector('a');
+      items.push({ nombre: nombre, desc: desc, url: ta ? ta.href : '#' + b.id, tipo: T.tema, busca: norm(nombre + ' ' + desc + ' ' + txt(b, 'h3')) });
     });
   });
   items.forEach(function (it) { it.n = norm(it.nombre); });
+  // Fichas de Universo (índice generado por build_universo.py)
+  fetch((EN ? '../' : '') + 'assets/indice-' + (EN ? 'en' : 'es') + '.json').then(function (r) { return r.ok ? r.json() : []; }).then(function (lista) {
+    lista.forEach(function (x) {
+      items.push({ nombre: x.t, desc: x.d, url: (EN ? '../' : '') + x.u, tipo: x.s, busca: norm(x.t + ' ' + x.d + ' ' + x.c + ' ' + x.s), n: norm(x.t) });
+    });
+  }).catch(function () {});
 
   var activo = -1, actuales = [];
   function cerrar() { lista.hidden = true; q.setAttribute('aria-expanded', 'false'); q.removeAttribute('aria-activedescendant'); activo = -1; }
