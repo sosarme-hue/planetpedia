@@ -277,7 +277,7 @@
   boton.addEventListener("click", function () { poner(!top.classList.contains("abierto")); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape" && top.classList.contains("abierto")) { poner(false); boton.focus(); } });
   document.addEventListener("click", function (e) { if (top.classList.contains("abierto") && !top.contains(e.target)) poner(false); });
-  top.querySelectorAll(".nav a").forEach(function (a) { a.addEventListener("click", function () { poner(false); }); });
+  top.querySelectorAll(".menu a").forEach(function (a) { a.addEventListener("click", function () { poner(false); }); });
 })();
 
 // Buscador de fichas de Quién es quién
@@ -294,4 +294,87 @@
     grupos.forEach(function (g) { g.hidden = !g.querySelector(".ficha-enlace:not([hidden])"); });
     vacio.hidden = hay > 0;
   });
+})();
+
+// Menú agrupado: desplegables en el ordenador
+(function () {
+  var grupos = [].slice.call(document.querySelectorAll(".top .grupo"));
+  if (!grupos.length) return;
+  var cerrar = function (excepto) {
+    grupos.forEach(function (g) { if (g !== excepto) { g.classList.remove("desplegado"); g.querySelector(".grupo-boton").setAttribute("aria-expanded", "false"); } });
+  };
+  grupos.forEach(function (g) {
+    var b = g.querySelector(".grupo-boton");
+    b.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var abre = !g.classList.contains("desplegado");
+      cerrar(g);
+      var panel = document.getElementById("buscador-global"), bb = document.querySelector(".buscar-boton");
+      if (abre && panel && !panel.hidden) { panel.hidden = true; if (bb) bb.setAttribute("aria-expanded", "false"); }
+      g.classList.toggle("desplegado", abre);
+      b.setAttribute("aria-expanded", abre ? "true" : "false");
+    });
+  });
+  document.addEventListener("click", function (e) { if (!e.target.closest || !e.target.closest(".grupo")) cerrar(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") cerrar(); });
+})();
+
+// Buscador de toda la web
+(function () {
+  var formularios = [].slice.call(document.querySelectorAll("[data-buscador]"));
+  if (!formularios.length) return;
+  var guion = document.querySelector('script[src*="app.js"]');
+  var raiz = new URL("../", guion ? guion.src : location.href);
+  var local = location.protocol === "file:" || /index\.html$/.test(location.pathname);
+  var enlace = function (r) { return local ? new URL(r.replace(/^\//, "") + "index.html", raiz).href : r; };
+  var datos = null, cargando = null;
+  var cargar = function () {
+    if (datos) return Promise.resolve(datos);
+    if (!cargando) cargando = fetch(new URL("assets/buscar.json", raiz).href).then(function (r) { return r.json(); }).then(function (d) {
+      datos = d.map(function (x) { x.n = quitar(x.t); x.m = quitar(x.d); x.c = quitar(x.k); return x; }); return datos;
+    }).catch(function () { datos = []; return datos; });
+    return cargando;
+  };
+  var quitar = function (t) { return (t || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); };
+  var esc = function (t) { return t.replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+  var buscar = function (q) {
+    var palabras = quitar(q).split(/\s+/).filter(function (p) { return p.length > 1 && ["que", "es", "un", "una", "el", "la", "de", "los", "las", "como", "del"].indexOf(p) < 0; });
+    if (!palabras.length) return [];
+    return datos.map(function (x) {
+      var p = 0;
+      palabras.forEach(function (w) { if (x.n.indexOf(w) >= 0) p += 4; else if (x.c.indexOf(w) >= 0) p += 2; else if (x.m.indexOf(w) >= 0) p += 1; });
+      return { x: x, p: p };
+    }).filter(function (o) { return o.p > 0; }).sort(function (a, b) { return b.p - a.p; }).slice(0, 8);
+  };
+  formularios.forEach(function (f) {
+    var input = f.querySelector("[data-buscar-input]"), lista = f.querySelector("[data-buscar-resultados]");
+    var pintar = function () {
+      var q = input.value.trim();
+      if (q.length < 2) { lista.hidden = true; return; }
+      cargar().then(function () {
+        var r = buscar(q);
+        lista.innerHTML = r.length ? r.map(function (o) { return '<li><a href="' + enlace(o.x.r) + '"><b>' + esc(o.x.t) + "</b><small>" + esc(o.x.d) + "</small></a></li>"; }).join("")
+          : '<li class="sin">No encontramos nada con esas palabras. Prueba con otra, o mira el <a href="' + enlace("/diccionario/") + '">diccionario</a>.</li>';
+        lista.hidden = false;
+      });
+    };
+    input.addEventListener("input", pintar);
+    input.addEventListener("focus", function () { cargar(); });
+    f.addEventListener("submit", function (e) {
+      e.preventDefault();
+      cargar().then(function () { var r = buscar(input.value); if (r.length) location.href = enlace(r[0].x.r); else pintar(); });
+    });
+    document.addEventListener("click", function (e) { if (!f.contains(e.target)) lista.hidden = true; });
+  });
+  var boton = document.querySelector(".buscar-boton"), panel = document.getElementById("buscador-global");
+  if (boton && panel) {
+    boton.addEventListener("click", function () {
+      var abre = panel.hidden;
+      document.querySelectorAll(".top .grupo.desplegado").forEach(function (g) { g.classList.remove("desplegado"); });
+      panel.hidden = !abre;
+      boton.setAttribute("aria-expanded", abre ? "true" : "false");
+      if (abre) panel.querySelector("input").focus();
+    });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !panel.hidden) { panel.hidden = true; boton.setAttribute("aria-expanded", "false"); boton.focus(); } });
+  }
 })();

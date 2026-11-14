@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/estilo.css?v=11">
+<link rel="stylesheet" href="assets/estilo.css?v=12">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "IApedia", "inLanguage": "es", "url": "https://iapedia.si/", "description": "IApedia explica la inteligencia artificial desde cero y en español: qué es, su historia, quién es quién, cómo usar ChatGPT, Claude, Gemini y Copilot, cursos gratis, vídeos y exámenes.", "isPartOf": {"@type": "WebSite", "name": "IApedia", "url": "https://iapedia.si/"}}</script>
 </head>
 <body>
@@ -25,50 +25,47 @@
   <div class="wrap">
     <a class="logo" href="./" aria-label="IApedia, inicio"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2a2f66"/><circle cx="9" cy="10" r="3" fill="#a995ff"/><circle cx="9" cy="22" r="3" fill="#a995ff"/><circle cx="23" cy="16" r="4" fill="#fff"/><path d="M11.5 11.2 19.5 15M11.5 20.8 19.5 17" stroke="#a995ff" stroke-width="2"/></svg><span>IA<b>pedia</b></span></a>
     <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir el menú"><span class="rayas" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-texto">Menú</span></button>
-    <nav class="nav" id="menu-principal" aria-label="Secciones">
-<a href="empieza-aqui/">Empieza aquí</a>
-<a href="semana/">Esta semana</a>
-<a href="guias/">Guías</a>
-<a href="prompts/">Prompts</a>
-<a href="para-ti/">IA para ti</a>
-<a href="cursos/">Cursos</a>
-<a href="examenes/">Exámenes</a>
-<a href="videos/">Vídeos</a>
-<a href="blog/">Blog</a>
-<a href="curiosidades/">Curiosidades</a>
-<a href="historia/">Historia</a>
-<a href="diccionario/">Diccionario</a>
-<a href="estafas/">Estafas</a>
-    </nav>
+    <nav class="menu" id="menu-principal" aria-label="Secciones"><div class="grupo"><button class="grupo-boton" type="button" aria-expanded="false" aria-controls="g-aprende">Aprende<svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="grupo-lista" id="g-aprende"><li><a href="empieza-aqui/">Empieza aquí</a></li><li><a href="cursos/">Cursos</a></li><li><a href="examenes/">Exámenes</a></li><li><a href="diccionario/">Diccionario</a></li><li><a href="para-ti/">IA para ti</a></li></ul></div><div class="grupo"><button class="grupo-boton" type="button" aria-expanded="false" aria-controls="g-usala">Úsala<svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="grupo-lista" id="g-usala"><li><a href="guias/">Guías de cada asistente</a></li><li><a href="prompts/">Prompts listos para copiar</a></li><li><a href="test-asistente/">¿Qué asistente me conviene?</a></li><li><a href="comparador/">Comparador de asistentes</a></li><li><a href="guias/imagenes-y-video/">Crear imágenes y vídeo</a></li></ul></div><div class="grupo"><button class="grupo-boton" type="button" aria-expanded="false" aria-controls="g-actualidad">Actualidad<svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="grupo-lista" id="g-actualidad"><li><a href="semana/">La semana en la IA</a></li><li><a href="blog/">Blog</a></li><li><a href="videos/">Vídeos</a></li><li><a href="curiosidades/">Curiosidades</a></li></ul></div><div class="grupo"><button class="grupo-boton" type="button" aria-expanded="false" aria-controls="g-historia">Historia<svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="grupo-lista" id="g-historia"><li><a href="historia/">Historia de la IA</a></li><li><a href="quien-es-quien/">Quién es quién</a></li><li><a href="superinteligencia/">Superinteligencia</a></li></ul></div><a class="menu-estafas" href="estafas/">Estafas</a></nav>
+    <div class="top-acciones">
+      <button class="buscar-boton" type="button" aria-expanded="false" aria-controls="buscador-global" aria-label="Buscar en IApedia"><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <a class="top-cta" href="empieza-aqui/">Empieza aquí</a>
+    </div>
+  </div>
+  <div class="buscador-global" id="buscador-global" hidden>
+    <form class="wrap p-busca" role="search" data-buscador>
+      <label class="oculto" for="busca-global">Buscar en IApedia</label>
+      <input id="busca-global" type="search" placeholder="Busca un tema, un asistente o una persona" autocomplete="off" data-buscar-input>
+      <button type="submit">Buscar</button>
+      <ul class="resultados-busqueda" data-buscar-resultados hidden></ul>
+    </form>
   </div>
 </header>
 <main id="contenido">
 
-
-<section class="hero con-foto">
-  <svg class="hero-red" viewBox="0 0 400 400" aria-hidden="true">
-    <defs><radialGradient id="g" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#6d4aff" stop-opacity=".45"/><stop offset="1" stop-color="#6d4aff" stop-opacity="0"/></radialGradient></defs>
-    <circle cx="200" cy="200" r="200" fill="url(#g)"/>
-    <g stroke="#a995ff" stroke-opacity=".45" stroke-width="1.5">
-      <path d="M80 110 200 80M80 110 200 200M80 110 200 320M80 200 200 80M80 200 200 200M80 200 200 320M80 290 200 80M80 290 200 200M80 290 200 320M200 80 320 150M200 80 320 250M200 200 320 150M200 200 320 250M200 320 320 150M200 320 320 250"/>
-    </g>
-    <g fill="#a995ff"><circle cx="80" cy="110" r="12"/><circle cx="80" cy="200" r="12"/><circle cx="80" cy="290" r="12"/></g>
-    <g fill="#ffffff"><circle cx="200" cy="80" r="14"/><circle cx="200" cy="200" r="14"/><circle cx="200" cy="320" r="14"/></g>
-    <g fill="#6d4aff" stroke="#fff" stroke-width="3"><circle cx="320" cy="150" r="18"/><circle cx="320" cy="250" r="18"/></g>
-  </svg>
-  <div class="wrap">
-    <p class="eyebrow">Aprende inteligencia artificial desde cero</p>
-    <h1>La inteligencia artificial, <span>explicada para todos</span></h1>
-    <p class="lede">Sin tecnicismos y sin saber nada antes. Entiende qué es la IA, de dónde viene y quién está detrás, aprende a usar ChatGPT, Claude, Gemini y Copilot paso a paso, y compruébalo con cursos y exámenes gratuitos.</p>
-    <div class="botones">
-      <a class="boton" href="empieza-aqui/">Empieza aquí →</a>
-      <a class="boton sec" href="cursos/">Ver los cursos</a>
+<section class="p-hero">
+  <div class="wrap p-hero-grid">
+    <div class="p-hero-texto">
+      <p class="eyebrow">La enciclopedia de la IA en español</p>
+      <h1>La inteligencia artificial, <span>explicada para todos</span></h1>
+      <p class="lede">Sin tecnicismos y sin saber nada antes. Escribe lo que quieras entender y te llevamos a la explicación sencilla.</p>
+      <form class="p-busca" role="search" data-buscador>
+        <label class="oculto" for="busca-portada">¿Qué quieres entender hoy?</label>
+        <input id="busca-portada" type="search" placeholder="¿Qué quieres entender hoy? Por ejemplo: qué es un prompt" autocomplete="off" data-buscar-input>
+        <button type="submit">Buscar</button>
+        <ul class="resultados-busqueda" data-buscar-resultados hidden></ul>
+      </form>
+      <div class="p-sugerencias"><span>Lo más buscado:</span><a href="guias/chatgpt/">¿Qué es ChatGPT?</a><a href="diccionario/">Alucinaciones</a><a href="estafas/">Voces clonadas</a><a href="test-asistente/">¿Qué asistente me conviene?</a></div>
     </div>
+    <aside class="p-semana" aria-labelledby="t-semana">
+      <div class="p-semana-cab"><h2 id="t-semana">La semana en la IA</h2><span>9 al 15 de noviembre de 2026</span></div>
+      <ol><li><a href="semana/#noticias"><span class="p-n">1</span><span>Google lanza Gemini 4 Carbon, su modelo más potente</span></a></li><li><a href="semana/#noticias"><span class="p-n">2</span><span>Anthropic presenta Claude Fable 5.2</span></a></li><li><a href="semana/#noticias"><span class="p-n">3</span><span>Anthropic se prepara para salir a bolsa</span></a></li></ol>
+      <div class="p-semana-extra"><a href="semana/#palabra"><small>Palabra de la semana</small><b>Modelo de frontera</b></a><a href="semana/#truco"><small>Truco de la semana</small><b>Pide que te pregunte antes de responder</b></a></div>
+      <a class="p-semana-mas" href="semana/">Leer la edición completa →</a>
+    </aside>
   </div>
-  <p class="credito-foto">Foto: <a href="https://unsplash.com/photos/nGoCBxiaRO0" rel="noopener">Growtika / Unsplash</a></p>
 </section>
 
-<section class="seccion" id="empieza">
+<section class="seccion p-empieza" id="empieza">
   <div class="wrap">
     <div class="que-es">
       <div class="que-es-texto">
@@ -85,181 +82,89 @@
 
     <h3 class="ya-la-usas-titulo">Ya la usas cada día, aunque no lo sepas</h3>
     <ul class="ya-la-usas">
-      <li><span aria-hidden="true">📱</span><b>Desbloquear el móvil con la cara</b><small>reconoce tus rasgos</small></li>
-      <li><span aria-hidden="true">🗺️</span><b>El GPS que esquiva atascos</b><small>predice el tráfico</small></li>
-      <li><span aria-hidden="true">🎬</span><b>Lo que te recomiendan Netflix o Spotify</b><small>aprende tus gustos</small></li>
-      <li><span aria-hidden="true">📧</span><b>El filtro de correo basura</b><small>detecta el spam</small></li>
-      <li><span aria-hidden="true">🌐</span><b>El traductor del móvil</b><small>traduce al instante</small></li>
-      <li><span aria-hidden="true">🏦</span><b>El aviso de tu banco ante un pago raro</b><small>detecta fraudes</small></li>
+      <li><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg><b>Desbloquear el móvil con la cara</b><small>reconoce tus rasgos</small></li>
+      <li><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><b>El GPS que esquiva atascos</b><small>predice el tráfico</small></li>
+      <li><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/></svg><b>Lo que te recomiendan Netflix o Spotify</b><small>aprende tus gustos</small></li>
+      <li><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><b>El filtro de correo basura</b><small>detecta el spam</small></li>
+      <li><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><b>El traductor del móvil</b><small>traduce al instante</small></li>
+      <li><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg><b>El aviso de tu banco ante un pago raro</b><small>detecta fraudes</small></li>
     </ul>
 
-    <h3 class="ya-la-usas-titulo">Tu camino en tres pasos</h3>
-    <div class="pasos pasos-enlace">
-      <a class="paso" href="empieza-aqui/">
-        <h3>Entiende lo básico</h3>
-        <p>La guía «La IA en 10 minutos» y el diccionario: las palabras que oyes en las noticias, con ejemplos de cada día.</p>
-        <span class="paso-ir">Empezar →</span>
-      </a>
-      <a class="paso" href="test-asistente/">
-        <h3>Pruébala sin miedo</h3>
-        <p>Descubre qué asistente te conviene (ChatGPT, Claude, Gemini, Copilot…) y sigue su guía paso a paso.</p>
-        <span class="paso-ir">Hacer el test →</span>
-      </a>
-      <a class="paso" href="cursos/">
-        <h3>Úsala en tu día a día</h3>
-        <p>Cursos cortos y gratuitos y exámenes para conseguir tu certificado de IApedia.</p>
-        <span class="paso-ir">Ver los cursos →</span>
-      </a>
+<h3 class="ya-la-usas-titulo">¿Por dónde empiezo?</h3>
+    <div class="p-caminos"><a class="p-camino" href="empieza-aqui/"><img src="https://images.unsplash.com/photo-1758691031979-6128d4029604?w=640&h=360&fit=crop&q=75&fm=jpg&auto=format" alt="" width="640" height="360" loading="lazy"><span class="p-camino-cuerpo"><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z"/><path d="M8 7h6"/></svg><b>No sé nada de IA</b><span>La IA en 10 minutos y el diccionario: qué es, cómo aprende y qué palabras oirás en las noticias.</span><span class="p-ir">Entender lo básico →</span><small class="p-credito">Foto: Vitaly Gariev / Unsplash</small></span></a><a class="p-camino" href="test-asistente/"><img src="https://images.unsplash.com/photo-1682941664177-7920d0e59418?w=640&h=360&fit=crop&q=75&fm=jpg&auto=format" alt="" width="640" height="360" loading="lazy"><span class="p-camino-cuerpo"><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg><b>Quiero probar un asistente</b><span>Un test de 5 preguntas te dice si te va mejor ChatGPT, Claude, Gemini o Copilot, y te lleva a su guía.</span><span class="p-ir">Hacer el test →</span><small class="p-credito">Foto: Sanket Mishra / Unsplash</small></span></a><a class="p-camino" href="cursos/"><img src="https://images.unsplash.com/photo-1547567667-1aa64e6f58dc?w=640&h=360&fit=crop&q=75&fm=jpg&auto=format" alt="" width="640" height="360" loading="lazy"><span class="p-camino-cuerpo"><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m12 7 1.5 3.3 3.5.4-2.6 2.4.7 3.5L12 15l-3.1 1.6.7-3.5L7 10.7l3.5-.4z"/></svg><b>Quiero sacarle partido</b><span>Seis cursos cortos y tres exámenes con certificado de IApedia en PDF.</span><span class="p-ir">Ver los cursos →</span><small class="p-credito">Foto: Alissa De Leva / Unsplash</small></span></a></div>
+  </div>
+</section>
+
+<section class="seccion p-guias" id="asistentes">
+  <div class="wrap">
+    <div class="p-cabecera">
+      <div><span class="mini">Guías paso a paso</span><h2>Aprende a manejar cada asistente</h2><p>Cómo crear la cuenta, hacer tu primera pregunta y proteger tu privacidad. Todos tienen versión gratuita.</p></div>
+      <a class="enlace-mas" href="comparador/">Comparar asistentes →</a>
+    </div>
+    <div class="p-asistentes">
+      <a class="p-asistente" href="guias/chatgpt/"><img src="assets/logos/chatgpt.svg" alt="" width="52" height="52" loading="lazy"><b>ChatGPT</b><small>OpenAI</small><span class="p-tag">Todo terreno</span></a>
+      <a class="p-asistente" href="guias/claude/"><img src="assets/logos/claude.svg" alt="" width="52" height="52" loading="lazy"><b>Claude</b><small>Anthropic</small><span class="p-tag">Escribir y resumir</span></a>
+      <a class="p-asistente" href="guias/gemini/"><img src="assets/logos/gemini.svg" alt="" width="52" height="52" loading="lazy"><b>Gemini</b><small>Google</small><span class="p-tag">Si usas Google</span></a>
+      <a class="p-asistente" href="guias/copilot/"><img src="assets/logos/copilot.svg" alt="" width="52" height="52" loading="lazy"><b>Copilot</b><small>Microsoft</small><span class="p-tag">Word y Excel</span></a>
+      <a class="p-asistente" href="guias/meta-ai/"><img src="assets/logos/meta-ai.svg" alt="" width="52" height="52" loading="lazy"><b>Meta AI</b><small>Meta</small><span class="p-tag">En WhatsApp</span></a>
+      <a class="p-asistente" href="guias/perplexity/"><img src="assets/logos/perplexity.svg" alt="" width="52" height="52" loading="lazy"><b>Perplexity</b><small>Perplexity AI</small><span class="p-tag">Cita sus fuentes</span></a>
+      <a class="p-asistente" href="guias/le-chat/"><img src="assets/logos/le-chat.svg" alt="" width="52" height="52" loading="lazy"><b>Le Chat</b><small>Mistral AI</small><span class="p-tag">El europeo</span></a>
+      <a class="p-asistente" href="guias/deepseek/"><img src="assets/logos/deepseek.svg" alt="" width="52" height="52" loading="lazy"><b>DeepSeek</b><small>DeepSeek</small><span class="p-tag">El chino gratuito</span></a>
     </div>
   </div>
 </section>
 
-<section class="seccion" id="historia">
+<section class="p-oscura" id="historia" aria-labelledby="t-historia">
   <div class="wrap">
-    <div class="seccion-head">
-      <span class="mini">Historia y protagonistas</span>
-      <h2>De Ramon Llull a ChatGPT</h2>
-      <p>La idea de una máquina que piensa es muy antigua. Estos son algunos momentos clave de una historia con altibajos.</p>
-    </div>
-    <ul class="hitos">
-      <li><span class="anio">1274</span><p>Ramon Llull diseña su <i>Ars Magna</i>, unas ruedas de papel para combinar ideas de forma mecánica.</p></li>
-      <li><span class="anio">1912</span><p>Leonardo Torres Quevedo construye El Ajedrecista, que juega finales de ajedrez solo.</p></li>
-      <li><span class="anio">1950</span><p>Alan Turing se pregunta: «¿Pueden pensar las máquinas?»</p></li>
-      <li><span class="anio">1956</span><p>Nace el nombre «inteligencia artificial» en un encuentro en Dartmouth.</p></li>
-      <li><span class="anio">1997</span><p>Deep Blue, de IBM, gana a Kaspárov, campeón del mundo de ajedrez.</p></li>
-      <li><span class="anio">2012</span><p>El aprendizaje profundo enseña a los ordenadores a reconocer fotos.</p></li>
-      <li><span class="anio">2022</span><p>ChatGPT llega al público y la IA entra en todas las casas.</p></li>
-    </ul>
-    <h3 class="sub-protagonistas">Quién es quién: las personas y empresas detrás de la IA</h3>
-    <div class="fichas-mini protagonistas"><a class="ficha-mini" href="quien-es-quien/alan-turing/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Alan_turing_header.jpg/330px-Alan_turing_header.jpg" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><span><b>Alan Turing</b><small>El padre de la informática y de la pregunta «¿pueden pensar las máquinas?»</small></span></a><a class="ficha-mini" href="quien-es-quien/ada-lovelace/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Ada_Lovelace_daguerreotype_by_Antoine_Claudet_1843_-_cropped.png/330px-Ada_Lovelace_daguerreotype_by_Antoine_Claudet_1843_-_cropped.png" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><span><b>Ada Lovelace</b><small>Escribió el primer programa de la historia</small></span></a><a class="ficha-mini" href="quien-es-quien/leonardo-torres-quevedo/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/1921_Leonardo_Torres_Quevedo.jpg/330px-1921_Leonardo_Torres_Quevedo.jpg" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><span><b>Leonardo Torres Quevedo</b><small>Creó El Ajedrecista, una de las primeras máquinas «inteligentes»</small></span></a><a class="ficha-mini" href="quien-es-quien/john-mccarthy/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/John_McCarthy_Stanford.jpg/330px-John_McCarthy_Stanford.jpg" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><span><b>John McCarthy</b><small>Puso nombre a la inteligencia artificial</small></span></a><a class="ficha-mini" href="quien-es-quien/geoffrey-hinton/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Geoffrey_Hinton_in_2026.jpg/330px-Geoffrey_Hinton_in_2026.jpg" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><span><b>Geoffrey Hinton</b><small>El «padrino» de las redes neuronales</small></span></a><a class="ficha-mini" href="quien-es-quien/yann-lecun/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Laura_Chaubard_%26_Yann_Le_Cun_-_2024_%2853814052697%29_%28cropped%29.jpg/330px-Laura_Chaubard_%26_Yann_Le_Cun_-_2024_%2853814052697%29_%28cropped%29.jpg" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><span><b>Yann LeCun</b><small>Enseñó a las máquinas a «ver»</small></span></a><a class="ficha-mini" href="quien-es-quien/fei-fei-li/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Fei-Fei_Li_at_AI_for_Good_2017.jpg/330px-Fei-Fei_Li_at_AI_for_Good_2017.jpg" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><span><b>Fei-Fei Li</b><small>Creó ImageNet, la base de datos que despertó a la IA moderna</small></span></a><a class="ficha-mini" href="quien-es-quien/demis-hassabis/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Demis_Hassabis%2C_2024_Nobel_Prize_Laureate_in_Chemistry_7_%28cropped%29.jpg/330px-Demis_Hassabis%2C_2024_Nobel_Prize_Laureate_in_Chemistry_7_%28cropped%29.jpg" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><span><b>Demis Hassabis</b><small>Fundador de DeepMind y Nobel de Química</small></span></a><a class="ficha-mini" href="quien-es-quien/nuria-oliver/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Nuria_Oliver_portrait_3.jpg/330px-Nuria_Oliver_portrait_3.jpg" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><span><b>Nuria Oliver</b><small>Experta en IA y comportamiento humano</small></span></a><a class="ficha-mini" href="quien-es-quien/openai/"><img class="avatar logo-empresa" src="assets/logos/empresas/openai.svg" alt="" width="96" height="96" loading="lazy"><span><b>OpenAI</b><small>La creadora de ChatGPT</small></span></a><a class="ficha-mini" href="quien-es-quien/anthropic/"><img class="avatar logo-empresa" src="assets/logos/empresas/anthropic.svg" alt="" width="96" height="96" loading="lazy"><span><b>Anthropic</b><small>La empresa de Claude, centrada en la seguridad</small></span></a><a class="ficha-mini" href="quien-es-quien/google-deepmind/"><img class="avatar logo-empresa" src="assets/logos/empresas/google-deepmind.svg" alt="" width="96" height="96" loading="lazy"><span><b>Google DeepMind</b><small>El laboratorio de IA de Google</small></span></a></div>
-    <p style="margin-top:16px"><a class="enlace-mas" href="historia/">Ver la historia completa →</a> · <a class="enlace-mas" href="quien-es-quien/">Ver las 124 personas y 14 empresas →</a></p>
+    <span class="mini">Historia y protagonistas</span>
+    <h2 id="t-historia">De Ramon Llull a ChatGPT</h2>
+    <ol class="p-linea"><li><span class="p-anio">1274</span><span>Ramon Llull y su máquina de combinar ideas</span></li><li><span class="p-anio">1912</span><span>El Ajedrecista de Torres Quevedo</span></li><li><span class="p-anio">1950</span><span>Turing: ¿pueden pensar las máquinas?</span></li><li><span class="p-anio">1956</span><span>Nace el nombre «inteligencia artificial»</span></li><li><span class="p-anio">1997</span><span>Deep Blue gana a Kaspárov</span></li><li><span class="p-anio">2012</span><span>Llega el aprendizaje profundo</span></li><li><span class="p-anio">2022</span><span>ChatGPT entra en todas las casas</span></li></ol>
+    <h3>Quién es quién</h3>
+    <div class="p-retratos"><a href="quien-es-quien/alan-turing/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Alan_turing_header.jpg/330px-Alan_turing_header.jpg" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><b>Alan Turing</b><small>El padre de la informática y de la pregunta «¿pueden pensar las máquinas?»</small></a><a href="quien-es-quien/ada-lovelace/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Ada_Lovelace_daguerreotype_by_Antoine_Claudet_1843_-_cropped.png/330px-Ada_Lovelace_daguerreotype_by_Antoine_Claudet_1843_-_cropped.png" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><b>Ada Lovelace</b><small>Escribió el primer programa de la historia</small></a><a href="quien-es-quien/leonardo-torres-quevedo/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/1921_Leonardo_Torres_Quevedo.jpg/330px-1921_Leonardo_Torres_Quevedo.jpg" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><b>Leonardo Torres Quevedo</b><small>Creó El Ajedrecista, una de las primeras máquinas «inteligentes»</small></a><a href="quien-es-quien/john-mccarthy/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/John_McCarthy_Stanford.jpg/330px-John_McCarthy_Stanford.jpg" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><b>John McCarthy</b><small>Puso nombre a la inteligencia artificial</small></a><a href="quien-es-quien/geoffrey-hinton/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Geoffrey_Hinton_in_2026.jpg/330px-Geoffrey_Hinton_in_2026.jpg" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><b>Geoffrey Hinton</b><small>El «padrino» de las redes neuronales</small></a><a href="quien-es-quien/yann-lecun/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Laura_Chaubard_%26_Yann_Le_Cun_-_2024_%2853814052697%29_%28cropped%29.jpg/330px-Laura_Chaubard_%26_Yann_Le_Cun_-_2024_%2853814052697%29_%28cropped%29.jpg" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><b>Yann LeCun</b><small>Enseñó a las máquinas a «ver»</small></a><a href="quien-es-quien/fei-fei-li/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Fei-Fei_Li_at_AI_for_Good_2017.jpg/330px-Fei-Fei_Li_at_AI_for_Good_2017.jpg" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><b>Fei-Fei Li</b><small>Creó ImageNet, la base de datos que despertó a la IA moderna</small></a><a href="quien-es-quien/demis-hassabis/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Demis_Hassabis%2C_2024_Nobel_Prize_Laureate_in_Chemistry_7_%28cropped%29.jpg/330px-Demis_Hassabis%2C_2024_Nobel_Prize_Laureate_in_Chemistry_7_%28cropped%29.jpg" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><b>Demis Hassabis</b><small>Fundador de DeepMind y Nobel de Química</small></a><a href="quien-es-quien/nuria-oliver/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Nuria_Oliver_portrait_3.jpg/330px-Nuria_Oliver_portrait_3.jpg" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><b>Nuria Oliver</b><small>Experta en IA y comportamiento humano</small></a><a href="quien-es-quien/dario-amodei/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Dario_Amodei_at_TechCrunch_Disrupt_2023_01_%28cropped%29.jpg/330px-Dario_Amodei_at_TechCrunch_Disrupt_2023_01_%28cropped%29.jpg" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><b>Dario Amodei</b><small>Cofundador y director ejecutivo de Anthropic, la empresa de Claude</small></a><a href="quien-es-quien/jensen-huang/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Jensen_Huang_Stanford_2026-04-30_010_%28cropped%29.jpg/330px-Jensen_Huang_Stanford_2026-04-30_010_%28cropped%29.jpg" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><b>Jensen Huang</b><small>Fundador de Nvidia, el «motor» de la IA</small></a><a href="quien-es-quien/sam-altman/"><img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Meeting_with_Masayoshi_Son_and_Sam_Altman_%28February_3%2C_2025%29_%283x4_cropped_on_Altman%29.jpg/330px-Meeting_with_Masayoshi_Son_and_Sam_Altman_%28February_3%2C_2025%29_%283x4_cropped_on_Altman%29.jpg" alt="" width="96" height="96" loading="lazy" referrerpolicy="no-referrer"><b>Sam Altman</b><small>Director ejecutivo de OpenAI, la empresa de ChatGPT</small></a></div>
+    <p class="p-enlaces"><a href="historia/">Ver la historia completa →</a><a href="quien-es-quien/">Las 124 personas y 14 empresas →</a></p>
   </div>
 </section>
 
-<section class="seccion fondo" id="semana">
-  <div class="wrap">
-    <div class="seccion-head">
-      <span class="mini">Se actualiza cada lunes</span>
-      <h2>La semana en la IA</h2>
-      <p>Cada lunes, lo más importante que ha pasado en la inteligencia artificial, explicado en dos líneas y sin tecnicismos.</p>
-    </div>
-    <div class="tarjetas tres">
-      <div class="tarjeta"><span class="icono" aria-hidden="true">📰</span><h3>3 noticias explicadas</h3><p>Qué ha pasado, por qué importa y cómo te afecta a ti.</p></div>
-      <div class="tarjeta"><span class="icono" aria-hidden="true">📖</span><h3>La palabra de la semana</h3><p>Un concepto que sale en las noticias, explicado con un ejemplo cotidiano.</p></div>
-      <div class="tarjeta"><span class="icono" aria-hidden="true">🛠️</span><h3>El truco de la semana</h3><p>Algo útil que puedes hacer hoy mismo con ChatGPT, Claude o Gemini.</p></div>
-    </div>
-    <p style="margin-top:16px"><a class="enlace-mas" href="semana/">Ver la edición de esta semana →</a> · <a class="enlace-mas" href="curiosidades/">Curiosidades de la IA →</a></p>
-  </div>
-</section>
-
-<section class="seccion" id="asistentes">
-  <div class="wrap">
-    <div class="seccion-head">
-      <span class="mini">Guías de uso paso a paso</span>
-      <h2>Aprende a manejar los asistentes más usados</h2>
-      <p>Cada guía explica cómo crear la cuenta, hacer tu primera pregunta, subir una foto o un documento y proteger tu privacidad. Todos tienen versión gratuita.</p>
-    </div>
-    <div class="tarjetas">
-      <div class="asistente"><div class="ficha-head"><img class="logo-ia" src="assets/logos/chatgpt.svg" alt="Logotipo de ChatGPT" width="44" height="44" loading="lazy"><div><h3><a href="guias/chatgpt/">ChatGPT</a></h3><span class="dato">OpenAI · Estados Unidos</span></div></div><p>El más conocido. Sirve para casi todo: preguntas, textos, ideas, imágenes y conversación por voz.</p><div class="etiquetas"><span class="etiqueta">Todo terreno</span><span class="etiqueta">Voz</span><span class="etiqueta">Imágenes</span></div><div class="acciones-ia"><span class="ver-guia">Ver la guía →</span><a class="abrir-ia" href="https://chatgpt.com" target="_blank" rel="noopener">Abrir ChatGPT ↗</a></div></div>
-      <div class="asistente"><div class="ficha-head"><img class="logo-ia" src="assets/logos/claude.svg" alt="Logotipo de Claude" width="44" height="44" loading="lazy"><div><h3><a href="guias/claude/">Claude</a></h3><span class="dato">Anthropic · Estados Unidos</span></div></div><p>Destaca al escribir, resumir documentos largos y explicar las cosas con calma y detalle.</p><div class="etiquetas"><span class="etiqueta">Escribir</span><span class="etiqueta">Resumir</span><span class="etiqueta">Documentos</span></div><div class="acciones-ia"><span class="ver-guia">Ver la guía →</span><a class="abrir-ia" href="https://claude.ai" target="_blank" rel="noopener">Abrir Claude ↗</a></div></div>
-      <div class="asistente"><div class="ficha-head"><img class="logo-ia" src="assets/logos/gemini.svg" alt="Logotipo de Gemini" width="44" height="44" loading="lazy"><div><h3><a href="guias/gemini/">Gemini</a></h3><span class="dato">Google · Estados Unidos</span></div></div><p>Integrado con Gmail, Google Docs, Maps y los móviles Android. Ideal si ya usas Google para todo.</p><div class="etiquetas"><span class="etiqueta">Android</span><span class="etiqueta">Gmail</span><span class="etiqueta">Búsquedas</span></div><div class="acciones-ia"><span class="ver-guia">Ver la guía →</span><a class="abrir-ia" href="https://gemini.google.com" target="_blank" rel="noopener">Abrir Gemini ↗</a></div></div>
-      <div class="asistente"><div class="ficha-head"><img class="logo-ia" src="assets/logos/copilot.svg" alt="Logotipo de Copilot" width="44" height="44" loading="lazy"><div><h3><a href="guias/copilot/">Copilot</a></h3><span class="dato">Microsoft · Estados Unidos</span></div></div><p>Viene en Windows y el navegador Edge, y ayuda dentro de Word, Excel y Outlook.</p><div class="etiquetas"><span class="etiqueta">Windows</span><span class="etiqueta">Word y Excel</span></div><div class="acciones-ia"><span class="ver-guia">Ver la guía →</span><a class="abrir-ia" href="https://copilot.microsoft.com" target="_blank" rel="noopener">Abrir Copilot ↗</a></div></div>
-      <div class="asistente"><div class="ficha-head"><img class="logo-ia" src="assets/logos/meta-ai.svg" alt="Logotipo de Meta AI" width="44" height="44" loading="lazy"><div><h3><a href="guias/meta-ai/">Meta AI</a></h3><span class="dato">Meta · Estados Unidos</span></div></div><p>Está dentro de WhatsApp, Instagram y Facebook. La forma más fácil de probar la IA sin instalar nada.</p><div class="etiquetas"><span class="etiqueta">WhatsApp</span><span class="etiqueta">Sin instalar</span></div><div class="acciones-ia"><span class="ver-guia">Ver la guía →</span><a class="abrir-ia" href="https://meta.ai" target="_blank" rel="noopener">Abrir Meta AI ↗</a></div></div>
-      <div class="asistente"><div class="ficha-head"><img class="logo-ia" src="assets/logos/perplexity.svg" alt="Logotipo de Perplexity" width="44" height="44" loading="lazy"><div><h3><a href="guias/perplexity/">Perplexity</a></h3><span class="dato">Perplexity AI · Estados Unidos</span></div></div><p>Un buscador que responde con frases y te dice de qué páginas ha sacado cada dato.</p><div class="etiquetas"><span class="etiqueta">Buscar</span><span class="etiqueta">Cita fuentes</span></div><div class="acciones-ia"><span class="ver-guia">Ver la guía →</span><a class="abrir-ia" href="https://perplexity.ai" target="_blank" rel="noopener">Abrir Perplexity ↗</a></div></div>
-      <div class="asistente"><div class="ficha-head"><img class="logo-ia" src="assets/logos/le-chat.svg" alt="Logotipo de Le Chat" width="44" height="44" loading="lazy"><div><h3><a href="guias/le-chat/">Le Chat</a></h3><span class="dato">Mistral AI · Francia</span></div></div><p>La alternativa europea. Rápido y con buen nivel en español.</p><div class="etiquetas"><span class="etiqueta">Europeo</span><span class="etiqueta">Rápido</span></div><div class="acciones-ia"><span class="ver-guia">Ver la guía →</span><a class="abrir-ia" href="https://chat.mistral.ai" target="_blank" rel="noopener">Abrir Le Chat ↗</a></div></div>
-      <div class="asistente"><div class="ficha-head"><img class="logo-ia" src="assets/logos/deepseek.svg" alt="Logotipo de DeepSeek" width="44" height="44" loading="lazy"><div><h3><a href="guias/deepseek/">DeepSeek</a></h3><span class="dato">DeepSeek · China</span></div></div><p>El asistente chino que sorprendió al mundo en 2025. Te contamos qué ofrece y qué precauciones tomar.</p><div class="etiquetas"><span class="etiqueta">Gratuito</span><span class="etiqueta">Razonamiento</span></div><div class="acciones-ia"><span class="ver-guia">Ver la guía →</span><a class="abrir-ia" href="https://chat.deepseek.com" target="_blank" rel="noopener">Abrir DeepSeek ↗</a></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="seccion" id="herramientas">
-  <div class="wrap">
-    <div class="seccion-head">
-      <span class="mini">Herramientas prácticas</span>
-      <h2>Úsala hoy mismo</h2>
-      <p>Instrucciones listas para copiar, guías pensadas para ti y todo lo necesario para no caer en estafas.</p>
-    </div>
-    <div class="tarjetas">
-      <a class="tarjeta" href="prompts/"><span class="icono">📋</span><h3>Prompts listos para copiar</h3><p>50 instrucciones para cocina, viajes, trabajo, estudios, salud y trámites.</p></a>
-      <a class="tarjeta" href="test-asistente/"><span class="icono">🧭</span><h3>¿Qué asistente es para ti?</h3><p>Test de 5 preguntas con resultado para compartir.</p></a>
-      <a class="tarjeta" href="comparador/"><span class="icono">⚖️</span><h3>Comparador de asistentes</h3><p>Marca lo que necesitas y te decimos cuál usar.</p></a>
-      <a class="tarjeta" href="para-ti/"><span class="icono">👥</span><h3>IA para ti</h3><p>Guías para mayores, estudiantes, autónomos, docentes y familias.</p></a>
-      <a class="tarjeta" href="estafas/"><span class="icono">🚨</span><h3>Alerta: estafas con IA</h3><p>Voces clonadas, deepfakes de famosos y falsas inversiones: cómo detectarlos.</p></a>
-      <a class="tarjeta" href="guias/imagenes-y-video/"><span class="icono">🎨</span><h3>Crear imágenes y vídeos</h3><p>Midjourney, Sora, Veo, Canva, Firefly y más, explicados.</p></a>
-    </div>
-  </div>
-</section>
-
-<section class="seccion fondo" id="cursos">
-  <div class="wrap">
-    <div class="seccion-head">
-      <span class="mini">Cursos gratuitos</span>
-      <h2>Cursos cortos para aprender a tu ritmo</h2>
-      <p>Lecciones de 5 minutos con ejemplos reales y un test al final de cada curso. Tu progreso se guarda en tu navegador.</p>
-    </div>
-    <div class="tarjetas tres">
-      <a class="tarjeta" href="cursos/entender-la-ia/"><span class="icono" aria-hidden="true">💡</span><span class="num">Curso 1</span><h3>Entender la IA</h3><p>Qué es, cómo aprende una máquina y qué puede y no puede hacer.</p><span class="meta">5 lecciones · 30 min</span></a>
-      <a class="tarjeta" href="cursos/tu-primer-chat/"><span class="icono" aria-hidden="true">💬</span><span class="num">Curso 2</span><h3>Tu primer chat con IA</h3><p>Cómo preguntar bien para conseguir respuestas útiles a la primera.</p><span class="meta">5 lecciones · 30 min</span></a>
-      <a class="tarjeta" href="cursos/escribir-y-resumir/"><span class="icono" aria-hidden="true">✍️</span><span class="num">Curso 3</span><h3>Escribir y resumir con IA</h3><p>Cartas, correos, resúmenes de documentos y traducciones.</p><span class="meta">6 lecciones · 40 min</span></a>
-      <a class="tarjeta" href="cursos/imagenes-y-video/"><span class="icono" aria-hidden="true">🎨</span><span class="num">Curso 4</span><h3>Imágenes y vídeo con IA</h3><p>Crear y retocar fotos, y aprender a detectar imágenes falsas.</p><span class="meta">5 lecciones · 35 min</span></a>
-      <a class="tarjeta" href="cursos/ia-en-casa-y-trabajo/"><span class="icono" aria-hidden="true">🏠</span><span class="num">Curso 5</span><h3>La IA en casa y en el trabajo</h3><p>Viajes, menús, deberes, hojas de cálculo y tareas que se repiten.</p><span class="meta">6 lecciones · 40 min</span></a>
-      <a class="tarjeta" href="cursos/seguridad/"><span class="icono" aria-hidden="true">🛡️</span><span class="num">Curso 6</span><h3>Bulos, privacidad y estafas</h3><p>Qué datos no compartir, cómo verificar y cómo reconocer timos hechos con IA.</p><span class="meta">5 lecciones · 30 min</span></a>
-    </div>
-  </div>
-</section>
-
-<section class="seccion" id="examenes">
-  <div class="wrap">
-    <div class="seccion-head">
-      <span class="mini">Exámenes de conocimiento</span>
-      <h2>Comprueba lo que sabes</h2>
-      <p>Tres niveles con preguntas nuevas cada semana. Aprueba con un 70 % y descarga tu certificado de IApedia en PDF.</p>
-    </div>
-    <div class="examenes">
-      <div class="lista-examenes">
-        <a class="examen" href="examenes/nivel-1/"><span class="medalla" style="background:#b07a3a">1</span><h3>Nivel 1 · Fundamentos</h3><p>15 preguntas sobre qué es la IA, su historia y sus conceptos básicos. Cambian cada semana.</p></a>
-        <a class="examen" href="examenes/nivel-2/"><span class="medalla" style="background:#7d8597">2</span><h3>Nivel 2 · Usuario práctico</h3><p>15 preguntas sobre cómo usar los asistentes y escribir buenas peticiones. Cambian cada semana.</p></a>
-        <a class="examen" href="examenes/nivel-3/"><span class="medalla" style="background:#b8962e">3</span><h3>Nivel 3 · Usuario experto</h3><p>15 preguntas sobre casos reales, seguridad, privacidad y ética. Cambian cada semana.</p></a>
+<section class="seccion" id="cursos">
+  <div class="wrap p-dos">
+    <div class="p-panel p-cursos">
+      <span class="mini">Cursos y exámenes gratuitos</span>
+      <h2>Aprende y consigue tu certificado</h2>
+      <p>Lecciones de 5 minutos con ejemplos reales. Tu progreso se guarda en tu navegador.</p>
+      <ul><li><a href="cursos/entender-la-ia/"><span><b class="p-num">Curso 1</b> Entender la IA</span><small>5 lecciones · 30 min</small></a></li><li><a href="cursos/tu-primer-chat/"><span><b class="p-num">Curso 2</b> Tu primer chat con IA</span><small>5 lecciones · 30 min</small></a></li><li><a href="cursos/escribir-y-resumir/"><span><b class="p-num">Curso 3</b> Escribir y resumir con IA</span><small>6 lecciones · 40 min</small></a></li><li><a href="cursos/imagenes-y-video/"><span><b class="p-num">Curso 4</b> Imágenes y vídeo con IA</span><small>5 lecciones · 35 min</small></a></li><li><a href="cursos/ia-en-casa-y-trabajo/"><span><b class="p-num">Curso 5</b> La IA en casa y en el trabajo</span><small>6 lecciones · 40 min</small></a></li><li><a href="cursos/seguridad/"><span><b class="p-num">Curso 6</b> Bulos, privacidad y estafas</span><small>5 lecciones · 30 min</small></a></li></ul>
+      <div class="p-examenes">
+        <a href="examenes/nivel-1/"><span class="medalla bronce">1</span><span><b>Nivel 1</b><small>Fundamentos</small></span></a>
+        <a href="examenes/nivel-2/"><span class="medalla plata">2</span><span><b>Nivel 2</b><small>Usuario práctico</small></span></a>
+        <a href="examenes/nivel-3/"><span class="medalla oro">3</span><span><b>Nivel 3</b><small>Usuario experto</small></span></a>
       </div>
-      <div class="prueba-rapida" id="prueba-rapida">
-        <h3>Prueba rápida: 3 preguntas</h3>
-        <p>¿Cuánto sabes ya? Responde y descúbrelo al momento.</p>
-        <form class="prueba" data-prueba>
-          <fieldset class="pregunta" data-correcta="b">
-            <legend>1. ¿Cómo aprende una inteligencia artificial?</legend>
-            <label><input type="radio" name="p1" value="a"> Leyendo un manual de instrucciones</label>
-            <label><input type="radio" name="p1" value="b"> Analizando millones de ejemplos</label>
-            <label><input type="radio" name="p1" value="c"> Conectándose al cerebro de una persona</label>
-            <p class="explica" hidden data-bien="¡Correcto! La IA encuentra patrones en enormes cantidades de ejemplos: textos, fotos, sonidos…" data-mal="No es así. La IA aprende encontrando patrones en millones de ejemplos: textos, fotos, sonidos…"></p>
-          </fieldset>
-          <fieldset class="pregunta" data-correcta="c">
-            <legend>2. ¿En qué año se lanzó ChatGPT al público?</legend>
-            <label><input type="radio" name="p2" value="a"> 1997</label>
-            <label><input type="radio" name="p2" value="b"> 2012</label>
-            <label><input type="radio" name="p2" value="c"> 2022</label>
-            <p class="explica" hidden data-bien="¡Correcto! Llegó el 30 de noviembre de 2022 y en dos meses tenía 100 millones de usuarios." data-mal="Fue en 2022, el 30 de noviembre. En dos meses llegó a 100 millones de usuarios."></p>
-          </fieldset>
-          <fieldset class="pregunta" data-correcta="a">
-            <legend>3. ¿Qué es una «alucinación» de la IA?</legend>
-            <label><input type="radio" name="p3" value="a"> Una respuesta que suena segura pero es falsa</label>
-            <label><input type="radio" name="p3" value="b"> Una imagen creada con IA</label>
-            <label><input type="radio" name="p3" value="c"> Un fallo de la conexión a internet</label>
-            <p class="explica" hidden data-bien="¡Correcto! Por eso conviene comprobar los datos importantes en otra fuente." data-mal="Una alucinación es una respuesta que suena convincente pero es inventada. Por eso conviene comprobar los datos importantes."></p>
-          </fieldset>
-          <button class="boton" type="submit">Ver mi resultado</button>
-          <p class="resultado" aria-live="polite"></p>
-        </form>
-      </div>
+      <p class="p-nota">Tres exámenes con preguntas nuevas cada semana. Aprueba con un 70 % y descarga tu certificado en PDF.</p>
+    </div>
+    <div class="p-columna">
+      <a class="p-panel p-alerta" href="estafas/">
+        <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/></svg>
+        <h2>Que no te engañen</h2>
+        <p>Voces clonadas, deepfakes de famosos y falsas inversiones: cómo detectarlos y qué hacer si te pasa.</p>
+        <span class="p-ir">Ver las estafas más comunes →</span>
+      </a>
+      <a class="p-panel p-debate" href="superinteligencia/">
+        <span class="mini">El gran debate</span>
+        <h2>¿Llegará una superinteligencia?</h2>
+        <p>Qué significan IA estrecha, IA general y superinteligencia, y qué opinan Hinton, Bengio o LeCun. Sin alarmismo y sin promesas.</p>
+        <span class="p-ir">Leer el debate →</span>
+      </a>
+      <a class="p-panel p-herramienta" href="prompts/">
+        <svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="18" rx="2"/><path d="M9 4V2h6v2M9 10h6M9 14h6M9 18h4"/></svg>
+        <div><h2>50 prompts listos para copiar</h2><p>Cocina, viajes, trabajo, estudios, salud y trámites.</p></div>
+      </a>
     </div>
   </div>
 </section>
 
-<section class="seccion" id="videos">
+<section class="seccion fondo" id="videos">
   <div class="wrap">
-    <div class="seccion-head">
-      <span class="mini">Vídeos explicativos</span>
-      <h2>Entiéndelo en unos minutos</h2>
-      <p>Una selección de los mejores vídeos en español para empezar. En la sección de vídeos tienes los más vistos de la historia y los más recientes, renovados cada día.</p>
+    <div class="p-cabecera">
+      <div><span class="mini">Vídeos y artículos</span><h2>Entiéndelo en unos minutos</h2></div>
+      <a class="enlace-mas" href="videos/">Ver todos los vídeos →</a>
     </div>
     <div class="videos">
       <article class="video">
@@ -287,76 +192,29 @@
         <span class="dato">Dot CSV</span>
       </article>
     </div>
-    <p style="margin-top:16px"><a class="enlace-mas" href="videos/">Ver todos los vídeos →</a></p>
-  </div>
-</section>
-
-<section class="seccion" id="blog">
-  <div class="wrap">
-    <div class="seccion-head">
-      <span class="mini">Blog · Novedades y avances</span>
-      <h2>Lo último en inteligencia artificial</h2>
-      <p>Artículos sobre los avances que importan, explicados con calma. Y cuando algo cambia, actualizamos las guías y te lo indicamos con la fecha.</p>
+    <div class="p-cabecera p-cabecera-blog">
+      <h3>Lo último en el blog</h3>
+      <a class="enlace-mas" href="blog/">Ver todos los artículos →</a>
     </div>
-    <div class="tarjetas tres">
-      <a class="tarjeta" href="blog/que-es-un-agente-de-ia/"><span class="num">Avances</span><h3>¿Qué es un «agente» de IA y por qué todo el mundo habla de ellos?</h3><p>La IA ya no solo responde: también hace tareas por ti, como reservar o rellenar formularios.</p><span class="meta">Lectura de 6 min</span></a>
-      <a class="tarjeta" href="blog/detectar-fotos-falsas/"><span class="num">Seguridad</span><h3>Cómo saber si una foto o un vídeo están hechos con IA</h3><p>Siete pistas sencillas para no caer en bulos ni en estafas.</p><span class="meta">Lectura de 5 min</span></a>
-      <a class="tarjeta" href="blog/ley-europea-ia/"><span class="num">Leyes</span><h3>La ley europea de inteligencia artificial, explicada</h3><p>Qué prohíbe, qué obliga a las empresas y qué derechos te da a ti.</p><span class="meta">Lectura de 7 min</span></a>
-    </div>
-    <p style="margin-top:16px"><a class="enlace-mas" href="blog/">Ver todos los artículos →</a></p>
-  </div>
-</section>
-
-<section class="seccion fondo" id="futuro">
-  <div class="wrap">
-    <div class="seccion-head">
-      <span class="mini">El gran debate</span>
-      <h2>¿Llegará una superinteligencia?</h2>
-      <p>Es una de las preguntas que más se oyen. Te explicamos qué significa cada palabra y qué opinan los expertos, sin alarmismo y sin promesas.</p>
-    </div>
-    <div class="tarjetas tres">
-      <div class="tarjeta"><span class="num">Hoy</span><h3>IA estrecha</h3><p>Lo que usamos ahora: muy buena en tareas concretas (escribir, traducir, reconocer imágenes), pero sin comprensión ni voluntad propia.</p></div>
-      <div class="tarjeta"><span class="num">¿Mañana?</span><h3>IA general (AGI)</h3><p>Una IA capaz de aprender y hacer casi cualquier tarea intelectual tan bien como una persona. Las grandes empresas dicen perseguirla; nadie sabe cuándo llegará, ni si llegará.</p></div>
-      <div class="tarjeta"><span class="num">¿Pasado mañana?</span><h3>Superinteligencia</h3><p>Una IA que superaría a los humanos en casi todo. Pioneros como Geoffrey Hinton o Yoshua Bengio piden prudencia; otros expertos, como Yann LeCun, creen que el riesgo se exagera.</p></div>
-    </div>
-    <p style="margin-top:16px"><a class="enlace-mas" href="superinteligencia/">Leer el debate completo →</a></p>
-  </div>
-</section>
-
-<section class="seccion">
-  <div class="wrap">
-    <div id="diccionario">
-      <div class="seccion-head">
-        <span class="mini">Diccionario</span>
-        <h2>Las palabras de la IA, sin misterio</h2>
-      </div>
-      <div class="palabras">
-        <div class="palabra"><b>Algoritmo:</b> <span>una receta de pasos que sigue el ordenador.</span></div>
-        <div class="palabra"><b>Chatbot:</b> <span>un programa con el que conversas escribiendo o hablando.</span></div>
-        <div class="palabra"><b>Prompt:</b> <span>lo que le escribes o le pides a la IA.</span></div>
-        <div class="palabra"><b>Modelo:</b> <span>el «cerebro» de la IA, ya entrenado con ejemplos.</span></div>
-        <div class="palabra"><b>Alucinación:</b> <span>cuando la IA inventa algo y lo dice con seguridad.</span></div>
-      </div>
-      <a class="enlace-mas" href="diccionario/">Ver el diccionario completo →</a>
-    </div>
+    <div class="p-articulos"><a class="p-articulo" href="blog/que-es-un-agente-de-ia/"><span class="mini">Avances</span><b>¿Qué es un «agente» de IA y por qué todo el mundo habla de ellos?</b><small>Lectura de 6 min</small></a><a class="p-articulo" href="blog/detectar-fotos-falsas/"><span class="mini">Seguridad</span><b>Cómo saber si una foto o un vídeo están hechos con IA</b><small>Lectura de 5 min</small></a><a class="p-articulo" href="blog/ley-europea-ia/"><span class="mini">Leyes</span><b>La ley europea de inteligencia artificial, explicada</b><small>Lectura de 7 min</small></a></div>
   </div>
 </section>
 
 </main>
 <footer class="pie">
-  <div class="wrap">
-    <div>
-      <p><strong>IApedia</strong> · La inteligencia artificial explicada para todos, en español.</p>
+  <div class="wrap pie-mapa">
+    <div class="pie-marca">
+      <p class="pie-logo"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2a2f66"/><circle cx="9" cy="10" r="3" fill="#a995ff"/><circle cx="9" cy="22" r="3" fill="#a995ff"/><circle cx="23" cy="16" r="4" fill="#fff"/><path d="M11.5 11.2 19.5 15M11.5 20.8 19.5 17" stroke="#a995ff" stroke-width="2"/></svg><span>IA<b>pedia</b></span></p>
+      <p>La inteligencia artificial explicada para todos, en español.</p>
       <p>Forma parte de <a href="https://planetpedia.net">Planetpedia</a>, una red de enciclopedias temáticas.</p>
-      <p>Última actualización: 14 de noviembre de 2026.</p>
     </div>
-    <div>
-      <p><a href="curiosidades/">Curiosidades</a> · <a href="quien-es-quien/">Quién es quién</a> · <a href="superinteligencia/">Superinteligencia</a></p>
-      <p><a href="aviso-legal/">Aviso legal</a> · <a href="privacidad/">Privacidad</a> · <a href="cookies/">Cookies</a></p>
-      <p>Los vídeos pertenecen a sus autores y se muestran desde YouTube.</p>
-    </div>
+    <div><h2>Aprende</h2><ul><li><a href="empieza-aqui/">Empieza aquí</a></li><li><a href="cursos/">Cursos</a></li><li><a href="examenes/">Exámenes</a></li><li><a href="diccionario/">Diccionario</a></li><li><a href="para-ti/">IA para ti</a></li></ul></div><div><h2>Úsala</h2><ul><li><a href="guias/">Guías de cada asistente</a></li><li><a href="prompts/">Prompts listos para copiar</a></li><li><a href="test-asistente/">¿Qué asistente me conviene?</a></li><li><a href="comparador/">Comparador de asistentes</a></li><li><a href="guias/imagenes-y-video/">Crear imágenes y vídeo</a></li></ul></div><div><h2>Actualidad</h2><ul><li><a href="semana/">La semana en la IA</a></li><li><a href="blog/">Blog</a></li><li><a href="videos/">Vídeos</a></li><li><a href="curiosidades/">Curiosidades</a></li></ul></div><div><h2>Historia</h2><ul><li><a href="historia/">Historia de la IA</a></li><li><a href="quien-es-quien/">Quién es quién</a></li><li><a href="superinteligencia/">Superinteligencia</a></li></ul></div>
+  </div>
+  <div class="wrap pie-legal">
+    <p>Última actualización: 14 de noviembre de 2026. Los vídeos pertenecen a sus autores y se muestran desde YouTube.</p>
+    <p><a href="estafas/">Estafas</a> · <a href="aviso-legal/">Aviso legal</a> · <a href="privacidad/">Privacidad</a> · <a href="cookies/">Cookies</a></p>
   </div>
 </footer>
-<script src="assets/app.js?v=11"></script>
+<script src="assets/app.js?v=12"></script>
 </body>
 </html>

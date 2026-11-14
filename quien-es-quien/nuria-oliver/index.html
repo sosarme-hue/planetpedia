@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../../assets/estilo.css?v=11">
+<link rel="stylesheet" href="../../assets/estilo.css?v=12">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfilePage", "name": "Nuria Oliver", "inLanguage": "es", "url": "https://iapedia.si/quien-es-quien/nuria-oliver/", "description": "Nuria Oliver: experta en IA y comportamiento humano. Quién es, qué ha hecho y por qué es importante en la historia de la inteligencia artificial.", "isPartOf": {"@type": "WebSite", "name": "IApedia", "url": "https://iapedia.si/"}}</script>
 </head>
 <body>
@@ -25,21 +25,19 @@
   <div class="wrap">
     <a class="logo" href="../../" aria-label="IApedia, inicio"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2a2f66"/><circle cx="9" cy="10" r="3" fill="#a995ff"/><circle cx="9" cy="22" r="3" fill="#a995ff"/><circle cx="23" cy="16" r="4" fill="#fff"/><path d="M11.5 11.2 19.5 15M11.5 20.8 19.5 17" stroke="#a995ff" stroke-width="2"/></svg><span>IA<b>pedia</b></span></a>
     <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir el menú"><span class="rayas" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-texto">Menú</span></button>
-    <nav class="nav" id="menu-principal" aria-label="Secciones">
-<a href="../../empieza-aqui/">Empieza aquí</a>
-<a href="../../semana/">Esta semana</a>
-<a href="../../guias/">Guías</a>
-<a href="../../prompts/">Prompts</a>
-<a href="../../para-ti/">IA para ti</a>
-<a href="../../cursos/">Cursos</a>
-<a href="../../examenes/">Exámenes</a>
-<a href="../../videos/">Vídeos</a>
-<a href="../../blog/">Blog</a>
-<a href="../../curiosidades/">Curiosidades</a>
-<a href="../../historia/" aria-current="page">Historia</a>
-<a href="../../diccionario/">Diccionario</a>
-<a href="../../estafas/">Estafas</a>
-    </nav>
+    <nav class="menu" id="menu-principal" aria-label="Secciones"><div class="grupo"><button class="grupo-boton" type="button" aria-expanded="false" aria-controls="g-aprende">Aprende<svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="grupo-lista" id="g-aprende"><li><a href="../../empieza-aqui/">Empieza aquí</a></li><li><a href="../../cursos/">Cursos</a></li><li><a href="../../examenes/">Exámenes</a></li><li><a href="../../diccionario/">Diccionario</a></li><li><a href="../../para-ti/">IA para ti</a></li></ul></div><div class="grupo"><button class="grupo-boton" type="button" aria-expanded="false" aria-controls="g-usala">Úsala<svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="grupo-lista" id="g-usala"><li><a href="../../guias/">Guías de cada asistente</a></li><li><a href="../../prompts/">Prompts listos para copiar</a></li><li><a href="../../test-asistente/">¿Qué asistente me conviene?</a></li><li><a href="../../comparador/">Comparador de asistentes</a></li><li><a href="../../guias/imagenes-y-video/">Crear imágenes y vídeo</a></li></ul></div><div class="grupo"><button class="grupo-boton" type="button" aria-expanded="false" aria-controls="g-actualidad">Actualidad<svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="grupo-lista" id="g-actualidad"><li><a href="../../semana/">La semana en la IA</a></li><li><a href="../../blog/">Blog</a></li><li><a href="../../videos/">Vídeos</a></li><li><a href="../../curiosidades/">Curiosidades</a></li></ul></div><div class="grupo activo"><button class="grupo-boton" type="button" aria-expanded="false" aria-controls="g-historia">Historia<svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="grupo-lista" id="g-historia"><li><a href="../../historia/" aria-current="page">Historia de la IA</a></li><li><a href="../../quien-es-quien/">Quién es quién</a></li><li><a href="../../superinteligencia/">Superinteligencia</a></li></ul></div><a class="menu-estafas" href="../../estafas/">Estafas</a></nav>
+    <div class="top-acciones">
+      <button class="buscar-boton" type="button" aria-expanded="false" aria-controls="buscador-global" aria-label="Buscar en IApedia"><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <a class="top-cta" href="../../empieza-aqui/">Empieza aquí</a>
+    </div>
+  </div>
+  <div class="buscador-global" id="buscador-global" hidden>
+    <form class="wrap p-busca" role="search" data-buscador>
+      <label class="oculto" for="busca-global">Buscar en IApedia</label>
+      <input id="busca-global" type="search" placeholder="Busca un tema, un asistente o una persona" autocomplete="off" data-buscar-input>
+      <button type="submit">Buscar</button>
+      <ul class="resultados-busqueda" data-buscar-resultados hidden></ul>
+    </form>
   </div>
 </header>
 <main id="contenido">
@@ -51,19 +49,19 @@
 <div class="siguiente"><a href="../../quien-es-quien/">← Todas las fichas</a><a href="../../historia/">Historia de la IA →</a></div></article></div></div>
 </main>
 <footer class="pie">
-  <div class="wrap">
-    <div>
-      <p><strong>IApedia</strong> · La inteligencia artificial explicada para todos, en español.</p>
+  <div class="wrap pie-mapa">
+    <div class="pie-marca">
+      <p class="pie-logo"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2a2f66"/><circle cx="9" cy="10" r="3" fill="#a995ff"/><circle cx="9" cy="22" r="3" fill="#a995ff"/><circle cx="23" cy="16" r="4" fill="#fff"/><path d="M11.5 11.2 19.5 15M11.5 20.8 19.5 17" stroke="#a995ff" stroke-width="2"/></svg><span>IA<b>pedia</b></span></p>
+      <p>La inteligencia artificial explicada para todos, en español.</p>
       <p>Forma parte de <a href="https://planetpedia.net">Planetpedia</a>, una red de enciclopedias temáticas.</p>
-      <p>Última actualización: 14 de noviembre de 2026.</p>
     </div>
-    <div>
-      <p><a href="../../curiosidades/">Curiosidades</a> · <a href="../../quien-es-quien/">Quién es quién</a> · <a href="../../superinteligencia/">Superinteligencia</a></p>
-      <p><a href="../../aviso-legal/">Aviso legal</a> · <a href="../../privacidad/">Privacidad</a> · <a href="../../cookies/">Cookies</a></p>
-      <p>Los vídeos pertenecen a sus autores y se muestran desde YouTube.</p>
-    </div>
+    <div><h2>Aprende</h2><ul><li><a href="../../empieza-aqui/">Empieza aquí</a></li><li><a href="../../cursos/">Cursos</a></li><li><a href="../../examenes/">Exámenes</a></li><li><a href="../../diccionario/">Diccionario</a></li><li><a href="../../para-ti/">IA para ti</a></li></ul></div><div><h2>Úsala</h2><ul><li><a href="../../guias/">Guías de cada asistente</a></li><li><a href="../../prompts/">Prompts listos para copiar</a></li><li><a href="../../test-asistente/">¿Qué asistente me conviene?</a></li><li><a href="../../comparador/">Comparador de asistentes</a></li><li><a href="../../guias/imagenes-y-video/">Crear imágenes y vídeo</a></li></ul></div><div><h2>Actualidad</h2><ul><li><a href="../../semana/">La semana en la IA</a></li><li><a href="../../blog/">Blog</a></li><li><a href="../../videos/">Vídeos</a></li><li><a href="../../curiosidades/">Curiosidades</a></li></ul></div><div><h2>Historia</h2><ul><li><a href="../../historia/">Historia de la IA</a></li><li><a href="../../quien-es-quien/">Quién es quién</a></li><li><a href="../../superinteligencia/">Superinteligencia</a></li></ul></div>
+  </div>
+  <div class="wrap pie-legal">
+    <p>Última actualización: 14 de noviembre de 2026. Los vídeos pertenecen a sus autores y se muestran desde YouTube.</p>
+    <p><a href="../../estafas/">Estafas</a> · <a href="../../aviso-legal/">Aviso legal</a> · <a href="../../privacidad/">Privacidad</a> · <a href="../../cookies/">Cookies</a></p>
   </div>
 </footer>
-<script src="../../assets/app.js?v=11"></script>
+<script src="../../assets/app.js?v=12"></script>
 </body>
 </html>

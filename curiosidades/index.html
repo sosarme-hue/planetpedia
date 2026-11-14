@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../assets/estilo.css?v=11">
+<link rel="stylesheet" href="../assets/estilo.css?v=12">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Curiosidades de la IA", "inLanguage": "es", "url": "https://iapedia.si/curiosidades/", "description": "16 historias y datos sorprendentes sobre la inteligencia artificial, de Torres Quevedo a ChatGPT.", "isPartOf": {"@type": "WebSite", "name": "IApedia", "url": "https://iapedia.si/"}}</script>
 </head>
 <body>
@@ -25,21 +25,19 @@
   <div class="wrap">
     <a class="logo" href="../" aria-label="IApedia, inicio"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2a2f66"/><circle cx="9" cy="10" r="3" fill="#a995ff"/><circle cx="9" cy="22" r="3" fill="#a995ff"/><circle cx="23" cy="16" r="4" fill="#fff"/><path d="M11.5 11.2 19.5 15M11.5 20.8 19.5 17" stroke="#a995ff" stroke-width="2"/></svg><span>IA<b>pedia</b></span></a>
     <button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir el menú"><span class="rayas" aria-hidden="true"><i></i><i></i><i></i></span><span class="menu-texto">Menú</span></button>
-    <nav class="nav" id="menu-principal" aria-label="Secciones">
-<a href="../empieza-aqui/">Empieza aquí</a>
-<a href="../semana/">Esta semana</a>
-<a href="../guias/">Guías</a>
-<a href="../prompts/">Prompts</a>
-<a href="../para-ti/">IA para ti</a>
-<a href="../cursos/">Cursos</a>
-<a href="../examenes/">Exámenes</a>
-<a href="../videos/">Vídeos</a>
-<a href="../blog/">Blog</a>
-<a href="../curiosidades/" aria-current="page">Curiosidades</a>
-<a href="../historia/">Historia</a>
-<a href="../diccionario/">Diccionario</a>
-<a href="../estafas/">Estafas</a>
-    </nav>
+    <nav class="menu" id="menu-principal" aria-label="Secciones"><div class="grupo"><button class="grupo-boton" type="button" aria-expanded="false" aria-controls="g-aprende">Aprende<svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="grupo-lista" id="g-aprende"><li><a href="../empieza-aqui/">Empieza aquí</a></li><li><a href="../cursos/">Cursos</a></li><li><a href="../examenes/">Exámenes</a></li><li><a href="../diccionario/">Diccionario</a></li><li><a href="../para-ti/">IA para ti</a></li></ul></div><div class="grupo"><button class="grupo-boton" type="button" aria-expanded="false" aria-controls="g-usala">Úsala<svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="grupo-lista" id="g-usala"><li><a href="../guias/">Guías de cada asistente</a></li><li><a href="../prompts/">Prompts listos para copiar</a></li><li><a href="../test-asistente/">¿Qué asistente me conviene?</a></li><li><a href="../comparador/">Comparador de asistentes</a></li><li><a href="../guias/imagenes-y-video/">Crear imágenes y vídeo</a></li></ul></div><div class="grupo activo"><button class="grupo-boton" type="button" aria-expanded="false" aria-controls="g-actualidad">Actualidad<svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="grupo-lista" id="g-actualidad"><li><a href="../semana/">La semana en la IA</a></li><li><a href="../blog/">Blog</a></li><li><a href="../videos/">Vídeos</a></li><li><a href="../curiosidades/" aria-current="page">Curiosidades</a></li></ul></div><div class="grupo"><button class="grupo-boton" type="button" aria-expanded="false" aria-controls="g-historia">Historia<svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><ul class="grupo-lista" id="g-historia"><li><a href="../historia/">Historia de la IA</a></li><li><a href="../quien-es-quien/">Quién es quién</a></li><li><a href="../superinteligencia/">Superinteligencia</a></li></ul></div><a class="menu-estafas" href="../estafas/">Estafas</a></nav>
+    <div class="top-acciones">
+      <button class="buscar-boton" type="button" aria-expanded="false" aria-controls="buscador-global" aria-label="Buscar en IApedia"><svg class="icono" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></button>
+      <a class="top-cta" href="../empieza-aqui/">Empieza aquí</a>
+    </div>
+  </div>
+  <div class="buscador-global" id="buscador-global" hidden>
+    <form class="wrap p-busca" role="search" data-buscador>
+      <label class="oculto" for="busca-global">Buscar en IApedia</label>
+      <input id="busca-global" type="search" placeholder="Busca un tema, un asistente o una persona" autocomplete="off" data-buscar-input>
+      <button type="submit">Buscar</button>
+      <ul class="resultados-busqueda" data-buscar-resultados hidden></ul>
+    </form>
   </div>
 </header>
 <main id="contenido">
@@ -47,19 +45,19 @@
 <div class="wrap" style="padding-block:20px 40px"><div class="curiosidades"><div class="curiosidad"><span class="num">01</span><h3>El primer «jugador» de ajedrez artificial es español</h3><p>El Ajedrecista de Leonardo Torres Quevedo (1912) jugaba solo finales de rey y torre contra rey, y siempre ganaba. Hoy se puede ver en el Museo Torres Quevedo, en Madrid.</p></div><div class="curiosidad"><span class="num">02</span><h3>«Robot» significa «trabajo forzado»</h3><p>La palabra la popularizó el escritor checo Karel Čapek en su obra de teatro R.U.R. (1920). Viene del checo «robota», trabajo forzoso.</p></div><div class="curiosidad"><span class="num">03</span><h3>Las tres leyes de la robótica son de una novela</h3><p>Isaac Asimov las formuló en el relato «Círculo vicioso» (1942). La primera: un robot no hará daño a un ser humano.</p></div><div class="curiosidad"><span class="num">04</span><h3>«Algoritmo» viene de un sabio persa</h3><p>La palabra procede del nombre de al-Juarismi, un matemático del siglo IX que trabajó en Bagdad.</p></div><div class="curiosidad"><span class="num">05</span><h3>La secretaria que quería intimidad con ELIZA</h3><p>Joseph Weizenbaum contó que su secretaria, sabiendo que ELIZA era un simple programa, le pidió que saliera de la sala para «hablar» a solas con él.</p></div><div class="curiosidad"><span class="num">06</span><h3>Deep Blue analizaba 200 millones de jugadas por segundo</h3><p>Así derrotó a Kaspárov en 1997, a fuerza bruta. AlphaGo, en cambio, aprendió a «intuir» las mejores jugadas.</p></div><div class="curiosidad"><span class="num">07</span><h3>La jugada 37</h3><p>En 2016, AlphaGo hizo un movimiento que los expertos creyeron un error. Resultó ser genial. Hoy se estudia como ejemplo de creatividad artificial.</p></div><div class="curiosidad"><span class="num">08</span><h3>Lee Sedol se retiró por la IA</h3><p>El campeón de Go que perdió contra AlphaGo dejó el juego profesional en 2019 diciendo que la IA era «una entidad que no puede ser derrotada».</p></div><div class="curiosidad"><span class="num">09</span><h3>Los CAPTCHA son un test de Turing</h3><p>Su nombre en inglés significa «prueba de Turing pública y automática para distinguir ordenadores de humanos». Durante años, al resolverlos ayudábamos a digitalizar libros.</p></div><div class="curiosidad"><span class="num">10</span><h3>ChatGPT, récord de velocidad</h3><p>Alcanzó 100 millones de usuarios en unos dos meses. A TikTok le costó unos nueve meses e Instagram tardó más de dos años.</p></div><div class="curiosidad"><span class="num">11</span><h3>«Inteligencia artificial», palabra del año</h3><p>La FundéuRAE la eligió palabra del año en 2022, el año en que llegó ChatGPT.</p></div><div class="curiosidad"><span class="num">12</span><h3>Entrenar la IA consume mucha energía</h3><p>Se estima que entrenar GPT-3 en 2020 consumió unos 1.300 MWh, lo que gasta un hogar español medio en más de un siglo.</p></div><div class="curiosidad"><span class="num">13</span><h3>Shakey, el abuelo de los robots</h3><p>Entre 1966 y 1972, el robot Shakey del instituto SRI fue el primero capaz de razonar sobre sus propios movimientos. Era lento: tardaba horas en planificar.</p></div><div class="curiosidad"><span class="num">14</span><h3>HAL 9000 nació en 1968</h3><p>El ordenador de «2001: una odisea del espacio» sigue siendo la IA de ficción más famosa. Se dice que su nombre sale de las letras anteriores a I-B-M, aunque Arthur C. Clarke, su autor, siempre lo negó.</p></div><div class="curiosidad"><span class="num">15</span><h3>Un Nobel para la IA… de Física</h3><p>En 2024 Geoffrey Hinton y John Hopfield ganaron el Nobel de Física por los descubrimientos que hicieron posibles las redes neuronales.</p></div><div class="curiosidad"><span class="num">16</span><h3>El traductor de Google cambió de cerebro en 2016</h3><p>Pasó a usar redes neuronales y su calidad mejoró más en un año que en los diez anteriores.</p></div></div><div class="siguiente"><a href="../historia/">Historia completa de la IA →</a><a href="../semana/">La semana en la IA →</a></div></div>
 </main>
 <footer class="pie">
-  <div class="wrap">
-    <div>
-      <p><strong>IApedia</strong> · La inteligencia artificial explicada para todos, en español.</p>
+  <div class="wrap pie-mapa">
+    <div class="pie-marca">
+      <p class="pie-logo"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#2a2f66"/><circle cx="9" cy="10" r="3" fill="#a995ff"/><circle cx="9" cy="22" r="3" fill="#a995ff"/><circle cx="23" cy="16" r="4" fill="#fff"/><path d="M11.5 11.2 19.5 15M11.5 20.8 19.5 17" stroke="#a995ff" stroke-width="2"/></svg><span>IA<b>pedia</b></span></p>
+      <p>La inteligencia artificial explicada para todos, en español.</p>
       <p>Forma parte de <a href="https://planetpedia.net">Planetpedia</a>, una red de enciclopedias temáticas.</p>
-      <p>Última actualización: 14 de noviembre de 2026.</p>
     </div>
-    <div>
-      <p><a href="../curiosidades/">Curiosidades</a> · <a href="../quien-es-quien/">Quién es quién</a> · <a href="../superinteligencia/">Superinteligencia</a></p>
-      <p><a href="../aviso-legal/">Aviso legal</a> · <a href="../privacidad/">Privacidad</a> · <a href="../cookies/">Cookies</a></p>
-      <p>Los vídeos pertenecen a sus autores y se muestran desde YouTube.</p>
-    </div>
+    <div><h2>Aprende</h2><ul><li><a href="../empieza-aqui/">Empieza aquí</a></li><li><a href="../cursos/">Cursos</a></li><li><a href="../examenes/">Exámenes</a></li><li><a href="../diccionario/">Diccionario</a></li><li><a href="../para-ti/">IA para ti</a></li></ul></div><div><h2>Úsala</h2><ul><li><a href="../guias/">Guías de cada asistente</a></li><li><a href="../prompts/">Prompts listos para copiar</a></li><li><a href="../test-asistente/">¿Qué asistente me conviene?</a></li><li><a href="../comparador/">Comparador de asistentes</a></li><li><a href="../guias/imagenes-y-video/">Crear imágenes y vídeo</a></li></ul></div><div><h2>Actualidad</h2><ul><li><a href="../semana/">La semana en la IA</a></li><li><a href="../blog/">Blog</a></li><li><a href="../videos/">Vídeos</a></li><li><a href="../curiosidades/">Curiosidades</a></li></ul></div><div><h2>Historia</h2><ul><li><a href="../historia/">Historia de la IA</a></li><li><a href="../quien-es-quien/">Quién es quién</a></li><li><a href="../superinteligencia/">Superinteligencia</a></li></ul></div>
+  </div>
+  <div class="wrap pie-legal">
+    <p>Última actualización: 14 de noviembre de 2026. Los vídeos pertenecen a sus autores y se muestran desde YouTube.</p>
+    <p><a href="../estafas/">Estafas</a> · <a href="../aviso-legal/">Aviso legal</a> · <a href="../privacidad/">Privacidad</a> · <a href="../cookies/">Cookies</a></p>
   </div>
 </footer>
-<script src="../assets/app.js?v=11"></script>
+<script src="../assets/app.js?v=12"></script>
 </body>
 </html>
