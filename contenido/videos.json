@@ -1097,13 +1097,6 @@
   ],
   "en": [
    {
-    "id": "V4Z8EdiJxgk",
-    "t": "The Black Hole That Kills Galaxies - Quasars",
-    "c": "Kurzgesagt – In a Nutshell",
-    "dur": "10:50",
-    "n": 11349447
-   },
-   {
     "id": "I82ADyJC7wE",
     "t": "Galaxies, part 1: Crash Course Astronomy #38",
     "c": "CrashCourse",
@@ -1292,13 +1285,6 @@
   ],
   "en": [
    {
-    "id": "L_JQOH1tEEA",
-    "t": "There Are Thousands of Alien Empires in The Milky Way",
-    "c": "Kurzgesagt – In a Nutshell",
-    "dur": "13:59",
-    "n": 9248017
-   },
-   {
     "id": "wEZBNsU4dMU",
     "t": "The best Milky Way animation, by Gaia",
     "c": "European Space Agency, ESA",
@@ -1435,15 +1421,7 @@
   ]
  },
  "anecdotas": {
-  "es": [
-   {
-    "id": "QylcH69Lw0w",
-    "t": "Las 20 mentiras de astronomía y ciencia que aún crees...",
-    "c": "Astronomiaweb",
-    "dur": "14:30",
-    "n": 8223550
-   }
-  ],
+  "es": [],
   "en": [
    {
     "id": "0rHUDWjR5gg",
@@ -1564,13 +1542,6 @@
  "telescopios-para-aficionados": {
   "es": [],
   "en": [
-   {
-    "id": "csIry_3pbDU",
-    "t": "How does a Space Telescope work?  (Hubble and Webb)",
-    "c": "Jared Owen",
-    "dur": "19:35",
-    "n": 4547525
-   },
    {
     "id": "mYhy7eaazIk",
     "t": "Telescopes: Crash Course Astronomy #6",
