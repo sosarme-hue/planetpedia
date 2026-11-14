@@ -1,0 +1,769 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Planetpedia</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Planetpedia: a network of independent encyclopedias and local guides to learn, follow your interests and discover places.">
+<link rel="alternate" hreflang="es" href="https://planetpedia.net/">
+<link rel="alternate" hreflang="en" href="https://planetpedia.net/en/">
+<link rel="alternate" hreflang="x-default" href="https://planetpedia.net/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Portada en dos caminos: cabecera con buscador, directorio de enciclopedias por ámbitos (lista densa) y guías locales (tarjetas con foto). */
+:root {
+  --bg: #ffffff;
+  --surface: #f3f6fa;
+  --ink: #0b1f3a;
+  --ink-soft: #4a5a72;
+  --line: #dde4ee;
+  --navy: #0d2b55;
+  --teal: #0fa3a3;
+  --teal-ink: #08787a;
+  --on-navy: #ffffff;
+  --on-navy-soft: #b9c8de;
+  --c-musica: #7a4bd1; --c-ciencia: #1f7ae0; --c-humanidades: #c0602d;
+  --c-educacion: #0f8f6a; --c-gastronomia: #b8324f; --c-aficiones: #b98a12;
+  --font-display: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --radius: 14px;
+  --maxw: 1160px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a1424; --surface: #111e33; --ink: #e8eef7; --ink-soft: #a3b2c7; --line: #22324b;
+    --navy: #0d2b55; --teal: #2ec4c4; --teal-ink: #5fd6d6; --on-navy: #ffffff; --on-navy-soft: #b9c8de;
+    --c-musica: #a07ef0; --c-ciencia: #5aa2f2; --c-humanidades: #e08a5c;
+    --c-educacion: #3fbf95; --c-gastronomia: #e0657f; --c-aficiones: #e0b440;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0a1424; --surface: #111e33; --ink: #e8eef7; --ink-soft: #a3b2c7; --line: #22324b;
+  --navy: #0d2b55; --teal: #2ec4c4; --teal-ink: #5fd6d6; --on-navy: #ffffff; --on-navy-soft: #b9c8de;
+  --c-musica: #a07ef0; --c-ciencia: #5aa2f2; --c-humanidades: #e08a5c;
+  --c-educacion: #3fbf95; --c-gastronomia: #e0657f; --c-aficiones: #e0b440;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.6 var(--font-body); }
+a { color: inherit; }
+img, svg { max-width: 100%; display: block; }
+:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; border-radius: 6px; }
+.wrap { max-width: var(--maxw); margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+p { margin: 0; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+/* Cabecera */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--navy); }
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--navy); color: var(--on-navy); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; flex-wrap: wrap; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font: 800 1.25rem/1 var(--font-display); letter-spacing: -0.01em; }
+.logo svg { width: 34px; height: 34px; }
+.logo b { color: var(--teal); font-weight: 800; }
+.nav { display: flex; gap: 4px 18px; flex-wrap: wrap; font-size: .92rem; }
+.nav a { text-decoration: none; color: var(--on-navy-soft); padding: 4px 0; }
+.nav a:hover { color: var(--on-navy); }
+.nav .idioma { color: var(--on-navy); font-weight: 600; font-size: .8rem; letter-spacing: .06em; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: 3px 10px; align-self: center; }
+.nav a.idioma:hover { border-color: var(--teal); }
+
+/* Portada */
+.hero { background: var(--navy); color: var(--on-navy); position: relative; overflow: hidden; }
+.hero .wrap { padding-block: 56px 64px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; position: relative; z-index: 1; }
+.hero-orbit { position: absolute; right: -160px; top: -120px; width: 620px; height: 620px; opacity: .55; pointer-events: none; }
+.eyebrow { font: 600 .78rem/1 var(--font-body); letter-spacing: .14em; text-transform: uppercase; color: var(--teal); }
+.hero h1 { font-size: clamp(2.1rem, 5.4vw, 3.9rem); line-height: 1.05; letter-spacing: -0.025em; max-width: 15ch; font-weight: 800; }
+.hero h1 span { color: var(--teal); }
+.hero .lede { max-width: 58ch; color: var(--on-navy-soft); font-size: 1.08rem; }
+.caminos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 12px; max-width: 760px; }
+.camino { display: flex; align-items: center; justify-content: space-between; gap: 12px; text-decoration: none; padding: 18px 20px; border-radius: var(--radius); border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.06); transition: background .15s, border-color .15s; }
+.camino:hover { background: rgba(255,255,255,.12); border-color: var(--teal); }
+.camino strong { display: block; font: 700 1.12rem/1.2 var(--font-display); }
+.camino small { color: var(--on-navy-soft); font-size: .88rem; }
+.camino .arrow { font-size: 1.4rem; color: var(--teal); }
+.buscar { max-width: 760px; }
+.buscar-campo { position: relative; }
+.buscar label { position: absolute; left: -9999px; }
+.buscar input { width: 100%; font: 500 1rem var(--font-body); padding: 15px 18px 15px 46px; border-radius: 999px; border: 1px solid rgba(255,255,255,.25); background: #ffffff; color: #0b1f3a; }
+.buscar input::placeholder { color: #6a7a92; }
+.buscar svg { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: #6a7a92; }
+.buscar-estado { margin-top: 10px; color: var(--on-navy-soft); font-size: .9rem; min-height: 1.4em; }
+
+/* Secciones */
+.seccion { padding-block: 64px; }
+.seccion + .seccion { border-top: 1px solid var(--line); }
+.seccion-head { display: flex; justify-content: space-between; align-items: end; gap: 12px 32px; flex-wrap: wrap; margin-bottom: 32px; }
+.seccion-head h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); letter-spacing: -0.02em; font-weight: 800; }
+.seccion-head p { color: var(--ink-soft); max-width: 52ch; }
+.contador { font: 600 .8rem var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--teal-ink); margin-bottom: 8px; display: block; }
+
+/* Enciclopedias */
+.ambitos { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 40px 36px; }
+.ambito { min-width: 0; }
+.ambito-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 2px solid var(--ink); margin-bottom: 4px; }
+.ambito-head h3 { white-space: nowrap; font-size: 1.12rem; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+.ambito-head p { color: var(--ink-soft); font-size: .85rem; }
+.dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.webs { display: grid; }
+.web { border-bottom: 1px solid var(--line); }
+.web-link { display: grid; grid-template-columns: 44px 1fr; gap: 14px; padding: 14px 4px; text-decoration: none; border-radius: 8px; transition: background .15s; }
+.web-link:hover { background: var(--surface); }
+.mono { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font: 800 1.2rem var(--font-display); color: #ffffff; }
+.web-body { display: grid; gap: 2px; min-width: 0; }
+.web-name { font: 700 1.02rem/1.3 var(--font-display); }
+.web-desc { color: var(--ink-soft); font-size: .92rem; line-height: 1.45; }
+.web-dom { color: var(--teal-ink); font-size: .8rem; font-weight: 500; }
+.web-link:hover .web-name { color: var(--teal-ink); }
+.mono-musica, .dot-musica { background: var(--c-musica); }
+.mono-ciencia, .dot-ciencia { background: var(--c-ciencia); }
+.mono-humanidades, .dot-humanidades { background: var(--c-humanidades); }
+.mono-educacion, .dot-educacion { background: var(--c-educacion); }
+.mono-gastronomia, .dot-gastronomia { background: var(--c-gastronomia); }
+.mono-aficiones, .dot-aficiones { background: var(--c-aficiones); }
+
+/* Guías locales */
+.guias-band { background: var(--surface); }
+.guias { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+.guia a { display: grid; height: 100%; text-decoration: none; background: var(--bg); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); transition: transform .2s, box-shadow .2s; }
+.guia a:hover { transform: translateY(-3px); box-shadow: 0 14px 30px -18px rgba(11,31,58,.45); }
+.guia-media { position: relative; display: block; aspect-ratio: 400 / 260; max-width: 100%; background: linear-gradient(135deg, #1b4f80, #0fa3a3); overflow: hidden; }
+.guia-media img, .guia-media svg { width: 100%; height: 100%; object-fit: cover; }
+.tag { position: absolute; top: 12px; left: 12px; font: 600 .72rem/1 var(--font-body); letter-spacing: .08em; text-transform: uppercase; padding: 6px 9px; border-radius: 999px; background: rgba(255,255,255,.92); color: #0b1f3a; }
+.tag-comarca { background: #0d2b55; color: #ffffff; }
+.tag-isla { background: #0fa3a3; color: #ffffff; }
+.cred { position: absolute; right: 8px; bottom: 6px; font-size: .64rem; color: rgba(255,255,255,.85); text-shadow: 0 1px 2px rgba(0,0,0,.6); }
+.guia-body { display: grid; gap: 4px; padding: 16px 18px 18px; }
+.guia-kicker { font: 600 .74rem var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--teal-ink); }
+.guia-name { font: 800 1.35rem/1.15 var(--font-display); letter-spacing: -0.01em; }
+.guia-desc { color: var(--ink-soft); font-size: .92rem; line-height: 1.45; }
+.guia-dom { color: var(--ink-soft); font-size: .78rem; margin-top: 6px; opacity: .85; }
+
+/* Próximas guías */
+.proximas { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; }
+.proximas-t { font: 600 .78rem var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+.proximas ul { display: flex; flex-wrap: wrap; gap: 8px; }
+.proximas li { padding: 6px 12px; border: 1px dashed var(--line); border-radius: 999px; font-size: .88rem; color: var(--ink-soft); background: var(--bg); }
+
+/* Selección */
+.piezas { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 0; border-top: 2px solid var(--ink); }
+.pieza { border-bottom: 1px solid var(--line); }
+.pieza a { display: grid; gap: 6px; padding: 20px 20px 22px 0; text-decoration: none; height: 100%; }
+.pieza-tipo { font: 600 .74rem var(--font-body); letter-spacing: .1em; text-transform: uppercase; color: var(--teal-ink); }
+.pieza-titulo { font: 700 1.12rem/1.3 var(--font-display); }
+.pieza a:hover .pieza-titulo { text-decoration: underline; text-decoration-color: var(--teal); text-underline-offset: 4px; }
+.pieza-origen { color: var(--ink-soft); font-size: .86rem; }
+.aviso { margin-top: 16px; color: var(--ink-soft); font-size: .85rem; }
+
+
+/* Del universo a nuestro entorno */
+.mundos-head { margin-bottom: 28px; }
+.mundos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.mundo { position: relative; overflow: hidden; border-radius: var(--radius); min-height: 380px; display: flex; align-items: flex-end; text-decoration: none; color: #ffffff; background: #071a33; }
+.mundo.tierra { background: #06343f; }
+.mundo svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.mundo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(4,14,30,0) 35%, rgba(4,14,30,.9) 75%); }
+.mundo-txt { position: relative; z-index: 1; padding: 28px; display: grid; gap: 8px; }
+.mundo-txt .eyebrow { color: #7fe0e0; }
+.mundo-txt h3 { font-size: clamp(1.9rem, 3.6vw, 2.6rem); font-weight: 800; letter-spacing: -0.02em; }
+.mundo-txt p { color: #d6e3f0; max-width: 40ch; }
+.mundo-txt .ir { margin-top: 6px; font-weight: 600; color: #ffffff; }
+.mundo:hover .ir { color: #7fe0e0; }
+.temas-bloque { scroll-margin-top: 80px; }
+.temas-bloque + .temas-bloque { margin-top: 48px; }
+.temas-bloque h3 { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 4px; }
+.temas-bloque > p { color: var(--ink-soft); margin-bottom: 18px; }
+.temas { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0 32px; border-top: 2px solid var(--ink); }
+.tema { padding: 16px 0 18px; border-bottom: 1px solid var(--line); display: grid; gap: 4px; }
+.tema strong { font: 700 1.04rem/1.3 var(--font-display); }
+.tema span { color: var(--ink-soft); font-size: .92rem; line-height: 1.45; }
+.pronto { display: inline-block; margin-top: 16px; font-size: .85rem; color: var(--ink-soft); }
+.pronto b { color: var(--teal-ink); font-weight: 600; }
+
+/* Sobre el proyecto */
+.sobre { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+@media (max-width: 760px) { .sobre { grid-template-columns: 1fr; } }
+.sobre-texto { display: grid; gap: 16px; font-size: 1.05rem; max-width: 62ch; }
+.sobre-texto p:first-child { font: 600 1.3rem/1.45 var(--font-display); color: var(--ink); }
+.sobre-texto p { color: var(--ink-soft); }
+.contacto { background: var(--navy); color: var(--on-navy); border-radius: var(--radius); padding: 28px; display: grid; gap: 12px; }
+.contacto h3 { font-size: 1.3rem; }
+.contacto p { color: var(--on-navy-soft); }
+.correo { font: 600 1.05rem var(--font-body); color: var(--on-navy); user-select: all; word-break: break-all; }
+.copiar { justify-self: start; font: 600 .9rem var(--font-body); padding: 10px 16px; border-radius: 999px; border: 1px solid var(--teal); background: transparent; color: var(--on-navy); cursor: pointer; }
+.copiar:hover { background: var(--teal); color: #08202a; }
+
+/* Pie */
+.pie { background: var(--navy); color: var(--on-navy-soft); font-size: .88rem; }
+.pie .wrap { padding-block: 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; }
+.pie strong { color: var(--on-navy); font-family: var(--font-display); }
+
+.sin-resultados { padding: 20px; border: 1px dashed var(--line); border-radius: var(--radius); color: var(--ink-soft); }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Planetpedia, home">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="11" fill="#ffffff"/>
+        <path d="M13 16c4-1 9 0 14 3M12 22c5 1 10 2 15 0" stroke="#0d2b55" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".35"/>
+        <ellipse cx="20" cy="20" rx="18" ry="6.5" fill="none" stroke="#2ec4c4" stroke-width="2.4" transform="rotate(-22 20 20)"/>
+        <circle cx="35.5" cy="13.5" r="2.4" fill="#2ec4c4"/>
+      </svg>
+      <span>Planet<b>pedia</b></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#universo">Universe</a>
+      <a href="#tierra">Planet Earth</a>
+      <a href="#enciclopedias">Encyclopedias</a>
+      <a href="#guias">Local guides</a>
+      <a href="#sobre">The project</a>
+      <a class="idioma" href="../" hreflang="es" lang="es">ES</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <svg class="hero-orbit" viewBox="0 0 600 600" aria-hidden="true">
+      <circle cx="300" cy="300" r="120" fill="none" stroke="#2ec4c4" stroke-opacity=".35"/>
+      <circle cx="300" cy="300" r="190" fill="none" stroke="#ffffff" stroke-opacity=".12"/>
+      <circle cx="300" cy="300" r="270" fill="none" stroke="#ffffff" stroke-opacity=".08"/>
+      <circle cx="420" cy="300" r="7" fill="#2ec4c4"/>
+      <circle cx="166" cy="166" r="5" fill="#ffffff" fill-opacity=".6"/>
+      <circle cx="300" cy="30" r="4" fill="#ffffff" fill-opacity=".45"/>
+    </svg>
+    <div class="wrap">
+      <span class="eyebrow">Knowledge and places to discover</span>
+      <h1>Explore your interests. <span>Discover new places.</span></h1>
+      <p class="lede">Planetpedia brings together a network of independent encyclopedias and guides to learn, follow your hobbies and get to know towns and cities. Each site has its own domain and its own voice; here you can find them all. Most sites are in Spanish.</p>
+      <div class="caminos">
+        <a class="camino" href="#enciclopedias"><span><strong>Explore knowledge</strong><small>19 subject encyclopedias</small></span><span class="arrow" aria-hidden="true">→</span></a>
+        <a class="camino" href="#guias"><span><strong>Discover destinations</strong><small>7 local guides</small></span><span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+      <div class="buscar" role="search">
+        <label for="q">Search the network</label>
+        <div class="buscar-campo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="q" type="search" placeholder="Search for a site, a topic or a place: wine, Sitges…" autocomplete="off">
+        </div>
+        <p class="buscar-estado" id="estado" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="mundos">
+    <div class="wrap">
+      <div class="seccion-head mundos-head">
+        <div><span class="contador">From the universe to our surroundings</span><h2>Look up at the sky. Come back to Earth.</h2></div>
+        <p>Two areas of Planetpedia's own, to explore through images, fact sheets and reading paths. In-depth explanations stay in the network's encyclopedias.</p>
+      </div>
+      <div class="mundos">
+        <a class="mundo" href="#universo">
+          <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <radialGradient id="g-esp" cx="70%" cy="30%" r="80%"><stop offset="0" stop-color="#1d3f74"/><stop offset="1" stop-color="#050f22"/></radialGradient>
+              <radialGradient id="g-pla" cx="35%" cy="35%" r="70%"><stop offset="0" stop-color="#f3d9a4"/><stop offset=".6" stop-color="#c98f4e"/><stop offset="1" stop-color="#5a3518"/></radialGradient>
+            </defs>
+            <rect width="600" height="400" fill="url(#g-esp)"/>
+            <g fill="#ffffff"><circle cx="40" cy="40" r="1.4"/><circle cx="120" cy="90" r="1"/><circle cx="210" cy="30" r="1.8"/><circle cx="300" cy="120" r="1"/><circle cx="80" cy="170" r="1.6"/><circle cx="250" cy="200" r="1"/><circle cx="560" cy="300" r="1.4"/><circle cx="520" cy="40" r="1"/><circle cx="380" cy="30" r="1.2"/><circle cx="170" cy="250" r="1"/><circle cx="30" cy="290" r="1.2"/><circle cx="330" cy="260" r="1"/></g>
+            <ellipse cx="440" cy="105" rx="140" ry="28" fill="none" stroke="#e6c48e" stroke-width="9" stroke-opacity=".55" transform="rotate(-18 440 105)"/>
+            <circle cx="440" cy="105" r="70" fill="url(#g-pla)"/>
+          </svg>
+          <span class="mundo-txt">
+            <span class="eyebrow">Solar system · Stars · Galaxies · Exploration</span>
+            <h3>Universe</h3>
+            <p>Look further. Discover the cosmos, from our own star to the most distant galaxies.</p>
+            <span class="ir">Explore the universe →</span>
+          </span>
+        </a>
+        <a class="mundo tierra" href="#tierra">
+          <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <defs>
+              <radialGradient id="g-oce" cx="35%" cy="35%" r="75%"><stop offset="0" stop-color="#3fa9c9"/><stop offset=".7" stop-color="#16607f"/><stop offset="1" stop-color="#0a2f48"/></radialGradient>
+              <clipPath id="c-glo"><circle cx="430" cy="115" r="105"/></clipPath>
+            </defs>
+            <rect width="600" height="400" fill="#06343f"/>
+            <circle cx="430" cy="115" r="116" fill="#7fe0d0" fill-opacity=".12"/>
+            <circle cx="430" cy="115" r="105" fill="url(#g-oce)"/>
+            <g clip-path="url(#c-glo)" fill="#6fb38d">
+              <path d="M320 70 l50 -22 l36 20 l-8 34 l-38 18 l-10 40 l-24 -12 l-22 -48z"/>
+              <path d="M380 150 l34 10 l24 42 l-16 34 l-14 40 l-18 -20 l-8 -50 l-20 -24z"/>
+              <path d="M440 50 l50 -8 l52 30 l18 50 l-28 24 l-36 -16 l-20 16 l-16 -28 l-34 -14z"/>
+              <path d="M460 140 l36 -4 l24 36 l-20 44 l-20 12 l-18 -38z"/>
+            </g>
+            <g clip-path="url(#c-glo)" fill="none" stroke="#e8fbf5" stroke-width="8" stroke-linecap="round" stroke-opacity=".45">
+              <path d="M310 100 q50 -34 110 -10"/><path d="M430 170 q40 -30 96 -12"/><path d="M350 230 q40 14 86 -4"/>
+            </g>
+          </svg>
+          <span class="mundo-txt">
+            <span class="eyebrow">Oceans · Climate · Geology · Ecosystems</span>
+            <h3>Planet Earth</h3>
+            <p>Get to know the world we live in: its landscapes, its forces and its life.</p>
+            <span class="ir">Explore the Earth →</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="temas-bloque" id="universo" style="margin-top:48px">
+        <h3>Universe</h3>
+        <p>Where to start looking at the sky.</p>
+        <ul class="temas">
+          <li class="tema"><strong>Solar system</strong><span>The Sun, the eight planets and their moons, asteroids and comets.</span></li>
+          <li class="tema"><strong>Stars and galaxies</strong><span>How stars are born, change and die, and how they gather in galaxies like the Milky Way.</span></li>
+          <li class="tema"><strong>Cosmology</strong><span>The origin and expansion of the universe, told in an accessible way.</span></li>
+          <li class="tema"><strong>Space exploration</strong><span>Missions, probes, telescopes and the people who made them possible.</span></li>
+          <li class="tema"><strong>Stargazing</strong><span>Constellations, binoculars and telescopes: a guide to get started.</span></li>
+          <li class="tema"><strong>Astronomy news</strong><span>Eclipses, meteor showers and recent discoveries.</span></li>
+        </ul>
+        <span class="pronto">Coming soon at <b>planetpedia.net/en/universe/</b></span>
+      </div>
+      <div class="temas-bloque" id="tierra">
+        <h3>Planet Earth</h3>
+        <p>The processes that shape our planet.</p>
+        <ul class="temas">
+          <li class="tema"><strong>Inside the Earth</strong><span>The planet's layers, tectonic plates, volcanoes and earthquakes.</span></li>
+          <li class="tema"><strong>Oceans and water</strong><span>Seas, rivers, glaciers and the water cycle.</span></li>
+          <li class="tema"><strong>Atmosphere and climate</strong><span>Weather, extreme events and climate change.</span></li>
+          <li class="tema"><strong>Life and ecosystems</strong><span>Biodiversity, habitats and how species interact.</span></li>
+          <li class="tema"><strong>World geography</strong><span>Continents, landscapes and major regions.</span></li>
+          <li class="tema"><strong>Our impact</strong><span>Resources, pollution and conservation.</span></li>
+        </ul>
+        <span class="pronto">Coming soon at <b>planetpedia.net/en/earth/</b></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="seccion" id="enciclopedias">
+    <div class="wrap">
+      <div class="seccion-head">
+        <div><span class="contador">19 sites · 6 areas</span><h2>Learn about a subject</h2></div>
+        <p>Subject encyclopedias, each devoted to one field. Not all of them are called "pedia": what they share is that they explain their subject well.</p>
+      </div>
+      <div class="ambitos">
+<section class="ambito" aria-labelledby="amb-musica">
+  <header class="ambito-head">
+    <h3 id="amb-musica"><span class="dot dot-musica" aria-hidden="true"></span>Music and arts</h3>
+    <p>Composers, painting and film</p>
+  </header>
+  <ul class="webs"><li class="web" data-search="classicapedia classicapedia.com compositores, obras y épocas de la música clásica, explicados para disfrutarla más. composers, works and periods of classical music, explained so you can enjoy it more. música y artes music and arts">
+  <a href="https://classicapedia.com/" class="web-link">
+    <span class="mono mono-musica" aria-hidden="true">C</span>
+    <span class="web-body">
+      <span class="web-name">Classicapedia</span>
+      <span class="web-desc">Composers, works and periods of classical music, explained so you can enjoy it more.</span>
+      <span class="web-dom">classicapedia.com <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</li><li class="web" data-search="pinacopedia pinacopedia.com pintores, cuadros y museos: la historia del arte, obra a obra. painters, paintings and museums: art history, one work at a time. música y artes music and arts">
+  <a href="https://pinacopedia.com/" class="web-link">
+    <span class="mono mono-musica" aria-hidden="true">P</span>
+    <span class="web-body">
+      <span class="web-name">Pinacopedia</span>
+      <span class="web-desc">Painters, paintings and museums: art history, one work at a time.</span>
+      <span class="web-dom">pinacopedia.com <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</li><li class="web" data-search="cinematopedia cinematopedia.com películas, directores y géneros para entender y disfrutar el cine. films, directors and genres to understand and enjoy cinema. música y artes music and arts">
+  <a href="https://cinematopedia.com/" class="web-link">
+    <span class="mono mono-musica" aria-hidden="true">C</span>
+    <span class="web-body">
+      <span class="web-name">Cinematopedia</span>
+      <span class="web-desc">Films, directors and genres to understand and enjoy cinema.</span>
+      <span class="web-dom">cinematopedia.com <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</li></ul>
+</section>
+<section class="ambito" aria-labelledby="amb-ciencia">
+  <header class="ambito-head">
+    <h3 id="amb-ciencia"><span class="dot dot-ciencia" aria-hidden="true"></span>Science and health</h3>
+    <p>From the lab to the clinic</p>
+  </header>
+  <ul class="webs"><li class="web" data-search="newtonpedia newtonpedia.com física, química y matemáticas contadas con claridad, de las leyes a sus descubridores. physics, chemistry and maths told clearly, from the laws to the people who found them. ciencia y salud science and health">
+  <a href="https://newtonpedia.com/" class="web-link">
+    <span class="mono mono-ciencia" aria-hidden="true">N</span>
+    <span class="web-body">
+      <span class="web-name">Newtonpedia</span>
+      <span class="web-desc">Physics, chemistry and maths told clearly, from the laws to the people who found them.</span>
+      <span class="web-dom">newtonpedia.com <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</li><li class="web" data-search="medicapedia medicapedia.org enfermedades, síntomas y tratamientos explicados en lenguaje claro. diseases, symptoms and treatments explained in plain language. ciencia y salud science and health">
+  <a href="https://medicapedia.org/" class="web-link">
+    <span class="mono mono-ciencia" aria-hidden="true">M</span>
+    <span class="web-body">
+      <span class="web-name">Medicapedia</span>
+      <span class="web-desc">Diseases, symptoms and treatments explained in plain language.</span>
+      <span class="web-dom">medicapedia.org <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</li><li class="web" data-search="farmacos.ai farmacos.ai medicamentos: para qué sirven, cómo se toman y qué precauciones tienen. medicines: what they are for, how to take them and what to watch out for. ciencia y salud science and health">
+  <a href="https://farmacos.ai/" class="web-link">
+    <span class="mono mono-ciencia" aria-hidden="true">F</span>
+    <span class="web-body">
+      <span class="web-name">Farmacos.ai</span>
+      <span class="web-desc">Medicines: what they are for, how to take them and what to watch out for.</span>
+      <span class="web-dom">farmacos.ai <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</li><li class="web" data-search="enfermería sí enfermeria.si recursos, técnicas y oposiciones para profesionales y estudiantes de enfermería. resources, techniques and exam preparation for nurses and nursing students. ciencia y salud science and health">
+  <a href="https://enfermeria.si/" class="web-link">
+    <span class="mono mono-ciencia" aria-hidden="true">E</span>
+    <span class="web-body">
+      <span class="web-name">Enfermería Sí</span>
+      <span class="web-desc">Resources, techniques and exam preparation for nurses and nursing students.</span>
+      <span class="web-dom">enfermeria.si <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</li></ul>
+</section>
+<section class="ambito" aria-labelledby="amb-humanidades">
+  <header class="ambito-head">
+    <h3 id="amb-humanidades"><span class="dot dot-humanidades" aria-hidden="true"></span>Humanities</h3>
+    <p>Ideas, myths and symbols</p>
+  </header>
+  <ul class="webs"><li class="web" data-search="filopedia filopedia.com filósofos, corrientes y grandes preguntas, de la antigüedad a hoy. philosophers, schools of thought and big questions, from antiquity to today. humanidades humanities">
+  <a href="https://filopedia.com/" class="web-link">
+    <span class="mono mono-humanidades" aria-hidden="true">F</span>
+    <span class="web-body">
+      <span class="web-name">Filopedia</span>
+      <span class="web-desc">Philosophers, schools of thought and big questions, from antiquity to today.</span>
+      <span class="web-dom">filopedia.com <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</li><li class="web" data-search="mythicapedia mythicapedia.com dioses, héroes y leyendas de las mitologías del mundo. gods, heroes and legends from the world&#x27;s mythologies. humanidades humanities">
+  <a href="https://mythicapedia.com/" class="web-link">
+    <span class="mono mono-humanidades" aria-hidden="true">M</span>
+    <span class="web-body">
+      <span class="web-name">Mythicapedia</span>
+      <span class="web-desc">Gods, heroes and legends from the world&#x27;s mythologies.</span>
+      <span class="web-dom">mythicapedia.com <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</li><li class="web" data-search="zodiacopedia zodiacopedia.com signos, planetas y cartas astrales: la astrología como cultura. signs, planets and birth charts: astrology as culture. humanidades humanities">
+  <a href="https://zodiacopedia.com/" class="web-link">
+    <span class="mono mono-humanidades" aria-hidden="true">Z</span>
+    <span class="web-body">
+      <span class="web-name">Zodiacopedia</span>
+      <span class="web-desc">Signs, planets and birth charts: astrology as culture.</span>
+      <span class="web-dom">zodiacopedia.com <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</li></ul>
+</section>
+<section class="ambito" aria-labelledby="amb-educacion">
+  <header class="ambito-head">
+    <h3 id="amb-educacion"><span class="dot dot-educacion" aria-hidden="true"></span>Education and society</h3>
+    <p>Learn, understand and decide</p>
+  </header>
+  <ul class="webs"><li class="web" data-search="escolapedia escolapedia.com apuntes y guías de estudio para primaria, eso y bachillerato. notes and study guides for primary and secondary school. educación y sociedad education and society">
+  <a href="https://escolapedia.com/" class="web-link">
+    <span class="mono mono-educacion" aria-hidden="true">E</span>
+    <span class="web-body">
+      <span class="web-name">Escolapedia</span>
+      <span class="web-desc">Notes and study guides for primary and secondary school.</span>
+      <span class="web-dom">escolapedia.com <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</li><li class="web" data-search="leypedia leypedia.com leyes, derechos y trámites explicados para cualquier persona. laws, rights and paperwork explained for everyone. educación y sociedad education and society">
+  <a href="https://leypedia.com/" class="web-link">
+    <span class="mono mono-educacion" aria-hidden="true">L</span>
+    <span class="web-body">
+      <span class="web-name">Leypedia</span>
+      <span class="web-desc">Laws, rights and paperwork explained for everyone.</span>
+      <span class="web-dom">leypedia.com <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</li><li class="web" data-search="saber para invertir saberparainvertir.com finanzas personales e inversión, desde lo básico y sin promesas fáciles. personal finance and investing, from the basics and without easy promises. educación y sociedad education and society">
+  <a href="https://saberparainvertir.com/" class="web-link">
+    <span class="mono mono-educacion" aria-hidden="true">S</span>
+    <span class="web-body">
+      <span class="web-name">Saber para Invertir</span>
+      <span class="web-desc">Personal finance and investing, from the basics and without easy promises.</span>
+      <span class="web-dom">saberparainvertir.com <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</li><li class="web" data-search="celebraciones celebraciones.org fiestas, tradiciones y fechas señaladas, con su origen y cómo celebrarlas. festivals, traditions and special dates, with their origins and how to celebrate them. educación y sociedad education and society">
+  <a href="https://celebraciones.org/" class="web-link">
+    <span class="mono mono-educacion" aria-hidden="true">C</span>
+    <span class="web-body">
+      <span class="web-name">Celebraciones</span>
+      <span class="web-desc">Festivals, traditions and special dates, with their origins and how to celebrate them.</span>
+      <span class="web-dom">celebraciones.org <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</li></ul>
+</section>
+<section class="ambito" aria-labelledby="amb-gastronomia">
+  <header class="ambito-head">
+    <h3 id="amb-gastronomia"><span class="dot dot-gastronomia" aria-hidden="true"></span>Food and wine</h3>
+    <p>Kitchens and wineries</p>
+  </header>
+  <ul class="webs"><li class="web" data-search="culinapedia culinapedia.com recetas, ingredientes y técnicas de las cocinas del mundo. recipes, ingredients and techniques from the world&#x27;s cuisines. gastronomía y vino food and wine">
+  <a href="https://culinapedia.com/" class="web-link">
+    <span class="mono mono-gastronomia" aria-hidden="true">C</span>
+    <span class="web-body">
+      <span class="web-name">Culinapedia</span>
+      <span class="web-desc">Recipes, ingredients and techniques from the world&#x27;s cuisines.</span>
+      <span class="web-dom">culinapedia.com <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</li><li class="web" data-search="worldwinepedia worldwinepedia.com uvas, regiones y bodegas para conocer el vino de todo el mundo. grapes, regions and wineries to get to know wine from around the world. gastronomía y vino food and wine">
+  <a href="https://worldwinepedia.com/" class="web-link">
+    <span class="mono mono-gastronomia" aria-hidden="true">W</span>
+    <span class="web-body">
+      <span class="web-name">WorldWinePedia</span>
+      <span class="web-desc">Grapes, regions and wineries to get to know wine from around the world.</span>
+      <span class="web-dom">worldwinepedia.com <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</li></ul>
+</section>
+<section class="ambito" aria-labelledby="amb-aficiones">
+  <header class="ambito-head">
+    <h3 id="amb-aficiones"><span class="dot dot-aficiones" aria-hidden="true"></span>Hobbies and everyday life</h3>
+    <p>Sport, games and pets</p>
+  </header>
+  <ul class="webs"><li class="web" data-search="tenispedia tenispedia.com jugadores, torneos y técnica: el tenis en vivo y en su historia. players, tournaments and technique: tennis live and through its history. aficiones y vida cotidiana hobbies and everyday life">
+  <a href="https://tenispedia.com/" class="web-link">
+    <span class="mono mono-aficiones" aria-hidden="true">T</span>
+    <span class="web-body">
+      <span class="web-name">Tenispedia</span>
+      <span class="web-desc">Players, tournaments and technique: tennis live and through its history.</span>
+      <span class="web-dom">tenispedia.com <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</li><li class="web" data-search="catdogpedia catdogpedia.com razas, salud y cuidados de perros y gatos. breeds, health and care for dogs and cats. aficiones y vida cotidiana hobbies and everyday life">
+  <a href="https://catdogpedia.com/" class="web-link">
+    <span class="mono mono-aficiones" aria-hidden="true">C</span>
+    <span class="web-body">
+      <span class="web-name">Catdogpedia</span>
+      <span class="web-desc">Breeds, health and care for dogs and cats.</span>
+      <span class="web-dom">catdogpedia.com <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</li><li class="web" data-search="ludicopedia ludicopedia.com juegos de mesa, de cartas y de ingenio: reglas, historia y estrategia. board, card and puzzle games: rules, history and strategy. aficiones y vida cotidiana hobbies and everyday life">
+  <a href="https://ludicopedia.com/" class="web-link">
+    <span class="mono mono-aficiones" aria-hidden="true">L</span>
+    <span class="web-body">
+      <span class="web-name">Ludicopedia</span>
+      <span class="web-desc">Board, card and puzzle games: rules, history and strategy.</span>
+      <span class="web-dom">ludicopedia.com <span aria-hidden="true">↗</span></span>
+    </span>
+  </a>
+</li></ul>
+</section>
+      </div>
+      <p class="sin-resultados" id="sin-enc" hidden>No encyclopedia matches your search.</p>
+    </div>
+  </section>
+
+  <section class="seccion guias-band" id="guias">
+    <div class="wrap">
+      <div class="seccion-head">
+        <div><span class="contador">7 destinations · Catalonia and the Balearic Islands</span><h2>Discover a place</h2></div>
+        <p>Local guides for people who live there and for visitors: what to see, where to eat, what's on and local services, with checked information.</p>
+      </div>
+      <ul class="guias">
+<li class="guia" data-search="sitges sitges sitges.si playas, la iglesia de la punta, el carnaval y la vida del pueblo todo el año. beaches, the church on the punta, carnival and town life all year round. municipio town guía local destino local guide destination">
+  <a href="https://sitges.si/">
+    <span class="guia-media"><img src="../img/sitges.jpg" alt="Sitges" loading="lazy" width="400" height="260"><span class="tag tag-municipio">Town</span><span class="cred">Photo: Howard Walsh / Unsplash</span></span>
+    <span class="guia-body">
+      <span class="guia-kicker">Discover</span>
+      <span class="guia-name">Sitges</span>
+      <span class="guia-desc">Beaches, the church on the Punta, Carnival and town life all year round.</span>
+      <span class="guia-dom">sitges.si</span>
+    </span>
+  </a>
+</li>
+<li class="guia" data-search="sant pere de ribes sant pere de ribes santperederibes.si viñas, masías y fiestas mayores entre el garraf y el penedès. vineyards, farmhouses and town festivals between the garraf and the penedès. municipio town guía local destino local guide destination">
+  <a href="https://santperederibes.si/">
+    <span class="guia-media"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Hills and vineyards">
+  <rect width="400" height="260" fill="#cfe3ea"/>
+  <circle cx="300" cy="70" r="28" fill="#f2c14e"/>
+  <path d="M0 170 C80 120 160 140 230 150 C300 160 350 120 400 130 V260 H0Z" fill="#6f9a74"/>
+  <path d="M0 200 C90 170 180 190 260 195 C320 199 370 180 400 185 V260 H0Z" fill="#4c7a57"/>
+  <g stroke="#3a6346" stroke-width="3" stroke-linecap="round" fill="none">
+    <path d="M20 240 Q120 215 220 228"/><path d="M40 252 Q150 228 260 240"/><path d="M180 255 Q290 230 390 238"/>
+  </g>
+  <path d="M90 168 v-18 h22 v18" fill="#e9dcc4"/><path d="M86 152 l15 -12 l15 12z" fill="#b5563b"/>
+</svg><span class="tag tag-municipio">Town</span></span>
+    <span class="guia-body">
+      <span class="guia-kicker">Discover</span>
+      <span class="guia-name">Sant Pere de Ribes</span>
+      <span class="guia-desc">Vineyards, farmhouses and town festivals between the Garraf and the Penedès.</span>
+      <span class="guia-dom">santperederibes.si</span>
+    </span>
+  </a>
+</li>
+<li class="guia" data-search="castelldefels castelldefels castelldefels.si del castillo a la playa: qué ver, dónde comer y la agenda local. from the castle to the beach: what to see, where to eat and what&#x27;s on. municipio town guía local destino local guide destination">
+  <a href="https://castelldefels.si/">
+    <span class="guia-media"><img src="../img/castelldefels.jpg" alt="Castelldefels" loading="lazy" width="400" height="260"><span class="tag tag-municipio">Town</span><span class="cred">Photo: Manuel Torres Garcia / Unsplash</span></span>
+    <span class="guia-body">
+      <span class="guia-kicker">Discover</span>
+      <span class="guia-name">Castelldefels</span>
+      <span class="guia-desc">From the castle to the beach: what to see, where to eat and what&#x27;s on.</span>
+      <span class="guia-dom">castelldefels.si</span>
+    </span>
+  </a>
+</li>
+<li class="guia" data-search="vilanova i la geltrú vilanova i la geltrú vilanova.si puerto, rambla y museos, con los servicios y la agenda ciudadana. harbour, promenade and museums, plus local services and events. municipio town guía local destino local guide destination">
+  <a href="https://vilanova.si/">
+    <span class="guia-media"><img src="../img/vilanova.jpg" alt="Vilanova i la Geltrú" loading="lazy" width="400" height="260"><span class="tag tag-municipio">Town</span><span class="cred">Photo: Chema Photo / Unsplash</span></span>
+    <span class="guia-body">
+      <span class="guia-kicker">Discover</span>
+      <span class="guia-name">Vilanova i la Geltrú</span>
+      <span class="guia-desc">Harbour, promenade and museums, plus local services and events.</span>
+      <span class="guia-dom">vilanova.si</span>
+    </span>
+  </a>
+</li>
+<li class="guia" data-search="sant cugat sant cugat santcugat.si el monasterio, collserola y una ciudad para vivir y pasear. the monastery, collserola park and a town made for living and walking. municipio town guía local destino local guide destination">
+  <a href="https://santcugat.si/">
+    <span class="guia-media"><img src="../img/santcugat.jpg" alt="Sant Cugat" loading="lazy" width="400" height="260"><span class="tag tag-municipio">Town</span><span class="cred">Photo: Manuel Torres Garcia / Unsplash</span></span>
+    <span class="guia-body">
+      <span class="guia-kicker">Discover</span>
+      <span class="guia-name">Sant Cugat</span>
+      <span class="guia-desc">The monastery, Collserola park and a town made for living and walking.</span>
+      <span class="guia-dom">santcugat.si</span>
+    </span>
+  </a>
+</li>
+<li class="guia" data-search="garraf garraf garraf.si playas, pueblos y viñas de la comarca, con la guía de cada municipio. beaches, villages and vineyards of the district, with a guide to each town. comarca district guía local destino local guide destination">
+  <a href="https://garraf.si/">
+    <span class="guia-media"><img src="../img/garraf.jpg" alt="Garraf" loading="lazy" width="400" height="260"><span class="tag tag-comarca">District</span><span class="cred">Photo: Max / Unsplash</span></span>
+    <span class="guia-body">
+      <span class="guia-kicker">Explore</span>
+      <span class="guia-name">Garraf</span>
+      <span class="guia-desc">Beaches, villages and vineyards of the district, with a guide to each town.</span>
+      <span class="guia-dom">garraf.si</span>
+    </span>
+  </a>
+</li>
+<li class="guia" data-search="eivissa ibiza (eivissa) eivissa.si dalt vila, calas, ferris y vida local de eivissa y formentera. dalt vila, coves, ferries and local life on ibiza and formentera. isla island guía local destino local guide destination">
+  <a href="https://eivissa.si/">
+    <span class="guia-media"><img src="../img/eivissa.jpg" alt="Ibiza (Eivissa)" loading="lazy" width="400" height="260"><span class="tag tag-isla">Island</span><span class="cred">Photo: Alejandra Camacho Álvarez / Unsplash</span></span>
+    <span class="guia-body">
+      <span class="guia-kicker">Explore</span>
+      <span class="guia-name">Ibiza (Eivissa)</span>
+      <span class="guia-desc">Dalt Vila, coves, ferries and local life on Ibiza and Formentera.</span>
+      <span class="guia-dom">eivissa.si</span>
+    </span>
+  </a>
+</li>
+      </ul>
+      <div class="proximas">
+        <span class="proximas-t">Coming soon</span>
+        <ul><li>Badalona</li><li>Cadaqués</li><li>Calafell</li><li>Girona</li><li>Lleida</li><li>Salou</li><li>Tarragona</li><li>Vilafranca</li></ul>
+      </div>
+      <p class="sin-resultados" id="sin-guias" hidden>No guide matches your search.</p>
+    </div>
+  </section>
+
+  <section class="seccion" id="seleccion">
+    <div class="wrap">
+      <div class="seccion-head">
+        <div><span class="contador">Editor's picks</span><h2>This week across the network</h2></div>
+        <p>Four reads picked from different sites. Each one takes you to the original article.</p>
+      </div>
+      <ul class="piezas">
+<li class="pieza">
+  <a href="https://classicapedia.com/">
+    <span class="pieza-tipo">Biography</span>
+    <span class="pieza-titulo">Who Bach was and why he is still the starting point</span>
+    <span class="pieza-origen">on Classicapedia (in Spanish)</span>
+  </a>
+</li>
+<li class="pieza">
+  <a href="https://newtonpedia.com/">
+    <span class="pieza-tipo">Science</span>
+    <span class="pieza-titulo">Gravity explained without formulas</span>
+    <span class="pieza-origen">on Newtonpedia (in Spanish)</span>
+  </a>
+</li>
+<li class="pieza">
+  <a href="https://escolapedia.com/">
+    <span class="pieza-tipo">Study</span>
+    <span class="pieza-titulo">How to prepare a history exam in one week</span>
+    <span class="pieza-origen">on Escolapedia (in Spanish)</span>
+  </a>
+</li>
+<li class="pieza">
+  <a href="https://sitges.si/">
+    <span class="pieza-tipo">Day trip</span>
+    <span class="pieza-titulo">A day in Sitges: from the Punta to the seafront</span>
+    <span class="pieza-origen">on Sitges Sí (in Spanish)</span>
+  </a>
+</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="seccion" id="sobre">
+    <div class="wrap sobre">
+      <div class="sobre-texto">
+        <span class="contador">About the project</span>
+        <p>Planetpedia is the work of one person who has built, site by site, a network of resources on very different subjects.</p>
+        <p>It started with curiosity: classical music, wine, tennis, philosophy. Then came the local guides to Catalonia and Ibiza. Each project has its own domain and identity, and they all share the same idea: explain things clearly, cite sources and be useful to anyone looking for something specific.</p>
+        <p>A project by <strong>Alejandro Rosàs Navarro</strong>.</p>
+        <p>This portal is the way in. Here you can see everything in the network and choose your path: learn or explore.</p>
+      </div>
+      <aside class="contacto" id="contacto" aria-labelledby="contacto-t">
+        <h3 id="contacto-t">Contact</h3>
+        <p>Suggestions, corrections or ideas for working together on any site in the network:</p>
+        <span class="correo" id="correo">contacto@planetpedia.net</span>
+        <button class="copiar" id="copiar" type="button">Copy address</button>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="pie">
+  <div class="wrap">
+    <span><strong>Planetpedia</strong> · Knowledge and places to discover</span>
+    <span>Guide photos: photographers credited on each image, via Unsplash.</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var q = document.getElementById('q');
+  var estado = document.getElementById('estado');
+  var webs = Array.prototype.slice.call(document.querySelectorAll('.web, .guia'));
+  var ambitos = Array.prototype.slice.call(document.querySelectorAll('.ambito'));
+  function norm(s) { return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
+  webs.forEach(function (w) { w._t = norm(w.getAttribute('data-search')); });
+  q.addEventListener('input', function () {
+    var t = norm(q.value.trim());
+    var nEnc = 0, nGuia = 0;
+    webs.forEach(function (w) {
+      var ok = !t || w._t.indexOf(t) !== -1;
+      w.hidden = !ok;
+      if (ok) { if (w.classList.contains('guia')) nGuia++; else nEnc++; }
+    });
+    ambitos.forEach(function (a) { a.hidden = !a.querySelector('.web:not([hidden])'); });
+    document.getElementById('sin-enc').hidden = nEnc > 0;
+    document.getElementById('sin-guias').hidden = nGuia > 0;
+    estado.textContent = t ? (nEnc + ' encyclopedias and ' + nGuia + ' guides match "' + q.value.trim() + '".') : '';
+  });
+  var btn = document.getElementById('copiar');
+  btn.addEventListener('click', function () {
+    var txt = document.getElementById('correo').textContent;
+    function marcar() { btn.textContent = 'Address copied'; setTimeout(function () { btn.textContent = 'Copy address'; }, 2000); }
+    function seleccionar() { var r = document.createRange(); r.selectNodeContents(document.getElementById('correo')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(txt).then(marcar, seleccionar); } else { seleccionar(); }
+  });
+})();
+</script>
+</body>
+</html>

@@ -6,6 +6,9 @@
 <title>Planetpedia</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Planetpedia: una red de enciclopedias temáticas y guías locales independientes para aprender, explorar intereses y conocer lugares.">
+<link rel="alternate" hreflang="es" href="https://planetpedia.net/">
+<link rel="alternate" hreflang="en" href="https://planetpedia.net/en/">
+<link rel="alternate" hreflang="x-default" href="https://planetpedia.net/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
@@ -69,6 +72,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .nav { display: flex; gap: 4px 18px; flex-wrap: wrap; font-size: .92rem; }
 .nav a { text-decoration: none; color: var(--on-navy-soft); padding: 4px 0; }
 .nav a:hover { color: var(--on-navy); }
+.nav .idioma { color: var(--on-navy); font-weight: 600; font-size: .8rem; letter-spacing: .06em; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: 3px 10px; align-self: center; }
+.nav a.idioma:hover { border-color: var(--teal); }
 
 /* Portada */
 .hero { background: var(--navy); color: var(--on-navy); position: relative; overflow: hidden; }
@@ -222,6 +227,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <a href="#enciclopedias">Enciclopedias</a>
       <a href="#guias">Guías locales</a>
       <a href="#sobre">El proyecto</a>
+      <a class="idioma" href="en/" hreflang="en" lang="en">EN</a>
     </nav>
   </div>
 </header>
@@ -349,7 +355,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <h3 id="amb-musica"><span class="dot dot-musica" aria-hidden="true"></span>Música y artes</h3>
     <p>Compositores, pintura y cine</p>
   </header>
-  <ul class="webs"><li class="web" data-search="classicapedia classicapedia.com compositores, obras y épocas de la música clásica, explicados para disfrutarla más. música y artes">
+  <ul class="webs"><li class="web" data-search="classicapedia classicapedia.com compositores, obras y épocas de la música clásica, explicados para disfrutarla más. composers, works and periods of classical music, explained so you can enjoy it more. música y artes music and arts">
   <a href="https://classicapedia.com/" class="web-link">
     <span class="mono mono-musica" aria-hidden="true">C</span>
     <span class="web-body">
@@ -358,7 +364,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <span class="web-dom">classicapedia.com <span aria-hidden="true">↗</span></span>
     </span>
   </a>
-</li><li class="web" data-search="pinacopedia pinacopedia.com pintores, cuadros y museos: la historia del arte, obra a obra. música y artes">
+</li><li class="web" data-search="pinacopedia pinacopedia.com pintores, cuadros y museos: la historia del arte, obra a obra. painters, paintings and museums: art history, one work at a time. música y artes music and arts">
   <a href="https://pinacopedia.com/" class="web-link">
     <span class="mono mono-musica" aria-hidden="true">P</span>
     <span class="web-body">
@@ -367,7 +373,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <span class="web-dom">pinacopedia.com <span aria-hidden="true">↗</span></span>
     </span>
   </a>
-</li><li class="web" data-search="cinematopedia cinematopedia.com películas, directores y géneros para entender y disfrutar el cine. música y artes">
+</li><li class="web" data-search="cinematopedia cinematopedia.com películas, directores y géneros para entender y disfrutar el cine. films, directors and genres to understand and enjoy cinema. música y artes music and arts">
   <a href="https://cinematopedia.com/" class="web-link">
     <span class="mono mono-musica" aria-hidden="true">C</span>
     <span class="web-body">
@@ -383,7 +389,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <h3 id="amb-ciencia"><span class="dot dot-ciencia" aria-hidden="true"></span>Ciencia y salud</h3>
     <p>Del laboratorio a la consulta</p>
   </header>
-  <ul class="webs"><li class="web" data-search="newtonpedia newtonpedia.com física, química y matemáticas contadas con claridad, de las leyes a sus descubridores. ciencia y salud">
+  <ul class="webs"><li class="web" data-search="newtonpedia newtonpedia.com física, química y matemáticas contadas con claridad, de las leyes a sus descubridores. physics, chemistry and maths told clearly, from the laws to the people who found them. ciencia y salud science and health">
   <a href="https://newtonpedia.com/" class="web-link">
     <span class="mono mono-ciencia" aria-hidden="true">N</span>
     <span class="web-body">
@@ -392,7 +398,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <span class="web-dom">newtonpedia.com <span aria-hidden="true">↗</span></span>
     </span>
   </a>
-</li><li class="web" data-search="medicapedia medicapedia.org enfermedades, síntomas y tratamientos explicados en lenguaje claro. ciencia y salud">
+</li><li class="web" data-search="medicapedia medicapedia.org enfermedades, síntomas y tratamientos explicados en lenguaje claro. diseases, symptoms and treatments explained in plain language. ciencia y salud science and health">
   <a href="https://medicapedia.org/" class="web-link">
     <span class="mono mono-ciencia" aria-hidden="true">M</span>
     <span class="web-body">
@@ -401,7 +407,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <span class="web-dom">medicapedia.org <span aria-hidden="true">↗</span></span>
     </span>
   </a>
-</li><li class="web" data-search="farmacos.ai farmacos.ai medicamentos: para qué sirven, cómo se toman y qué precauciones tienen. ciencia y salud">
+</li><li class="web" data-search="farmacos.ai farmacos.ai medicamentos: para qué sirven, cómo se toman y qué precauciones tienen. medicines: what they are for, how to take them and what to watch out for. ciencia y salud science and health">
   <a href="https://farmacos.ai/" class="web-link">
     <span class="mono mono-ciencia" aria-hidden="true">F</span>
     <span class="web-body">
@@ -410,7 +416,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <span class="web-dom">farmacos.ai <span aria-hidden="true">↗</span></span>
     </span>
   </a>
-</li><li class="web" data-search="enfermería sí enfermeria.si recursos, técnicas y oposiciones para profesionales y estudiantes de enfermería. ciencia y salud">
+</li><li class="web" data-search="enfermería sí enfermeria.si recursos, técnicas y oposiciones para profesionales y estudiantes de enfermería. resources, techniques and exam preparation for nurses and nursing students. ciencia y salud science and health">
   <a href="https://enfermeria.si/" class="web-link">
     <span class="mono mono-ciencia" aria-hidden="true">E</span>
     <span class="web-body">
@@ -426,7 +432,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <h3 id="amb-humanidades"><span class="dot dot-humanidades" aria-hidden="true"></span>Humanidades</h3>
     <p>Ideas, mitos y símbolos</p>
   </header>
-  <ul class="webs"><li class="web" data-search="filopedia filopedia.com filósofos, corrientes y grandes preguntas, de la antigüedad a hoy. humanidades">
+  <ul class="webs"><li class="web" data-search="filopedia filopedia.com filósofos, corrientes y grandes preguntas, de la antigüedad a hoy. philosophers, schools of thought and big questions, from antiquity to today. humanidades humanities">
   <a href="https://filopedia.com/" class="web-link">
     <span class="mono mono-humanidades" aria-hidden="true">F</span>
     <span class="web-body">
@@ -435,7 +441,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <span class="web-dom">filopedia.com <span aria-hidden="true">↗</span></span>
     </span>
   </a>
-</li><li class="web" data-search="mythicapedia mythicapedia.com dioses, héroes y leyendas de las mitologías del mundo. humanidades">
+</li><li class="web" data-search="mythicapedia mythicapedia.com dioses, héroes y leyendas de las mitologías del mundo. gods, heroes and legends from the world&#x27;s mythologies. humanidades humanities">
   <a href="https://mythicapedia.com/" class="web-link">
     <span class="mono mono-humanidades" aria-hidden="true">M</span>
     <span class="web-body">
@@ -444,7 +450,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <span class="web-dom">mythicapedia.com <span aria-hidden="true">↗</span></span>
     </span>
   </a>
-</li><li class="web" data-search="zodiacopedia zodiacopedia.com signos, planetas y cartas astrales: la astrología como cultura. humanidades">
+</li><li class="web" data-search="zodiacopedia zodiacopedia.com signos, planetas y cartas astrales: la astrología como cultura. signs, planets and birth charts: astrology as culture. humanidades humanities">
   <a href="https://zodiacopedia.com/" class="web-link">
     <span class="mono mono-humanidades" aria-hidden="true">Z</span>
     <span class="web-body">
@@ -460,7 +466,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <h3 id="amb-educacion"><span class="dot dot-educacion" aria-hidden="true"></span>Educación y sociedad</h3>
     <p>Aprender, entender y decidir</p>
   </header>
-  <ul class="webs"><li class="web" data-search="escolapedia escolapedia.com apuntes y guías de estudio para primaria, eso y bachillerato. educación y sociedad">
+  <ul class="webs"><li class="web" data-search="escolapedia escolapedia.com apuntes y guías de estudio para primaria, eso y bachillerato. notes and study guides for primary and secondary school. educación y sociedad education and society">
   <a href="https://escolapedia.com/" class="web-link">
     <span class="mono mono-educacion" aria-hidden="true">E</span>
     <span class="web-body">
@@ -469,7 +475,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <span class="web-dom">escolapedia.com <span aria-hidden="true">↗</span></span>
     </span>
   </a>
-</li><li class="web" data-search="leypedia leypedia.com leyes, derechos y trámites explicados para cualquier persona. educación y sociedad">
+</li><li class="web" data-search="leypedia leypedia.com leyes, derechos y trámites explicados para cualquier persona. laws, rights and paperwork explained for everyone. educación y sociedad education and society">
   <a href="https://leypedia.com/" class="web-link">
     <span class="mono mono-educacion" aria-hidden="true">L</span>
     <span class="web-body">
@@ -478,7 +484,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <span class="web-dom">leypedia.com <span aria-hidden="true">↗</span></span>
     </span>
   </a>
-</li><li class="web" data-search="saber para invertir saberparainvertir.com finanzas personales e inversión, desde lo básico y sin promesas fáciles. educación y sociedad">
+</li><li class="web" data-search="saber para invertir saberparainvertir.com finanzas personales e inversión, desde lo básico y sin promesas fáciles. personal finance and investing, from the basics and without easy promises. educación y sociedad education and society">
   <a href="https://saberparainvertir.com/" class="web-link">
     <span class="mono mono-educacion" aria-hidden="true">S</span>
     <span class="web-body">
@@ -487,7 +493,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <span class="web-dom">saberparainvertir.com <span aria-hidden="true">↗</span></span>
     </span>
   </a>
-</li><li class="web" data-search="celebraciones celebraciones.org fiestas, tradiciones y fechas señaladas, con su origen y cómo celebrarlas. educación y sociedad">
+</li><li class="web" data-search="celebraciones celebraciones.org fiestas, tradiciones y fechas señaladas, con su origen y cómo celebrarlas. festivals, traditions and special dates, with their origins and how to celebrate them. educación y sociedad education and society">
   <a href="https://celebraciones.org/" class="web-link">
     <span class="mono mono-educacion" aria-hidden="true">C</span>
     <span class="web-body">
@@ -503,7 +509,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <h3 id="amb-gastronomia"><span class="dot dot-gastronomia" aria-hidden="true"></span>Gastronomía y vino</h3>
     <p>Cocinas y bodegas</p>
   </header>
-  <ul class="webs"><li class="web" data-search="culinapedia culinapedia.com recetas, ingredientes y técnicas de las cocinas del mundo. gastronomía y vino">
+  <ul class="webs"><li class="web" data-search="culinapedia culinapedia.com recetas, ingredientes y técnicas de las cocinas del mundo. recipes, ingredients and techniques from the world&#x27;s cuisines. gastronomía y vino food and wine">
   <a href="https://culinapedia.com/" class="web-link">
     <span class="mono mono-gastronomia" aria-hidden="true">C</span>
     <span class="web-body">
@@ -512,7 +518,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <span class="web-dom">culinapedia.com <span aria-hidden="true">↗</span></span>
     </span>
   </a>
-</li><li class="web" data-search="worldwinepedia worldwinepedia.com uvas, regiones y bodegas para conocer el vino de todo el mundo. gastronomía y vino">
+</li><li class="web" data-search="worldwinepedia worldwinepedia.com uvas, regiones y bodegas para conocer el vino de todo el mundo. grapes, regions and wineries to get to know wine from around the world. gastronomía y vino food and wine">
   <a href="https://worldwinepedia.com/" class="web-link">
     <span class="mono mono-gastronomia" aria-hidden="true">W</span>
     <span class="web-body">
@@ -528,7 +534,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <h3 id="amb-aficiones"><span class="dot dot-aficiones" aria-hidden="true"></span>Aficiones y vida cotidiana</h3>
     <p>Deporte, juego y compañía</p>
   </header>
-  <ul class="webs"><li class="web" data-search="tenispedia tenispedia.com jugadores, torneos y técnica: el tenis en vivo y en su historia. aficiones y vida cotidiana">
+  <ul class="webs"><li class="web" data-search="tenispedia tenispedia.com jugadores, torneos y técnica: el tenis en vivo y en su historia. players, tournaments and technique: tennis live and through its history. aficiones y vida cotidiana hobbies and everyday life">
   <a href="https://tenispedia.com/" class="web-link">
     <span class="mono mono-aficiones" aria-hidden="true">T</span>
     <span class="web-body">
@@ -537,7 +543,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <span class="web-dom">tenispedia.com <span aria-hidden="true">↗</span></span>
     </span>
   </a>
-</li><li class="web" data-search="catdogpedia catdogpedia.com razas, salud y cuidados de perros y gatos. aficiones y vida cotidiana">
+</li><li class="web" data-search="catdogpedia catdogpedia.com razas, salud y cuidados de perros y gatos. breeds, health and care for dogs and cats. aficiones y vida cotidiana hobbies and everyday life">
   <a href="https://catdogpedia.com/" class="web-link">
     <span class="mono mono-aficiones" aria-hidden="true">C</span>
     <span class="web-body">
@@ -546,7 +552,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       <span class="web-dom">catdogpedia.com <span aria-hidden="true">↗</span></span>
     </span>
   </a>
-</li><li class="web" data-search="ludicopedia ludicopedia.com juegos de mesa, de cartas y de ingenio: reglas, historia y estrategia. aficiones y vida cotidiana">
+</li><li class="web" data-search="ludicopedia ludicopedia.com juegos de mesa, de cartas y de ingenio: reglas, historia y estrategia. board, card and puzzle games: rules, history and strategy. aficiones y vida cotidiana hobbies and everyday life">
   <a href="https://ludicopedia.com/" class="web-link">
     <span class="mono mono-aficiones" aria-hidden="true">L</span>
     <span class="web-body">
@@ -569,7 +575,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
         <p>Guías ciudadanas hechas para quien vive allí y para quien llega: qué ver, dónde comer, agenda y servicios, con información comprobada.</p>
       </div>
       <ul class="guias">
-<li class="guia" data-search="sitges sitges.si playas, la iglesia de la punta, el carnaval y la vida del pueblo todo el año. municipio guía local destino">
+<li class="guia" data-search="sitges sitges sitges.si playas, la iglesia de la punta, el carnaval y la vida del pueblo todo el año. beaches, the church on the punta, carnival and town life all year round. municipio town guía local destino local guide destination">
   <a href="https://sitges.si/">
     <span class="guia-media"><img src="img/sitges.jpg" alt="Sitges" loading="lazy" width="400" height="260"><span class="tag tag-municipio">Municipio</span><span class="cred">Foto: Howard Walsh / Unsplash</span></span>
     <span class="guia-body">
@@ -580,7 +586,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     </span>
   </a>
 </li>
-<li class="guia" data-search="sant pere de ribes santperederibes.si viñas, masías y fiestas mayores entre el garraf y el penedès. municipio guía local destino">
+<li class="guia" data-search="sant pere de ribes sant pere de ribes santperederibes.si viñas, masías y fiestas mayores entre el garraf y el penedès. vineyards, farmhouses and town festivals between the garraf and the penedès. municipio town guía local destino local guide destination">
   <a href="https://santperederibes.si/">
     <span class="guia-media"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Colinas y viñas">
   <rect width="400" height="260" fill="#cfe3ea"/>
@@ -600,7 +606,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     </span>
   </a>
 </li>
-<li class="guia" data-search="castelldefels castelldefels.si del castillo a la playa: qué ver, dónde comer y la agenda local. municipio guía local destino">
+<li class="guia" data-search="castelldefels castelldefels castelldefels.si del castillo a la playa: qué ver, dónde comer y la agenda local. from the castle to the beach: what to see, where to eat and what&#x27;s on. municipio town guía local destino local guide destination">
   <a href="https://castelldefels.si/">
     <span class="guia-media"><img src="img/castelldefels.jpg" alt="Castelldefels" loading="lazy" width="400" height="260"><span class="tag tag-municipio">Municipio</span><span class="cred">Foto: Manuel Torres Garcia / Unsplash</span></span>
     <span class="guia-body">
@@ -611,7 +617,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     </span>
   </a>
 </li>
-<li class="guia" data-search="vilanova i la geltrú vilanova.si puerto, rambla y museos, con los servicios y la agenda ciudadana. municipio guía local destino">
+<li class="guia" data-search="vilanova i la geltrú vilanova i la geltrú vilanova.si puerto, rambla y museos, con los servicios y la agenda ciudadana. harbour, promenade and museums, plus local services and events. municipio town guía local destino local guide destination">
   <a href="https://vilanova.si/">
     <span class="guia-media"><img src="img/vilanova.jpg" alt="Vilanova i la Geltrú" loading="lazy" width="400" height="260"><span class="tag tag-municipio">Municipio</span><span class="cred">Foto: Chema Photo / Unsplash</span></span>
     <span class="guia-body">
@@ -622,7 +628,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     </span>
   </a>
 </li>
-<li class="guia" data-search="sant cugat santcugat.si el monasterio, collserola y una ciudad para vivir y pasear. municipio guía local destino">
+<li class="guia" data-search="sant cugat sant cugat santcugat.si el monasterio, collserola y una ciudad para vivir y pasear. the monastery, collserola park and a town made for living and walking. municipio town guía local destino local guide destination">
   <a href="https://santcugat.si/">
     <span class="guia-media"><img src="img/santcugat.jpg" alt="Sant Cugat" loading="lazy" width="400" height="260"><span class="tag tag-municipio">Municipio</span><span class="cred">Foto: Manuel Torres Garcia / Unsplash</span></span>
     <span class="guia-body">
@@ -633,7 +639,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     </span>
   </a>
 </li>
-<li class="guia" data-search="garraf garraf.si playas, pueblos y viñas de la comarca, con la guía de cada municipio. comarca guía local destino">
+<li class="guia" data-search="garraf garraf garraf.si playas, pueblos y viñas de la comarca, con la guía de cada municipio. beaches, villages and vineyards of the district, with a guide to each town. comarca district guía local destino local guide destination">
   <a href="https://garraf.si/">
     <span class="guia-media"><img src="img/garraf.jpg" alt="Garraf" loading="lazy" width="400" height="260"><span class="tag tag-comarca">Comarca</span><span class="cred">Foto: Max / Unsplash</span></span>
     <span class="guia-body">
@@ -644,7 +650,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     </span>
   </a>
 </li>
-<li class="guia" data-search="eivissa eivissa.si dalt vila, calas, ferris y vida local de eivissa y formentera. isla guía local destino">
+<li class="guia" data-search="eivissa ibiza (eivissa) eivissa.si dalt vila, calas, ferris y vida local de eivissa y formentera. dalt vila, coves, ferries and local life on ibiza and formentera. isla island guía local destino local guide destination">
   <a href="https://eivissa.si/">
     <span class="guia-media"><img src="img/eivissa.jpg" alt="Eivissa" loading="lazy" width="400" height="260"><span class="tag tag-isla">Isla</span><span class="cred">Foto: Alejandra Camacho Álvarez / Unsplash</span></span>
     <span class="guia-body">
