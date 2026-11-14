@@ -204,12 +204,23 @@ def pagina(lang, aqui, otra, titulo, desc, claves, contenido, migas, og_img=None
 '''
 
 
+def vistas(v, t):
+    n = v.get("n") or 0
+    if not n: return ""
+    es = t["videos"] == "Vídeos"
+    if n >= 1e6: x = f"{n/1e6:.1f}".rstrip("0").rstrip(".") + (" M" if es else "M")
+    elif n >= 1e3: x = f"{n/1e3:.0f}" + (" mil" if es else "K")
+    else: x = str(n)
+    if es: x = x.replace(".", ",")
+    return " · " + x + (" visualizaciones" if es else " views")
+
+
 def video_html(v, t):
     dur = f'<span class="vid-dur">{e(v["dur"])}</span>' if v.get("dur") else ""
     return (f'<li class="vid"><button type="button" data-yt="{e(v["id"])}" aria-label="{e(t["ver"])}: {e(v["t"])}">'
             f'<img src="https://i.ytimg.com/vi/{e(v["id"])}/hqdefault.jpg" alt="" loading="lazy" decoding="async" width="480" height="360">'
             f'<span class="vid-play" aria-hidden="true"></span>{dur}</button>'
-            f'<span class="vid-t">{e(v["t"])}</span><span class="vid-c">{e(v["c"])}{" · en inglés" if v.get("otro") else ""}</span></li>')
+            f'<span class="vid-t">{e(v["t"])}</span><span class="vid-c">{e(v["c"])}{vistas(v, t)}{" · en inglés" if v.get("otro") else ""}</span></li>')
 
 
 def videos_de(f, lang):
