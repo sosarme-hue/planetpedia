@@ -279,3 +279,19 @@
   document.addEventListener("click", function (e) { if (top.classList.contains("abierto") && !top.contains(e.target)) poner(false); });
   top.querySelectorAll(".nav a").forEach(function (a) { a.addEventListener("click", function () { poner(false); }); });
 })();
+
+// Buscador de fichas de Quién es quién
+(function () {
+  var input = document.querySelector("[data-buscar-fichas]");
+  if (!input) return;
+  var quitar = function (t) { return t.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); };
+  var fichas = [].slice.call(document.querySelectorAll(".ficha-enlace"));
+  var grupos = [].slice.call(document.querySelectorAll(".persona-grupo"));
+  var vacio = document.querySelector("[data-sin-resultados]");
+  input.addEventListener("input", function () {
+    var q = quitar(input.value.trim()), hay = 0;
+    fichas.forEach(function (f) { var ok = !q || quitar(f.textContent).indexOf(q) !== -1; f.hidden = !ok; if (ok) hay++; });
+    grupos.forEach(function (g) { g.hidden = !g.querySelector(".ficha-enlace:not([hidden])"); });
+    vacio.hidden = hay > 0;
+  });
+})();

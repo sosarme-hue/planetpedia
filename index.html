@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/estilo.css?v=9">
+<link rel="stylesheet" href="assets/estilo.css?v=10">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "IApedia", "inLanguage": "es", "url": "https://iapedia.si/", "description": "IApedia explica la inteligencia artificial desde cero y en español: qué es, su historia, quién es quién, cómo usar ChatGPT, Claude, Gemini y Copilot, cursos gratis, vídeos y exámenes.", "isPartOf": {"@type": "WebSite", "name": "IApedia", "url": "https://iapedia.si/"}}</script>
 </head>
 <body>
@@ -70,24 +70,46 @@
 
 <section class="seccion" id="empieza">
   <div class="wrap">
-    <div class="seccion-head">
-      <span class="mini">Empieza aquí</span>
-      <h2>¿Qué es la inteligencia artificial?</h2>
+    <div class="que-es">
+      <div class="que-es-texto">
+        <span class="mini">Empieza aquí</span>
+        <h2>¿Qué es la inteligencia artificial?</h2>
+        <p class="definicion">Es la tecnología que permite a una máquina hacer tareas que hasta hace poco solo podía hacer una persona: <mark>entender lo que le dices, escribir, traducir, reconocer una cara o recomendarte una película</mark>.</p>
+        <p class="definicion-2">No sigue una lista de órdenes escrita a mano: <strong>aprende buscando patrones en millones de ejemplos</strong>, igual que un niño aprende qué es un perro después de ver muchos. Es muy útil, pero <strong>no piensa ni siente</strong> y puede equivocarse, así que conviene comprobar lo importante.</p>
+      </div>
+      <figure class="que-es-foto">
+        <img src="https://images.unsplash.com/photo-1682159672286-40790338349b?w=900&q=75&fm=jpg&auto=format" alt="Una mano robótica y la mano de un niño a punto de tocarse" width="900" height="600" loading="lazy">
+        <figcaption>Foto: <a href="https://unsplash.com/photos/_7ceGXTAtyQ" rel="noopener">Katja Ano / Unsplash</a></figcaption>
+      </figure>
     </div>
-    <p class="definicion">Es un programa de ordenador que <mark>aprende de millones de ejemplos</mark> en lugar de seguir solo instrucciones fijas. Por eso puede conversar, escribir, traducir o reconocer una foto, aunque <mark>no piensa ni siente</mark> como una persona.</p>
-    <div class="pasos">
-      <div class="paso">
+
+    <h3 class="ya-la-usas-titulo">Ya la usas cada día, aunque no lo sepas</h3>
+    <ul class="ya-la-usas">
+      <li><span aria-hidden="true">📱</span><b>Desbloquear el móvil con la cara</b><small>reconoce tus rasgos</small></li>
+      <li><span aria-hidden="true">🗺️</span><b>El GPS que esquiva atascos</b><small>predice el tráfico</small></li>
+      <li><span aria-hidden="true">🎬</span><b>Lo que te recomiendan Netflix o Spotify</b><small>aprende tus gustos</small></li>
+      <li><span aria-hidden="true">📧</span><b>El filtro de correo basura</b><small>detecta el spam</small></li>
+      <li><span aria-hidden="true">🌐</span><b>El traductor del móvil</b><small>traduce al instante</small></li>
+      <li><span aria-hidden="true">🏦</span><b>El aviso de tu banco ante un pago raro</b><small>detecta fraudes</small></li>
+    </ul>
+
+    <h3 class="ya-la-usas-titulo">Tu camino en tres pasos</h3>
+    <div class="pasos pasos-enlace">
+      <a class="paso" href="empieza-aqui/">
         <h3>Entiende lo básico</h3>
-        <p>Lee la guía «La IA en 10 minutos» y el diccionario: las palabras que oyes en las noticias, explicadas con ejemplos de cada día.</p>
-      </div>
-      <div class="paso">
+        <p>La guía «La IA en 10 minutos» y el diccionario: las palabras que oyes en las noticias, con ejemplos de cada día.</p>
+        <span class="paso-ir">Empezar →</span>
+      </a>
+      <a class="paso" href="test-asistente/">
         <h3>Pruébala sin miedo</h3>
-        <p>Elige un asistente (ChatGPT, Claude, Gemini o Copilot) y sigue su guía paso a paso: cómo entrar, cómo preguntar y qué evitar.</p>
-      </div>
-      <div class="paso">
+        <p>Descubre qué asistente te conviene (ChatGPT, Claude, Gemini, Copilot…) y sigue su guía paso a paso.</p>
+        <span class="paso-ir">Hacer el test →</span>
+      </a>
+      <a class="paso" href="cursos/">
         <h3>Úsala en tu día a día</h3>
-        <p>Haz los cursos cortos y aprueba los exámenes para obtener tu certificado de IApedia.</p>
-      </div>
+        <p>Cursos cortos y gratuitos y exámenes para conseguir tu certificado de IApedia.</p>
+        <span class="paso-ir">Ver los cursos →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -307,14 +329,14 @@
         <h2>Las personas y empresas detrás de la IA</h2>
       </div>
       <ul class="chips">
-        <li><b>Alan Turing</b> <span>pionero</span></li>
-        <li><b>John McCarthy</b> <span>bautizó la IA</span></li>
-        <li><b>Geoffrey Hinton</b> <span>redes neuronales</span></li>
-        <li><b>Fei-Fei Li</b> <span>visión artificial</span></li>
-        <li><b>Demis Hassabis</b> <span>Google DeepMind</span></li>
-        <li><b>OpenAI</b></li><li><b>Anthropic</b></li><li><b>Google</b></li><li><b>Microsoft</b></li><li><b>Meta</b></li><li><b>Nvidia</b></li><li><b>Mistral AI</b></li>
+        <li><a href="quien-es-quien/alan-turing/"><b>Alan Turing</b> <span>pionero</span></a></li>
+        <li><a href="quien-es-quien/john-mccarthy/"><b>John McCarthy</b> <span>bautizó la IA</span></a></li>
+        <li><a href="quien-es-quien/geoffrey-hinton/"><b>Geoffrey Hinton</b> <span>redes neuronales</span></a></li>
+        <li><a href="quien-es-quien/fei-fei-li/"><b>Fei-Fei Li</b> <span>visión artificial</span></a></li>
+        <li><a href="quien-es-quien/demis-hassabis/"><b>Demis Hassabis</b> <span>Google DeepMind</span></a></li>
+        <li><a href="quien-es-quien/openai/"><b>OpenAI</b></a></li><li><a href="quien-es-quien/anthropic/"><b>Anthropic</b></a></li><li><a href="quien-es-quien/google-deepmind/"><b>Google</b></a></li><li><a href="quien-es-quien/microsoft/"><b>Microsoft</b></a></li><li><a href="quien-es-quien/meta/"><b>Meta</b></a></li><li><a href="quien-es-quien/nvidia/"><b>Nvidia</b></a></li><li><a href="quien-es-quien/mistral-ai/"><b>Mistral AI</b></a></li>
       </ul>
-      <a class="enlace-mas" href="quien-es-quien/">Ver todas las fichas →</a>
+      <a class="enlace-mas" href="quien-es-quien/">Ver las más de 120 fichas →</a>
     </div>
     <div id="diccionario">
       <div class="seccion-head">
@@ -348,6 +370,6 @@
     </div>
   </div>
 </footer>
-<script src="assets/app.js?v=9"></script>
+<script src="assets/app.js?v=10"></script>
 </body>
 </html>
