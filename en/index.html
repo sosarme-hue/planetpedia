@@ -78,11 +78,13 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 /* Portada */
 .hero { background: var(--navy); color: var(--on-navy); position: relative; overflow: visible; overflow-x: clip; z-index: 2; }
 .hero .wrap { padding-block: 56px 64px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; position: relative; z-index: 1; }
-.hero-orbit { position: absolute; right: -160px; top: -120px; width: 620px; height: 620px; opacity: .55; pointer-events: none; }
+.sistema { position: absolute; z-index: 0; top: 50%; right: max(-40px, calc((100vw - var(--maxw)) / 2 - 60px)); width: min(560px, 44vw); aspect-ratio: 1; transform: translateY(-50%); }
+@media (max-width: 900px) { .sistema { right: -30%; width: 110vw; max-width: 720px; opacity: .38; pointer-events: none; } }
+@media (max-width: 560px) { .sistema { top: 6%; right: -45%; width: 130vw; transform: none; opacity: .3; } }
 .eyebrow { font: 600 .78rem/1 var(--font-body); letter-spacing: .14em; text-transform: uppercase; color: var(--teal); }
 .hero h1 { font-size: clamp(2.1rem, 5.4vw, 3.9rem); line-height: 1.05; letter-spacing: -0.025em; max-width: 15ch; font-weight: 800; }
 .hero h1 span { color: var(--teal); }
-.hero .lede { max-width: 58ch; color: var(--on-navy-soft); font-size: 1.08rem; }
+.hero .lede { max-width: 50ch; color: var(--on-navy-soft); font-size: 1.08rem; }
 .caminos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 12px; max-width: 760px; }
 .camino { display: flex; align-items: center; justify-content: space-between; gap: 12px; text-decoration: none; padding: 18px 20px; border-radius: var(--radius); border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.06); transition: background .15s, border-color .15s; }
 .camino:hover { background: rgba(255,255,255,.12); border-color: var(--teal); }
@@ -245,14 +247,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 
 <main id="inicio">
   <section class="hero">
-    <svg class="hero-orbit" viewBox="0 0 600 600" aria-hidden="true">
-      <circle cx="300" cy="300" r="120" fill="none" stroke="#2ec4c4" stroke-opacity=".35"/>
-      <circle cx="300" cy="300" r="190" fill="none" stroke="#ffffff" stroke-opacity=".12"/>
-      <circle cx="300" cy="300" r="270" fill="none" stroke="#ffffff" stroke-opacity=".08"/>
-      <circle cx="420" cy="300" r="7" fill="#2ec4c4"/>
-      <circle cx="166" cy="166" r="5" fill="#ffffff" fill-opacity=".6"/>
-      <circle cx="300" cy="30" r="4" fill="#ffffff" fill-opacity=".45"/>
-    </svg>
+    <canvas class="sistema" id="sistema" role="img"></canvas>
     <div class="wrap">
       <span class="eyebrow">Knowledge and places to discover</span>
       <h1>Explore your interests. <span>Discover new places.</span></h1>
@@ -858,6 +853,84 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     function marcar() { btn.textContent = 'Address copied'; setTimeout(function () { btn.textContent = 'Copy address'; }, 2000); }
     function seleccionar() { var r = document.createRange(); r.selectNodeContents(document.getElementById('correo')); var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); }
     if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(txtc).then(marcar, seleccionar); } else { seleccionar(); }
+  });
+})();
+// Sistema solar animado de la portada
+(function () {
+  var cv = document.getElementById('sistema');
+  if (!cv || !cv.getContext) return;
+  var EN = document.documentElement.lang === 'en';
+  cv.setAttribute('aria-label', EN ? 'Animated solar system: the Sun and the eight planets in orbit' : 'Sistema solar animado: el Sol y los ocho planetas en órbita');
+  var ctx = cv.getContext('2d');
+  // nombre, periodo orbital (años), radio dibujo, color, anillo
+  var P = [
+    ['Mercurio', 0.241, 2.2, '#b9b2a8'], ['Venus', 0.615, 3.4, '#e8c98b'], ['Tierra', 1, 3.6, '#4fa3e0'],
+    ['Marte', 1.881, 2.8, '#d9663f'], ['Júpiter', 11.86, 8, '#d8b48a'], ['Saturno', 29.46, 6.8, '#e7d29c', true],
+    ['Urano', 84.01, 5, '#9fdfe6'], ['Neptuno', 164.8, 4.8, '#4f7ce8']
+  ];
+  var ang = [0.4, 2.1, 4.0, 5.3, 1.2, 3.4, 0.2, 4.6];
+  var estrellas = [];
+  for (var i = 0; i < 140; i++) estrellas.push([Math.random(), Math.random(), Math.random() * 1.1 + 0.2, Math.random() * 6.28]);
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W = 0, dpr = 1;
+  function medir() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = cv.clientWidth;
+    cv.width = Math.round(W * dpr); cv.height = Math.round(W * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function radio(i) { var c = W / 2; return c * (0.14 + 0.105 * i); }
+  function dibujar(t) {
+    var c = W / 2, k = W / 600;
+    ctx.clearRect(0, 0, W, W);
+    estrellas.forEach(function (s) {
+      ctx.globalAlpha = 0.35 + 0.35 * Math.sin(t / 1400 + s[3]);
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath(); ctx.arc(s[0] * W, s[1] * W, s[2] * k, 0, 6.283); ctx.fill();
+    });
+    ctx.globalAlpha = 1;
+    ctx.lineWidth = 1;
+    for (var i = 0; i < 8; i++) {
+      ctx.strokeStyle = i === 2 ? 'rgba(46,196,196,.45)' : 'rgba(255,255,255,.12)';
+      ctx.beginPath(); ctx.arc(c, c, radio(i), 0, 6.283); ctx.stroke();
+    }
+    var g = ctx.createRadialGradient(c, c, 0, c, c, 46 * k);
+    g.addColorStop(0, 'rgba(255,214,120,.95)'); g.addColorStop(.35, 'rgba(255,170,60,.55)'); g.addColorStop(1, 'rgba(255,140,40,0)');
+    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(c, c, 46 * k, 0, 6.283); ctx.fill();
+    ctx.fillStyle = '#ffd36b'; ctx.beginPath(); ctx.arc(c, c, 17 * k, 0, 6.283); ctx.fill();
+    for (var j = 0; j < 8; j++) {
+      var p = P[j], r = radio(j), a = ang[j] + (t / 1000) * (0.9 / Math.pow(p[1], 0.55));
+      var x = c + r * Math.cos(a), y = c + r * Math.sin(a), pr = p[2] * k * 1.25;
+      if (p[4]) {
+        ctx.strokeStyle = 'rgba(231,210,156,.8)'; ctx.lineWidth = 1.6 * k;
+        ctx.beginPath(); ctx.ellipse(x, y, pr * 2.1, pr * 0.75, -0.45, 0, 6.283); ctx.stroke();
+      }
+      var gp = ctx.createRadialGradient(x - pr * .4, y - pr * .4, pr * .2, x, y, pr);
+      gp.addColorStop(0, '#ffffff'); gp.addColorStop(.25, p[3]); gp.addColorStop(1, p[3]);
+      ctx.fillStyle = gp; ctx.beginPath(); ctx.arc(x, y, pr, 0, 6.283); ctx.fill();
+      // sombra del lado opuesto al Sol
+      ctx.fillStyle = 'rgba(5,15,34,.45)';
+      ctx.beginPath(); ctx.arc(x, y, pr, a - 1.57, a + 1.57); ctx.fill();
+    }
+  }
+  var visible = true, raf = 0, t0 = performance.now(), parado = 0;
+  function bucle(now) { dibujar(now - t0); raf = requestAnimationFrame(bucle); }
+  function arrancar() { if (!raf && !reduce && visible && !document.hidden) raf = requestAnimationFrame(bucle); }
+  function parar() { if (raf) { cancelAnimationFrame(raf); raf = 0; } }
+  medir(); dibujar(0);
+  window.addEventListener('resize', function () { medir(); dibujar(performance.now() - t0); });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) { visible = e[0].isIntersecting; visible ? arrancar() : parar(); }).observe(cv);
+  }
+  document.addEventListener('visibilitychange', function () { document.hidden ? parar() : arrancar(); });
+  arrancar();
+  cv.addEventListener('click', function (ev) {
+    var b = cv.getBoundingClientRect(), dx = ev.clientX - b.left - b.width / 2, dy = ev.clientY - b.top - b.height / 2;
+    if (Math.sqrt(dx * dx + dy * dy) < b.width * 0.09) { var u = document.getElementById('universo'); if (u) u.scrollIntoView(); }
+  });
+  cv.addEventListener('mousemove', function (ev) {
+    var b = cv.getBoundingClientRect(), dx = ev.clientX - b.left - b.width / 2, dy = ev.clientY - b.top - b.height / 2;
+    cv.style.cursor = Math.sqrt(dx * dx + dy * dy) < b.width * 0.09 ? 'pointer' : 'default';
   });
 })();
 </script>
