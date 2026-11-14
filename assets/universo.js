@@ -42,7 +42,7 @@
       act = -1;
       if (!res.length) { lista.innerHTML = '<li class="vacio">' + T.sin + ' «' + q.value.replace(/</g, '&lt;') + '»</li>'; }
       else lista.innerHTML = res.map(function (x, i) {
-        return '<li role="option" id="op' + i + '" data-i="' + i + '"><img src="' + RAIZ + 'img/universo/' + x.f + '.jpg" alt="" loading="lazy"><b>' + marca(x.t, t) + '</b><small>' + x.s + ' · ' + x.d.replace(/</g, '&lt;') + '</small></li>';
+        return '<li role="option" id="op' + i + '" data-i="' + i + '"><img src="' + RAIZ + 'img/' + x.f + '.jpg" alt="" loading="lazy"><b>' + marca(x.t, t) + '</b><small>' + x.s + ' · ' + x.d.replace(/</g, '&lt;') + '</small></li>';
       }).join('');
       lista.hidden = false; q.setAttribute('aria-expanded', 'true');
     });
@@ -194,5 +194,79 @@
       new IntersectionObserver(function (e) { vis = e[0].isIntersecting; if (vis) { prev = performance.now(); requestAnimationFrame(dib); } }).observe(cv);
     }
   };
+  SIMS.magnitud = function (box) {
+    var EJ = [[5.1, 'Lorca (2011)', 'Lorca, Spain (2011)'], [6.9, 'Loma Prieta (1989)', 'Loma Prieta (1989)'], [7.8, 'Turquía y Siria (2023)', 'Turkey and Syria (2023)'],
+              [8.5, 'Lisboa (1755)', 'Lisbon (1755)'], [9.0, 'Japón (2011)', 'Japan (2011)'], [9.5, 'Chile (1960)', 'Chile (1960)']];
+    box.appendChild(el('<label>' + (EN ? 'Magnitude: ' : 'Magnitud: ') + '<b class="mv"></b><input type="range" min="2" max="9.5" step="0.1" value="6"></label><div class="res"></div><div class="barras"></div>'));
+    var r = box.querySelector('input'), mv = box.querySelector('.mv'), out = box.querySelector('.res'), bars = box.querySelector('.barras');
+    function E(m) { return Math.pow(10, 1.5 * m + 4.8); }
+    function pinta() {
+      var m = +r.value, j = E(m), tnt = j / 4.184e9, hir = tnt / 15000;
+      mv.textContent = fmt(m, 1);
+      var tx = tnt >= 1e6 ? fmt(tnt / 1e6, 1) + (EN ? ' million tonnes of TNT' : ' millones de toneladas de TNT') : fmt(tnt, tnt < 10 ? 2 : 0) + (EN ? ' tonnes of TNT' : ' toneladas de TNT');
+      out.innerHTML = '<p>' + (EN ? 'Energy released: ' : 'Energía liberada: ') + '<b>' + tx + '</b>' + (hir >= 0.01 ? ' · ' + (EN ? 'about ' : 'unas ') + '<b>' + fmt(hir, hir < 10 ? 1 : 0) + '</b> ' + (fmt(hir, hir < 10 ? 1 : 0) === '1' ? (EN ? 'Hiroshima bomb' : 'bomba de Hiroshima') : (EN ? 'Hiroshima bombs' : 'bombas de Hiroshima')) : '') + '</p><p>' +
+        (EN ? 'One point more (' : 'Un punto más (') + fmt(m + 1, 1) + ') = ' + (EN ? '≈ 32 times more energy; two points more = ≈ 1,000 times.' : '≈ 32 veces más energía; dos puntos más = ≈ 1.000 veces.') + '</p>';
+      var max = Math.log10(E(9.5));
+      bars.innerHTML = EJ.concat([[m, EN ? 'Your choice' : 'Tu elección', EN ? 'Your choice' : 'Tu elección']]).sort(function (a, b) { return a[0] - b[0]; }).map(function (x) {
+        var w = Math.max(2, (Math.log10(E(x[0])) - 10) / (max - 10) * 100);
+        return '<div class="barra' + (x[1] === (EN ? 'Your choice' : 'Tu elección') ? ' tuya' : '') + '"><span>' + (EN ? x[2] : x[1]) + ' · ' + fmt(x[0], 1) + '</span><i style="width:' + w + '%"></i></div>';
+      }).join('') + '<small>' + (EN ? 'Bars on a logarithmic scale.' : 'Barras en escala logarítmica.') + '</small>';
+    }
+    r.addEventListener('input', pinta); pinta();
+  };
+  SIMS.reloj = function (box) {
+    var EV = [[4540, 'Se forma la Tierra', 'The Earth forms'], [4500, 'Un choque gigante forma la Luna', 'A giant impact forms the Moon'], [4400, 'Primeros océanos', 'First oceans'],
+      [3700, 'Primeras señales de vida', 'First signs of life'], [3500, 'Estromatolitos', 'Stromatolites'], [2400, 'Gran Oxidación: llega el oxígeno', 'Great Oxidation: oxygen arrives'],
+      [1800, 'Células complejas (eucariotas)', 'Complex cells (eukaryotes)'], [700, 'Tierra bola de nieve', 'Snowball Earth'], [539, 'Explosión cámbrica', 'Cambrian explosion'],
+      [470, 'Las plantas colonizan la tierra', 'Plants colonise the land'], [375, 'Los primeros animales salen del agua', 'The first animals leave the water'],
+      [252, 'La Gran Mortandad', 'The Great Dying'], [230, 'Primeros dinosaurios', 'First dinosaurs'], [130, 'Primeras flores', 'First flowers'],
+      [66, 'Un asteroide extingue a los dinosaurios', 'An asteroid wipes out the dinosaurs'], [7, 'Primeros homininos', 'First hominins'],
+      [0.3, 'Aparece Homo sapiens', 'Homo sapiens appears'], [0.012, 'Nace la agricultura', 'Farming begins'], [0.0045, 'Pirámides de Guiza', 'Pyramids of Giza'],
+      [0.000534, 'Colón llega a América', 'Columbus reaches America'], [0, 'Hoy', 'Today']];
+    var MES = EN ? ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'] : ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'];
+    var T0 = Date.UTC(2001, 0, 1), ANIO = 365 * 864e5;
+    function fecha(ma) {
+      var ms = (4540 - ma) / 4540 * ANIO, d = new Date(T0 + Math.min(ms, ANIO - 1));
+      var dia = d.getUTCDate() + ' ' + MES[d.getUTCMonth()];
+      if (ma < 30) { var h = d.getUTCHours(), mi = d.getUTCMinutes(), se = d.getUTCSeconds(); dia += ', ' + (h < 10 ? '0' : '') + h + ':' + (mi < 10 ? '0' : '') + mi + ':' + (se < 10 ? '0' : '') + se; }
+      return ma === 0 ? (EN ? '31 Dec, midnight' : '31 dic, medianoche') : dia;
+    }
+    function hace(ma) { return ma === 0 ? '' : ma >= 1 ? fmt(ma, 0) + (EN ? ' million years ago' : ' millones de años') : fmt(ma * 1e6, 0) + (EN ? ' years ago' : ' años'); }
+    box.appendChild(el('<p>' + (EN ? 'If the Earth\'s 4.54 billion years were one calendar year, starting on 1 January:' : 'Si los 4.540 millones de años de la Tierra fueran un año del calendario, empezando el 1 de enero:') + '</p><ol class="reloj">' +
+      EV.map(function (x) { return '<li><b>' + fecha(x[0]) + '</b><span>' + (EN ? x[2] : x[1]) + '</span><small>' + (x[0] ? (EN ? '' : 'hace ') + hace(x[0]) : '') + '</small></li>'; }).join('') + '</ol>'));
+  };
+  SIMS.centro = function (box) {
+    // [km desde, km hasta, capa es, capa en, T min, T max (°C), descripción es, descripción en]
+    var C = [[0, 35, 'Corteza', 'Crust', 15, 500, 'Roca sólida: granito en los continentes, basalto bajo los océanos.', 'Solid rock: granite under continents, basalt under oceans.'],
+      [35, 660, 'Manto superior', 'Upper mantle', 500, 1900, 'Roca caliente que fluye muy despacio, como plastilina, y mueve las placas.', 'Hot rock that flows very slowly, like putty, and moves the plates.'],
+      [660, 2900, 'Manto inferior', 'Lower mantle', 1900, 3700, 'Roca sólida sometida a presiones enormes.', 'Solid rock under enormous pressure.'],
+      [2900, 5150, 'Núcleo externo', 'Outer core', 3700, 5200, 'Hierro y níquel líquidos: sus corrientes crean el campo magnético.', 'Liquid iron and nickel: its currents create the magnetic field.'],
+      [5150, 6371, 'Núcleo interno', 'Inner core', 5200, 5400, 'Una bola de hierro sólido tan caliente como la superficie del Sol.', 'A ball of solid iron as hot as the surface of the Sun.']];
+    var HITOS = [[3.9, 'Mina más profunda del mundo (Mponeng, Sudáfrica)', 'Deepest mine in the world (Mponeng, South Africa)'],
+      [11, 'Profundidad de la fosa de las Marianas', 'Depth of the Mariana Trench'], [12.3, 'Pozo de Kola, el agujero más profundo jamás perforado', 'Kola borehole, the deepest hole ever drilled']];
+    box.appendChild(el('<label>' + (EN ? 'Depth: ' : 'Profundidad: ') + '<b class="mv"></b><input type="range" min="0" max="6371" step="1" value="0"></label><div class="corte"><i></i></div><div class="res"></div>'));
+    var r = box.querySelector('input'), mv = box.querySelector('.mv'), out = box.querySelector('.res'), mk = box.querySelector('.corte i');
+    function pinta() {
+      var km = +r.value, c = C.filter(function (x) { return km >= x[0] && km <= x[1]; })[0] || C[4];
+      var t = c[4] + (c[5] - c[4]) * (km - c[0]) / (c[1] - c[0]);
+      var gpa = km < 35 ? km * 0.03 : km < 2900 ? 1 + (km - 35) / 2865 * 135 : 136 + (km - 2900) / 3471 * 224;
+      mv.textContent = fmt(km, 0) + ' km';
+      mk.style.left = (km / 6371 * 100) + '%';
+      var h = km >= 2 && km <= 20 ? HITOS.reduce(function (a, x) { return Math.abs(x[0] - km) < Math.abs(a[0] - km) ? x : a; }) : null;
+      out.innerHTML = '<p><b>' + (EN ? c[3] : c[2]) + '</b> · ' + (EN ? c[7] : c[6]) + '</p><p>' + (EN ? 'Temperature: about ' : 'Temperatura: unos ') + '<b>' + fmt(Math.round(t / 10) * 10, 0) + ' °C</b> · ' +
+        (EN ? 'Pressure: about ' : 'Presión: unas ') + '<b>' + fmt(Math.max(1, gpa * 9869), 0) + '</b> ' + (EN ? 'times that at the surface' : 'veces la de la superficie') + '</p>' +
+        '<p>' + (EN ? 'Walking non-stop at 5 km/h, you would take ' : 'Caminando sin parar a 5 km/h tardarías ') + '<b>' + fmt(km / 5 / 24, km / 5 / 24 < 10 ? 1 : 0) + (EN ? ' days' : ' días') + '</b>' + (EN ? ' to get here.' : ' en llegar aquí.') + '</p>' +
+        (h ? '<p class="hito">' + (EN ? h[2] : h[1]) + ' · ' + fmt(h[0], 1) + ' km</p>' : '');
+    }
+    r.addEventListener('input', pinta); pinta();
+  };
   [].forEach.call(document.querySelectorAll('.sim[data-sim]'), function (box) { var f = SIMS[box.getAttribute('data-sim')]; if (f) f(box); });
+  // Vídeos de YouTube: se cargan al pulsar
+  document.addEventListener('click', function (ev) {
+    var b = ev.target.closest && ev.target.closest('button[data-yt]'); if (!b) return;
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(b.getAttribute('data-yt')) + '?autoplay=1&rel=0';
+    f.title = b.getAttribute('aria-label') || 'YouTube'; f.allow = 'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen'; f.allowFullscreen = true;
+    b.replaceWith(f);
+  });
 })();

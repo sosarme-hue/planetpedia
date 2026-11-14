@@ -1,0 +1,429 @@
+{
+ "ballena": {
+  "autor": "Giles Laurent",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:001_Humpback_whale_breaching_in_Ballena_Marine_National_Park_Photo_by_Giles_Laurent.jpg",
+  "w": 960,
+  "h": 640
+ },
+ "iguazu": {
+  "autor": "W. Bulach",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:00_1838_Iguazu_Falls_from_the_Brazilian_side.jpg",
+  "w": 960,
+  "h": 640
+ },
+ "terremoto": {
+  "autor": "United States Geological Survey",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:1985_Mexico_Earthquake_-_Eight-story_building_collapsed_2.jpg",
+  "w": 960,
+  "h": 632
+ },
+ "deshielo": {
+  "autor": "NASA's Earth Observatory",
+  "licencia": "CC BY 2.0",
+  "url": "https://commons.wikimedia.org/wiki/File:A_M%C3%A9lange_of_Ice_-_NASA_Earth_Observatory.jpg",
+  "w": 960,
+  "h": 640
+ },
+ "amazonas": {
+  "autor": "Alexander Gerst",
+  "licencia": "CC BY-SA 2.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Amazon_River_-_2018.jpg",
+  "w": 960,
+  "h": 640
+ },
+ "selva": {
+  "autor": "Jay",
+  "licencia": "CC BY 2.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Amazon_rainforest_treetops_in_Tena,_Ecuador.jpg",
+  "w": 960,
+  "h": 640
+ },
+ "geoda": {
+  "autor": "AmberLocket",
+  "licencia": "CC0",
+  "url": "https://commons.wikimedia.org/wiki/File:Amethyst_Geode_from_Brazil.jpg",
+  "w": 960,
+  "h": 640
+ },
+ "amonite": {
+  "autor": "Harshit SR",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Ammonite_fossil_imprint.jpg",
+  "w": 960,
+  "h": 640
+ },
+ "aurora": {
+  "autor": "Pavel.shyshkouski",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Aurora_in_Abisko_near_Tornetr%C3%A4sk.jpg",
+  "w": 960,
+  "h": 640
+ },
+ "tierra_noche": {
+  "autor": "NASA Goddard Space Flight Center from Greenbelt, MD, USA",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Black_Marble_-_City_Lights_2012_(8246892319).jpg",
+  "w": 960,
+  "h": 540
+ },
+ "darwin": {
+  "autor": "Julia Margaret Cameron / Adam Cuerden",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Charles_Darwin_by_Julia_Margaret_Cameron,_c._1868.jpg",
+  "w": 960,
+  "h": 1192
+ },
+ "arrecife": {
+  "autor": "Jerry Reid",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Coral_Reef.jpg",
+  "w": 960,
+  "h": 641
+ },
+ "cueva_cristales": {
+  "autor": "Alexander Van Driessche",
+  "licencia": "CC BY 3.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Cristales_cueva_de_Naica.JPG",
+  "w": 960,
+  "h": 640
+ },
+ "tajogaite": {
+  "autor": "Pierre Markuse from Hamm, Germany",
+  "licencia": "CC BY 2.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Cumbre_Vieja_Volcano_eruption,_La_Palma,_Spain_-_October_15th,_2021_(51596481010).jpg",
+  "w": 960,
+  "h": 486
+ },
+ "nubes": {
+  "autor": "Thennicke",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Cumulonimbus_sunset_panorama,_Albury_NSW_Australia.jpg",
+  "w": 960,
+  "h": 480
+ },
+ "pinguinos": {
+  "autor": "The original uploader was Mtpaley at English Wikipedia.",
+  "licencia": "CC BY 2.5",
+  "url": "https://commons.wikimedia.org/wiki/File:EmperorPenguinColonyClose.jpg",
+  "w": 960,
+  "h": 720
+ },
+ "gran_canon": {
+  "autor": "Tomascastelazo",
+  "licencia": "CC BY-SA 3.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Grand_canyon_march_2013.jpg",
+  "w": 960,
+  "h": 640
+ },
+ "rayo": {
+  "autor": "Rollingskyphoto",
+  "licencia": "CC BY 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:High_Quality_Lightning_Strike.jpg",
+  "w": 960,
+  "h": 540
+ },
+ "huracan": {
+  "autor": "Image courtesy of Mike Trenchard, Earth Sciences & Image Analysis Laboratory, NASA Johnson Space Center.",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Hurricane_Isabel_from_ISS.jpg",
+  "w": 960,
+  "h": 635
+ },
+ "baikal": {
+  "autor": "Sergey Pesterev",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Lake_Baikal_in_winter.jpg",
+  "w": 960,
+  "h": 641
+ },
+ "fumarola": {
+  "autor": "MARUM − Zentrum für Marine Umweltwissenschaften, Universität Bremen",
+  "licencia": "CC BY 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:MARUM_Schwarzer_Raucher.jpg",
+  "w": 960,
+  "h": 720
+ },
+ "mariposa": {
+  "autor": "Kenneth Dwain Harrelson",
+  "licencia": "CC BY-SA 3.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Monarch_In_May.jpg",
+  "w": 960,
+  "h": 638
+ },
+ "mareas": {
+  "autor": "Lynx1211",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Mont_St_Michel_during_low_tide_(cropped).jpg",
+  "w": 960,
+  "h": 640
+ },
+ "oceano": {
+  "autor": "Bahnfrend",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Ocean_Wave,_Circular_Quay,_2017_(01).jpg",
+  "w": 960,
+  "h": 636
+ },
+ "pangea": {
+  "autor": "Kent G. Budge",
+  "licencia": "CC0",
+  "url": "https://commons.wikimedia.org/wiki/File:Pangaea_assembly_490.png",
+  "w": 960,
+  "h": 679
+ },
+ "glaciar": {
+  "autor": "Luca Galuzzi (Lucag)",
+  "licencia": "CC BY-SA 2.5",
+  "url": "https://commons.wikimedia.org/wiki/File:Perito_Moreno_Glacier_Patagonia_Argentina_Luca_Galuzzi_2005.JPG",
+  "w": 960,
+  "h": 640
+ },
+ "oso_polar": {
+  "autor": "USFWSAlaska",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Polar_bear_on_sea_ice_(52791040875).jpg",
+  "w": 960,
+  "h": 640
+ },
+ "lava": {
+  "autor": "Brocken Inaglory",
+  "licencia": "CC BY-SA 3.0",
+  "url": "https://commons.wikimedia.org/wiki/File:P%C4%81hoehoe_lava_meets_Pacific.jpg",
+  "w": 960,
+  "h": 602
+ },
+ "abisal": {
+  "autor": "Jl FilpoC",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Rape_abisal,_Greg_Dykstra.jpg",
+  "w": 960,
+  "h": 721
+ },
+ "secuoyas": {
+  "autor": "Michael Schweppe",
+  "licencia": "CC BY-SA 2.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Redwood_National_Park,_fog_in_the_forest.jpg",
+  "w": 960,
+  "h": 720
+ },
+ "estromatolitos": {
+  "autor": "Happy Little Nomad",
+  "licencia": "CC BY-SA 2.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Stromatolites_in_Shark_Bay.jpg",
+  "w": 960,
+  "h": 720
+ },
+ "volcan": {
+  "autor": "Heinrich Stürzl",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Stromboli_Eruption_1979-08-18_(02).jpg",
+  "w": 960,
+  "h": 715
+ },
+ "placas": {
+  "autor": "United States Geological Survey",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Tectonic_plates(Empty).png",
+  "w": 960,
+  "h": 609
+ },
+ "capas": {
+  "autor": "Rajneesh kumar Thakur",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:The_layers_of_the_Earth_model.jpg",
+  "w": 960,
+  "h": 720
+ },
+ "trilobites": {
+  "autor": "Anonymsiy",
+  "licencia": "CC0",
+  "url": "https://commons.wikimedia.org/wiki/File:Trilobite_Fossil.jpg",
+  "w": 960,
+  "h": 663
+ },
+ "tundra": {
+  "autor": "Daniel Case",
+  "licencia": "CC BY-SA 3.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Tundra_landscape_with_mountains_and_small_pond,_Ivvavik_National_Park,_YT.jpg",
+  "w": 960,
+  "h": 624
+ },
+ "tiranosaurio": {
+  "autor": "Robosorne",
+  "licencia": "CC BY-SA 3.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Tyrannosaurus_rex_skeleton_(cast_of_specimen_MOR_555)_at_Cleveland_Museum_of_Natural_History.jpg",
+  "w": 960,
+  "h": 640
+ },
+ "atmosfera_iss": {
+  "autor": "Images ISS001-421-24 and ISS002-E-9767 (click to order high-resolution images), were provided by the Earth Sciences and Image Analysis Labor",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Viewing_Earth%E2%80%99s_Limb_(3338_-_ISS001-421-24_lrg).jpg",
+  "w": 960,
+  "h": 639
+ },
+ "sabana": {
+  "autor": "Christoph Strässler",
+  "licencia": "CC BY-SA 2.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Wildebeest_herd,_Northern_Serengeti,_Tanzania.jpg",
+  "w": 960,
+  "h": 540
+ },
+ "plastico": {
+  "autor": "Marek Ślusarczyk (Tupungato) Photo portfolio",
+  "licencia": "CC BY 3.0",
+  "url": "https://commons.wikimedia.org/wiki/File:004_Beach_pollution_in_Tenerife_-_Atlantic_Ocean_beach_plastic_garbage_debris.jpg",
+  "w": 960,
+  "h": 640
+ },
+ "iceberg": {
+  "autor": "W. Bulach",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:00_4461_Tabular_iceberg_in_Antarctica.jpg",
+  "w": 960,
+  "h": 637
+ },
+ "calzada": {
+  "autor": "Suzanne Mischyshyn",
+  "licencia": "CC BY-SA 2.0",
+  "url": "https://commons.wikimedia.org/wiki/File:County_Antrim_-_Giant%27s_Causeway_-_Tops_of_Basalt_Columns_-_geograph.org.uk_-_3987884.jpg",
+  "w": 960,
+  "h": 640
+ },
+ "mar_muerto": {
+  "autor": "Godot13",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Dead_Sea_salt_formation_(Aerial_view,_2007).jpg",
+  "w": 960,
+  "h": 638
+ },
+ "dallol": {
+  "autor": "Thomas Fuhrmann",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Ethiopia_-_Dallol.jpg",
+  "w": 960,
+  "h": 640
+ },
+ "everest": {
+  "autor": "Luca Galuzzi (Lucag)",
+  "licencia": "CC BY-SA 2.5",
+  "url": "https://commons.wikimedia.org/wiki/File:Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg",
+  "w": 960,
+  "h": 640
+ },
+ "galapagos": {
+  "autor": "E bailey",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Galapagos_giant_tortoise,_head_(Chelonoidis_niger_hoodensis).jpg",
+  "w": 960,
+  "h": 640
+ },
+ "himalaya": {
+  "autor": "Vinodtiwari2608",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Himalaya_Mountains_view_from_air.JPG",
+  "w": 960,
+  "h": 720
+ },
+ "maldivas": {
+  "autor": "Hotel Kaesong",
+  "licencia": "CC BY-SA 2.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Maldives_-_aerial_view4.jpg",
+  "w": 960,
+  "h": 720
+ },
+ "eolico": {
+  "autor": "Photo by Kim Hansen. Postprocessing (crop, rotation, color adjustment, dust spot removal and noise reduction) by Richard Bartz and Kim Hanse",
+  "licencia": "CC BY-SA 3.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Middelgrunden_wind_farm_2009-07-01_edit_filtered.jpg",
+  "w": 960,
+  "h": 699
+ },
+ "solar": {
+  "autor": "Chongkian",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Monnaran_Solar_Power_Plant.jpg",
+  "w": 960,
+  "h": 720
+ },
+ "nilo": {
+  "autor": "ISS Expedition 25 crew",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Nile_River_Delta_at_Night.JPG",
+  "w": 960,
+  "h": 639
+ },
+ "donana": {
+  "autor": "Diego Delso",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Paisaje_en_el_Parque_de_Do%C3%B1ana,_Espa%C3%B1a,_2015-12-07,_DD_16.JPG",
+  "w": 960,
+  "h": 594
+ },
+ "atacama": {
+  "autor": "Diego Delso",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Paisaje_en_el_desierto_de_Atacama,_Chile,_2016-02-06,_DD_16.JPG",
+  "w": 960,
+  "h": 504
+ },
+ "picos_europa": {
+  "autor": "Teofrasto820",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Picos_de_Europa_vistos_desde_la_Fuente_del_Chivo.jpg",
+  "w": 960,
+  "h": 720
+ },
+ "copo": {
+  "autor": "Alexey Kljatov",
+  "licencia": "CC BY 2.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Real_snowflake_macro_photo_-_Flickr_-_Alexey_Kljatov.jpg",
+  "w": 960,
+  "h": 720
+ },
+ "uyuni": {
+  "autor": "Christopher Crouzet",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Reflection_on_the_Salar_de_Uyuni,_bolivia.jpg",
+  "w": 960,
+  "h": 640
+ },
+ "rio_tinto": {
+  "autor": "LBM1948",
+  "licencia": "CC BY-SA 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:R%C3%ADo_Tinto,_cauce_13.jpg",
+  "w": 960,
+  "h": 637
+ },
+ "deforestacion": {
+  "autor": "Amazônia Real from Manaus AM, Brasil",
+  "licencia": "CC BY 2.0",
+  "url": "https://commons.wikimedia.org/wiki/File:SOBREVVO_EM_RONDONIA_DIA_07-08-2020_(FOTO_BRUNO_KELLY)_(62)_(50224604772).jpg",
+  "w": 960,
+  "h": 640
+ },
+ "sahara": {
+  "autor": "Vyacheslav Argenberg",
+  "licencia": "CC BY 4.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Sand_dune_in_the_desert,_Sahara_Desert,_Egypt.jpg",
+  "w": 960,
+  "h": 640
+ },
+ "smog": {
+  "autor": "NASA",
+  "licencia": "Public domain",
+  "url": "https://commons.wikimedia.org/wiki/File:Smog_boven_mexico_city_november_1985.jpg",
+  "w": 960,
+  "h": 955
+ },
+ "arcoiris": {
+  "autor": "Brocken Inaglory: Brocken Inaglory",
+  "licencia": "CC BY-SA 3.0",
+  "url": "https://commons.wikimedia.org/wiki/File:Steam_Phase_eruption_of_Castle_geyser_with_double_rainbow.jpg",
+  "w": 960,
+  "h": 804
+ }
+}

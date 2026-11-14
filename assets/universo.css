@@ -196,4 +196,61 @@ tr:last-child td { border-bottom: 0; }
   .pasos .sig { text-align: left; }
   .sim { padding: 14px; }
   .datos dl { grid-template-columns: minmax(0,1fr) minmax(0,1.2fr); }
+  .mapa { grid-template-columns: 1fr 1fr; gap: 20px 14px; margin: 32px 0 48px; }
+  .mapa h3 { font-size: .95rem; }
+  .mapa li a { font-size: .84rem; line-height: 1.3; display: block; padding: 2px 0; }
 }
+
+/* Vídeos */
+.videos { margin: 40px 0 8px; padding-top: 24px; border-top: 1px solid var(--line); }
+.videos h2 { font-size: 1.3rem; margin-bottom: 14px; }
+.vids { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(260px, 100%), 1fr)); gap: 18px; padding: 0; margin: 0; }
+.vid { display: grid; gap: 6px; align-content: start; }
+.vid button { position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 0; border-radius: 12px; overflow: hidden; background: #000; cursor: pointer; }
+.vid button img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .25s; }
+.vid button:hover img { transform: scale(1.04); }
+.vid-play { position: absolute; left: 50%; top: 50%; width: 62px; height: 44px; margin: -22px 0 0 -31px; border-radius: 12px; background: rgba(204,0,0,.92); }
+.vid-play::after { content: ""; position: absolute; left: 25px; top: 13px; border-style: solid; border-width: 9px 0 9px 15px; border-color: transparent transparent transparent #fff; }
+.vid-dur { position: absolute; right: 8px; bottom: 8px; background: rgba(0,0,0,.8); color: #fff; font-size: .75rem; padding: 2px 6px; border-radius: 4px; }
+.vid iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 12px; display: block; }
+.vid-t { font-weight: 600; font-size: .95rem; line-height: 1.3; }
+.vid-c { color: var(--ink-soft); font-size: .82rem; }
+.vid-aviso { color: var(--ink-soft); font-size: .85rem; margin-top: 14px; }
+.vid-sec { margin-bottom: 24px; }
+.vid-ficha { margin: 18px 0 26px; }
+.vid-ficha h3 { font-size: 1.05rem; margin-bottom: 10px; }
+.vid-ficha h3 a { text-decoration: none; }
+.ir-videos { margin: 28px 0 0; }
+.ir-videos a { display: inline-block; padding: 12px 18px; border-radius: 999px; background: var(--ink); color: var(--bg); font-weight: 600; text-decoration: none; }
+@media (max-width: 560px) {
+  .vids { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .vid-t { font-size: .82rem; }
+  .vid-c { font-size: .74rem; }
+  .vid-play { transform: scale(.7); }
+}
+
+/* Simuladores de la Tierra */
+.sim[data-sim="magnitud"] label { display: grid; gap: 6px; font-weight: 600; margin-bottom: 10px; }
+.sim[data-sim="magnitud"] .res { display: block; }
+.sim[data-sim="magnitud"] .res p { margin: 6px 0; }
+.sim[data-sim="magnitud"] .res b { font-size: 1.05rem; }
+.sim[data-sim="magnitud"] .barra { grid-template-columns: minmax(0, 190px) 1fr; }
+.sim[data-sim="magnitud"] .barra.tuya span { font-weight: 700; color: var(--teal-ink); }
+.sim[data-sim="magnitud"] .barra.tuya i { background: #e0603a; }
+.sim[data-sim="magnitud"] small { color: var(--ink-soft); font-size: .78rem; }
+.reloj { list-style: none; padding: 0; margin: 10px 0 0; display: grid; gap: 0; }
+.reloj li { display: grid; grid-template-columns: 150px 1fr auto; gap: 12px; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: .92rem; align-items: baseline; }
+.reloj b { font-family: var(--font-display); color: var(--teal-ink); }
+.reloj small { color: var(--ink-soft); font-size: .78rem; text-align: right; }
+@media (max-width: 560px) {
+  .reloj li { grid-template-columns: 1fr; gap: 0; }
+  .reloj small { text-align: left; }
+  .sim[data-sim="magnitud"] .barra { grid-template-columns: 1fr; gap: 2px; }
+}
+
+.sim .corte{position:relative;height:14px;border-radius:7px;margin:14px 0 6px;background:linear-gradient(90deg,#8a6a4a 0 .6%,#c2562a .6% 10.4%,#e07a2a 10.4% 45.5%,#f2b233 45.5% 80.8%,#ffe27a 80.8%)}
+.sim .corte i{position:absolute;top:-4px;width:4px;height:22px;margin-left:-2px;background:var(--ink,#0b1424);border-radius:2px}
+.sim .hito{font-size:.9em;opacity:.8}
+.sim .res > p { grid-column: 1 / -1; margin: 0; }
+.sim label:has(input[type=range]) { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.sim label input[type=range] { flex: 1 1 100%; width: 100%; }

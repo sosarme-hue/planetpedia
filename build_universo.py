@@ -1,4 +1,4 @@
-# Genera la sección Universo (castellano en /universo/, inglés en /en/universe/),
+# Genera las áreas Universo (/universo/, /en/universe/) y Planeta Tierra (/tierra/, /en/earth/),
 # el índice de búsqueda, el sitemap y robots.txt.
 # Uso: python3 build_universo.py
 import html, json, re, sys, pathlib, importlib
@@ -6,29 +6,37 @@ import html, json, re, sys, pathlib, importlib
 ROOT = pathlib.Path(__file__).parent
 sys.path.insert(0, str(ROOT / "contenido"))
 DOM = "https://planetpedia.net"
-CRED = json.loads((ROOT / "img/universo/creditos.json").read_text())
+CRED, FDIR = {}, {}
+for _cj in sorted(ROOT.glob("img/*/creditos.json")):
+    for _k, _v in json.loads(_cj.read_text()).items():
+        assert _k not in CRED, "clave de foto repetida: " + _k
+        CRED[_k] = _v; FDIR[_k] = _cj.parent.name
 
-ORDEN = ["sistema_solar", "estrellas", "galaxias", "cosmologia", "exploracion", "observar", "curiosidades"]
-SECCIONES = [importlib.import_module("universo." + m) for m in ORDEN]
 
+def imgp(clave):
+    return f"img/{FDIR[clave]}/{clave}.jpg"
+
+from areas import AREAS
+_vj = ROOT / "contenido/videos.json"
+VIDEOS = json.loads(_vj.read_text()) if _vj.exists() else {}
+for _ak, _a in AREAS.items():
+    _a["key"] = _ak
+    _a["secciones"] = [importlib.import_module(_a["pkg"] + "." + m) for m in _a["orden"]]
+    for _s in _a["secciones"]:
+        _s.AREA = _a
+A = AREAS["universo"]   # área que se está generando
 L = {
-    "es": dict(base="universo", inicio="Inicio", uni="Universo", fichas="fichas", datos="Ficha técnica",
+    "es": dict(inicio="Inicio", fichas="fichas", videos="Vídeos", videos_ficha="Vídeos para entenderlo mejor",
+               videos_aviso="Los vídeos son de YouTube y de sus autores. Se cargan solo al pulsar sobre ellos.", ver="Ver vídeo", ver_todos="Ver todos los vídeos", datos="Ficha técnica",
                indice="En esta página", relacionadas="Más en", anterior="Anterior", siguiente="Siguiente",
-               foto="Foto", sabias="¿Sabías que…?", buscar="Busca en el Universo: Saturno, agujero negro, eclipse…",
-               buscar_lbl="Buscar en Universo", sin="No hay resultados para", otras="Ver la sección",
-               lede="Una enciclopedia del cosmos: del Sol a las galaxias más lejanas, con fotos reales de telescopios y sondas, cifras, curiosidades y simuladores.",
-               h1="Universo", eyebrow="Enciclopedia del cosmos", secciones="Secciones",
-               creditos="Fotografías de Wikimedia Commons (NASA, ESA, ESO y otros autores), con su licencia en cada imagen.",
+               foto="Foto", sabias="¿Sabías que…?", sin="No hay resultados para", otras="Ver la sección", secciones="Secciones",
                leer="Leer", cifras="Cifras para empezar", otro="English", otro_lbl="Read in English",
                actualizado="Actualizado", pie="Planetpedia · Conocimiento y lugares por descubrir",
                volver="Volver a Planetpedia"),
-    "en": dict(base="en/universe", inicio="Home", uni="Universe", fichas="articles", datos="Key facts",
+    "en": dict(inicio="Home", fichas="articles", videos="Videos", videos_ficha="Videos to understand it better",
+               videos_aviso="Videos are from YouTube and belong to their creators. They only load when you click them.", ver="Play video", ver_todos="See all videos", datos="Key facts",
                indice="On this page", relacionadas="More in", anterior="Previous", siguiente="Next",
-               foto="Photo", sabias="Did you know?", buscar="Search the Universe: Saturn, black hole, eclipse…",
-               buscar_lbl="Search the Universe", sin="No results for", otras="Open the section",
-               lede="An encyclopedia of the cosmos: from the Sun to the most distant galaxies, with real images from telescopes and probes, figures, curiosities and simulators.",
-               h1="Universe", eyebrow="Encyclopedia of the cosmos", secciones="Sections",
-               creditos="Photographs from Wikimedia Commons (NASA, ESA, ESO and other authors), with each image's licence.",
+               foto="Photo", sabias="Did you know?", sin="No results for", otras="Open the section", secciones="Sections",
                leer="Read", cifras="Numbers to start with", otro="Español", otro_lbl="Leer en español",
                actualizado="Updated", pie="Planetpedia · Knowledge and places to discover",
                volver="Back to Planetpedia"),
@@ -38,8 +46,13 @@ i = lambda lang: 0 if lang == "es" else 1
 e = lambda s: html.escape(s, quote=True)
 
 
-def ruta(lang, sec=None, ficha=None):
-    p = L[lang]["base"] + "/"
+def T(lang):
+    return {**L[lang], **A["txt"][lang]}
+
+
+def ruta(lang, sec=None, ficha=None, area=None):
+    a = sec.AREA if sec else (area or A)
+    p = a["base"][i(lang)] + "/"
     if sec: p += sec.SLUG[i(lang)] + "/"
     if ficha: p += ficha["slug"][i(lang)] + "/"
     return p
@@ -53,9 +66,11 @@ def rel(desde, hasta):
 
 TODAS = {}
 FALTAN = set()
-for s in SECCIONES:
-    for f in s.FICHAS:
-        TODAS[f["slug"][0]] = (s, f)
+for _a in AREAS.values():
+    for s in _a["secciones"]:
+        for f in s.FICHAS:
+            assert f["slug"][0] not in TODAS, "slug repetido: " + f["slug"][0]
+            TODAS[f["slug"][0]] = (s, f)
 
 
 def inline(t, lang, aqui):
@@ -70,7 +85,7 @@ def inline(t, lang, aqui):
             s, f = TODAS[dest[1:]]
             return f'<a href="{rel(aqui, ruta(lang, s, f))}">{txt}</a>'
         if dest.startswith("#"):
-            s = next(x for x in SECCIONES if x.SLUG[0] == dest[1:])
+            s = next(x for a in AREAS.values() for x in a["secciones"] if x.SLUG[0] == dest[1:])
             return f'<a href="{rel(aqui, ruta(lang, s))}">{txt}</a>'
         return f'<a href="{dest}" rel="noopener">{txt}</a>'
     return re.sub(r"\[(.+?)\]\((.+?)\)", enlace, t)
@@ -80,10 +95,10 @@ def figura(clave, pie, lang, aqui, clase="", eager=False):
     c = CRED[clave]
     autor = re.sub(r"\s*\(.*?\)\s*$", "", c["autor"])[:90]
     lic = c["licencia"].replace("Public domain", "Dominio público" if lang == "es" else "Public domain")
-    src = rel(aqui, f"img/universo/{clave}.jpg")
+    src = rel(aqui, imgp(clave))
     carga = 'fetchpriority="high"' if eager else 'loading="lazy" decoding="async"'
     return (f'<figure class="fig {clase}"><img src="{src}" alt="{e(pie)}" width="{c["w"]}" height="{c["h"]}" {carga}>'
-            f'<figcaption>{inline(pie, lang, aqui)} <span class="cred">{L[lang]["foto"]}: {e(autor)} · '
+            f'<figcaption>{inline(pie, lang, aqui)} <span class="cred">{T(lang)["foto"]}: {e(autor)} · '
             f'<a href="{e(c["url"])}" rel="noopener">{e(lic)}</a></span></figcaption></figure>')
 
 
@@ -111,7 +126,7 @@ def cuerpo(md, lang, aqui):
         if b.startswith("!sim "):
             out.append(f'<div class="sim" data-sim="{e(b[5:].strip())}"></div>'); continue
         if b.startswith("> "):
-            out.append(f'<aside class="sabias"><b>{L[lang]["sabias"]}</b><p>{inline(" ".join(l[2:] for l in lineas), lang, aqui)}</p></aside>'); continue
+            out.append(f'<aside class="sabias"><b>{T(lang)["sabias"]}</b><p>{inline(" ".join(l[2:] for l in lineas), lang, aqui)}</p></aside>'); continue
         if b.startswith("|"):
             filas = [[c.strip() for c in l.strip().strip("|").split("|")] for l in lineas if not re.match(r"^\|[\s\-|]+\|$", l.strip())]
             th = "".join(f"<th>{inline(c, lang, aqui)}</th>" for c in filas[0])
@@ -126,12 +141,12 @@ LOGO = '''<svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r=
 
 
 def pagina(lang, aqui, otra, titulo, desc, claves, contenido, migas, og_img=None, ld=None):
-    t = L[lang]
+    t = T(lang)
     home = rel(aqui, "" if lang == "es" else "en/")
     ld_all = [{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": n + 1, "name": nom, "item": DOM + "/" + u} for n, (nom, u) in enumerate(migas)]}]
     if ld: ld_all.append(ld)
-    og = f'<meta property="og:image" content="{DOM}/img/universo/{og_img}.jpg">' if og_img else ""
+    og = f'<meta property="og:image" content="{DOM}/{imgp(og_img)}">' if og_img else ""
     migas_html = " <span aria-hidden=\"true\">›</span> ".join(
         f'<a href="{rel(aqui, u)}">{e(nom)}</a>' if k < len(migas) - 1 else f'<span aria-current="page">{e(nom)}</span>'
         for k, (nom, u) in enumerate(migas))
@@ -189,20 +204,35 @@ def pagina(lang, aqui, otra, titulo, desc, claves, contenido, migas, og_img=None
 '''
 
 
+def video_html(v, t):
+    dur = f'<span class="vid-dur">{e(v["dur"])}</span>' if v.get("dur") else ""
+    return (f'<li class="vid"><button type="button" data-yt="{e(v["id"])}" aria-label="{e(t["ver"])}: {e(v["t"])}">'
+            f'<img src="https://i.ytimg.com/vi/{e(v["id"])}/hqdefault.jpg" alt="" loading="lazy" decoding="async" width="480" height="360">'
+            f'<span class="vid-play" aria-hidden="true"></span>{dur}</button>'
+            f'<span class="vid-t">{e(v["t"])}</span><span class="vid-c">{e(v["c"])}{" · en inglés" if v.get("otro") else ""}</span></li>')
+
+
+def videos_de(f, lang):
+    v = VIDEOS.get(f["slug"][0], {})
+    if v.get(lang): return v[lang]
+    # Sin vídeo en español: se ofrecen los ingleses, marcados como tales
+    return [dict(x, otro=1) for x in v.get("en", [])] if lang == "es" else []
+
+
 def tarjeta(lang, aqui, s, f):
     url = rel(aqui, ruta(lang, s, f))
     c = CRED[f["foto"]]
-    return (f'<li class="card"><a href="{url}"><span class="card-img"><img src="{rel(aqui, "img/universo/" + f["foto"] + ".jpg")}" alt="" '
+    return (f'<li class="card"><a href="{url}"><span class="card-img"><img src="{rel(aqui, imgp(f["foto"]))}" alt="" '
             f'width="{c["w"]}" height="{c["h"]}" loading="lazy" decoding="async"></span>'
             f'<span class="card-txt"><strong>{e(f["titulo"][i(lang)])}</strong><span>{e(f["resumen"][i(lang)])}</span></span></a></li>')
 
 
 def migas_base(lang):
-    return [(L[lang]["inicio"], "" if lang == "es" else "en/"), (L[lang]["uni"], ruta(lang))]
+    return [(T(lang)["inicio"], "" if lang == "es" else "en/"), (T(lang)["uni"], ruta(lang))]
 
 
 def pag_ficha(lang, s, f, prev, nxt):
-    k = i(lang); t = L[lang]
+    k = i(lang); t = T(lang)
     aqui = ruta(lang, s, f); otra = ruta("en" if lang == "es" else "es", s, f)
     html_c, toc = cuerpo(f[lang], lang, aqui)
     datos = ""
@@ -222,6 +252,11 @@ def pag_ficha(lang, s, f, prev, nxt):
     if nxt: nav += f'<a class="sig" href="{rel(aqui, ruta(lang, s, nxt))}"><small>{t["siguiente"]} →</small>{e(nxt["titulo"][k])}</a>'
     nav += "</nav>"
     palabras = len(re.findall(r"\w+", f[lang]))
+    vl = videos_de(f, lang)
+    vids = ""
+    if vl:
+        vids = (f'<section class="videos"><h2>{t["videos_ficha"]}</h2><ul class="vids">' + "".join(video_html(v, t) for v in vl) +
+                f'</ul><p class="vid-aviso">{t["videos_aviso"]} <a href="{rel(aqui, ruta(lang) + ("videos/" if lang == "es" else "videos/"))}">{t["ver_todos"]} →</a></p></section>')
     cont = f'''<article class="ficha">
 <header class="ficha-head wrap">
   <span class="eyebrow">{e(s.TITULO[k])}</span>
@@ -232,13 +267,14 @@ def pag_ficha(lang, s, f, prev, nxt):
 <div class="wrap ficha-cols">
   <div class="texto">
 {html_c}
+{vids}
 {nav}
   </div>
   <aside class="lateral">{datos}{indice}{rel_html}</aside>
 </div>
 </article>'''
     ld = {"@context": "https://schema.org", "@type": "Article", "headline": f["titulo"][k], "description": f["resumen"][k],
-          "inLanguage": lang, "image": f"{DOM}/img/universo/{f['foto']}.jpg", "datePublished": FECHA, "dateModified": FECHA,
+          "inLanguage": lang, "image": f"{DOM}/{imgp(f['foto'])}", "datePublished": FECHA, "dateModified": FECHA,
           "keywords": f["claves"][k], "wordCount": palabras, "url": f"{DOM}/{aqui}",
           "author": {"@type": "Person", "name": "Alejandro Rosàs Navarro"},
           "publisher": {"@type": "Organization", "name": "Planetpedia", "url": DOM + "/"},
@@ -249,11 +285,11 @@ def pag_ficha(lang, s, f, prev, nxt):
 
 
 def pag_seccion(lang, s):
-    k = i(lang); t = L[lang]
+    k = i(lang); t = T(lang)
     aqui = ruta(lang, s); otra = ruta("en" if lang == "es" else "es", s)
     intro, _ = cuerpo(s.INTRO[k], lang, aqui)
     cont = f'''<section class="sec-head">
-  <img class="sec-fondo" src="{rel(aqui, 'img/universo/' + s.FOTO + '.jpg')}" alt="" fetchpriority="high">
+  <img class="sec-fondo" src="{rel(aqui, imgp(s.FOTO))}" alt="" fetchpriority="high">
   <div class="wrap">
     <span class="eyebrow">{t["uni"]} · {len(s.FICHAS)} {t["fichas"]}</span>
     <h1>{e(s.TITULO[k])}</h1>
@@ -270,31 +306,21 @@ def pag_seccion(lang, s):
     return aqui, pagina(lang, aqui, otra, f"{s.TITULO[k]} · {t['uni']} · Planetpedia", s.RESUMEN[k], claves, cont, migas, s.FOTO, ld)
 
 
-CIFRAS = [
-    ("13.800 millones de años", "13.8 billion years", "edad del universo", "age of the universe"),
-    ("2 billones", "2 trillion", "galaxias en el universo observable (estimación)", "galaxies in the observable universe (estimate)"),
-    ("8 min 20 s", "8 min 20 s", "tarda la luz del Sol en llegar a la Tierra", "for sunlight to reach Earth"),
-    ("299.792 km/s", "299,792 km/s", "velocidad de la luz en el vacío", "speed of light in a vacuum"),
-    ("4,24 años luz", "4.24 light years", "hasta Próxima Centauri, la estrella más cercana", "to Proxima Centauri, the nearest star"),
-    ("−270 °C", "−270 °C", "temperatura del fondo cósmico", "temperature of the cosmic background"),
-]
-
-
 def pag_portada(lang):
-    k = i(lang); t = L[lang]
+    k = i(lang); t = T(lang)
     aqui = ruta(lang); otra = ruta("en" if lang == "es" else "es")
     secs = "".join(
-        f'<li class="secc"><a href="{rel(aqui, ruta(lang, s))}"><img src="{rel(aqui, "img/universo/" + s.FOTO + ".jpg")}" alt="" loading="lazy" decoding="async">'
+        f'<li class="secc"><a href="{rel(aqui, ruta(lang, s))}"><img src="{rel(aqui, imgp(s.FOTO))}" alt="" loading="lazy" decoding="async">'
         f'<span class="secc-txt"><small>{len(s.FICHAS)} {t["fichas"]}</small><strong>{e(s.TITULO[k])}</strong><span>{e(s.RESUMEN[k])}</span></span></a></li>'
-        for s in SECCIONES)
-    cifras = "".join(f'<li><b>{e(c[k])}</b><span>{e(c[2 + k])}</span></li>' for c in CIFRAS)
+        for s in A["secciones"])
+    cifras = "".join(f'<li><b>{e(c[k])}</b><span>{e(c[2 + k])}</span></li>' for c in A["cifras"])
     listado = "".join(
         f'<section class="mapa-sec"><h3><a href="{rel(aqui, ruta(lang, s))}">{e(s.TITULO[k])}</a></h3><ul>' +
         "".join(f'<li><a href="{rel(aqui, ruta(lang, s, f))}">{e(f["titulo"][k])}</a></li>' for f in s.FICHAS) + "</ul></section>"
-        for s in SECCIONES)
-    n = sum(len(s.FICHAS) for s in SECCIONES)
+        for s in A["secciones"])
+    n = sum(len(s.FICHAS) for s in A["secciones"])
     cont = f'''<section class="uni-hero">
-  <img class="sec-fondo" src="{rel(aqui, 'img/universo/campo_webb.jpg')}" alt="" fetchpriority="high">
+  <img class="sec-fondo" src="{rel(aqui, imgp(A["foto"]))}" alt="" fetchpriority="high">
   <div class="wrap">
     <span class="eyebrow">{t["eyebrow"]} · {n} {t["fichas"]}</span>
     <h1>{t["h1"]}</h1>
@@ -306,23 +332,60 @@ def pag_portada(lang):
   <ul class="cifras">{cifras}</ul>
   <h2 class="tit">{t["secciones"]}</h2>
   <ul class="seccs">{secs}</ul>
+  {f'<p class="ir-videos"><a href="{rel(aqui, ruta(lang) + "videos/")}">▶ {t["ver_todos"]}: {t["videos"].lower()} {"de" if lang == "es" else "about the"} {t["uni"]}</a></p>' if any(videos_de(f, lang) for s in A["secciones"] for f in s.FICHAS) else ""}
   <div class="mapa">{listado}</div>
 </div>'''
-    claves = ", ".join(s.CLAVES[k] for s in SECCIONES)
+    claves = ", ".join(s.CLAVES[k] for s in A["secciones"])
     ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": t["h1"], "description": t["lede"], "inLanguage": lang,
           "url": f"{DOM}/{aqui}"}
     return aqui, pagina(lang, aqui, otra, f"{t['h1']}: {t['eyebrow'].lower()} · Planetpedia", t["lede"], claves, cont,
-                        migas_base(lang), "campo_webb", ld)
+                        migas_base(lang), A["foto"], ld)
+
+
+def pag_videos(lang):
+    k = i(lang); t = T(lang)
+    aqui = ruta(lang) + "videos/"; otra = ruta("en" if lang == "es" else "es") + "videos/"
+    bloques, n = [], 0
+    for s in A["secciones"]:
+        filas = []
+        for f in s.FICHAS:
+            vl = videos_de(f, lang)
+            if not vl: continue
+            n += len(vl)
+            filas.append(f'<div class="vid-ficha"><h3><a href="{rel(aqui, ruta(lang, s, f))}">{e(f["titulo"][k])}</a></h3><ul class="vids">' +
+                         "".join(video_html(v, t) for v in vl) + "</ul></div>")
+        if filas:
+            bloques.append(f'<section class="vid-sec"><h2 class="tit">{e(s.TITULO[k])}</h2>{"".join(filas)}</section>')
+    cont = f'''<section class="sec-head">
+  <img class="sec-fondo" src="{rel(aqui, imgp(A["foto"]))}" alt="" fetchpriority="high">
+  <div class="wrap">
+    <span class="eyebrow">{t["uni"]} · {n} {t["videos"].lower()}</span>
+    <h1>{t["videos"]}: {t["uni"]}</h1>
+    <p class="lede">{e(t["videos_lede"])}</p>
+  </div>
+</section>
+<div class="wrap">
+  <p class="vid-aviso">{t["videos_aviso"]}</p>
+  {"".join(bloques)}
+</div>'''
+    ld = {"@context": "https://schema.org", "@type": "CollectionPage", "name": f'{t["videos"]}: {t["uni"]}', "description": t["videos_lede"],
+          "inLanguage": lang, "url": f"{DOM}/{aqui}"}
+    migas = migas_base(lang) + [(t["videos"], aqui)]
+    claves = ", ".join(["vídeos" if lang == "es" else "videos", "YouTube"] + [f["titulo"][k] for s in A["secciones"] for f in s.FICHAS])
+    return aqui, pagina(lang, aqui, otra, f'{t["videos"]}: {t["uni"]} · Planetpedia', t["videos_lede"], claves, cont, migas, A["foto"], ld)
 
 
 def indice(lang):
     k = i(lang); out = []
-    for s in SECCIONES:
-        out.append({"t": s.TITULO[k], "d": s.RESUMEN[k], "c": s.CLAVES[k], "u": ruta(lang, s), "s": L[lang]["uni"], "f": s.FOTO})
+    for s in A["secciones"]:
+        out.append({"t": s.TITULO[k], "d": s.RESUMEN[k], "c": s.CLAVES[k], "u": ruta(lang, s), "s": T(lang)["uni"], "f": FDIR[s.FOTO] + "/" + s.FOTO})
+        if s is A["secciones"][0] and any(videos_de(f, lang) for x in A["secciones"] for f in x.FICHAS):
+            out.append({"t": T(lang)["videos"] + ": " + T(lang)["uni"], "d": T(lang)["videos_lede"], "c": "vídeos videos youtube documentales",
+                        "u": ruta(lang) + "videos/", "s": T(lang)["uni"], "f": FDIR[A["foto"]] + "/" + A["foto"]})
         for f in s.FICHAS:
             heads = " ".join(re.findall(r"^## (.+)$", f[lang], re.M))
             out.append({"t": f["titulo"][k], "d": f["resumen"][k], "c": f["claves"][k] + " " + heads,
-                        "u": ruta(lang, s, f), "s": s.TITULO[k], "f": f["foto"]})
+                        "u": ruta(lang, s, f), "s": s.TITULO[k], "f": FDIR[f["foto"]] + "/" + f["foto"]})
     return out
 
 
@@ -330,22 +393,27 @@ VERSION = "1"
 
 
 def main():
-    global VERSION
+    global VERSION, A
     import hashlib
     VERSION = hashlib.md5((ROOT / "assets/universo.css").read_bytes() + (ROOT / "assets/universo.js").read_bytes()).hexdigest()[:8]
     urls = []
     for lang in ("es", "en"):
-        pags = [pag_portada(lang)]
-        for s in SECCIONES:
-            pags.append(pag_seccion(lang, s))
-            for n, f in enumerate(s.FICHAS):
-                prev = s.FICHAS[n - 1] if n else None
-                nxt = s.FICHAS[n + 1] if n + 1 < len(s.FICHAS) else None
-                pags.append(pag_ficha(lang, s, f, prev, nxt))
-        for ruta_, contenido in pags:
-            p = ROOT / ruta_ / "index.html"; p.parent.mkdir(parents=True, exist_ok=True); p.write_text(contenido)
-            urls.append(ruta_)
-        (ROOT / f"assets/indice-{lang}.json").write_text(json.dumps(indice(lang), ensure_ascii=False, separators=(",", ":")))
+        ind = []
+        for A in AREAS.values():
+            pags = [pag_portada(lang)]
+            if any(videos_de(f, lang) for s in A["secciones"] for f in s.FICHAS):
+                pags.append(pag_videos(lang))
+            for s in A["secciones"]:
+                pags.append(pag_seccion(lang, s))
+                for n, f in enumerate(s.FICHAS):
+                    prev = s.FICHAS[n - 1] if n else None
+                    nxt = s.FICHAS[n + 1] if n + 1 < len(s.FICHAS) else None
+                    pags.append(pag_ficha(lang, s, f, prev, nxt))
+            for ruta_, contenido in pags:
+                p = ROOT / ruta_ / "index.html"; p.parent.mkdir(parents=True, exist_ok=True); p.write_text(contenido)
+                urls.append(ruta_)
+            ind += indice(lang)
+        (ROOT / f"assets/indice-{lang}.json").write_text(json.dumps(ind, ensure_ascii=False, separators=(",", ":")))
     todas = ["", "en/"] + urls
     (ROOT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
         "".join(f"  <url><loc>{DOM}/{u}</loc><lastmod>{FECHA}</lastmod></url>\n" for u in todas) + "</urlset>\n")

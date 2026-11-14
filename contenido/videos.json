@@ -1,0 +1,2072 @@
+{
+ "vision-general": {
+  "es": [
+   {
+    "id": "jMw6YNphlF0",
+    "t": "Sistema solar 101 | National Geographic en Español",
+    "c": "National Geographic España",
+    "dur": "3:56",
+    "views": "272.887 visualizaciones"
+   },
+   {
+    "id": "ZykXgSqet6A",
+    "t": "El Sistema Solar | Videos Educativos para Niños  | Happy Learning",
+    "c": "Happy Learning Español",
+    "dur": "3:12",
+    "views": "22.577.292 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "libKVRa01L8",
+    "t": "Solar System 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "4:11",
+    "views": "39,821,484 views"
+   },
+   {
+    "id": "Cyl3X88KEgg",
+    "t": "Why Humanity Will Never Leave The Solar System",
+    "c": "Kurzgesagt – In a Nutshell",
+    "dur": "12:44",
+    "views": "11,077,418 views"
+   }
+  ]
+ },
+ "sol": {
+  "es": [
+   {
+    "id": "1t1srO-kG4s",
+    "t": "El Sol como Nunca lo viste con imágenes Reales más increíbles ( Sin IA )",
+    "c": "Astronomiaweb",
+    "dur": "12:58",
+    "views": "197.784 visualizaciones"
+   },
+   {
+    "id": "wANko2eM_uY",
+    "t": "El sol | Videos Educativos para Niños",
+    "c": "Happy Learning Español",
+    "dur": "3:34",
+    "views": "3.185.623 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "2HoTK_Gqi2Q",
+    "t": "Sun 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "5:01",
+    "views": "11,370,841 views"
+   },
+   {
+    "id": "b22HKFMIfWo",
+    "t": "The Sun: Crash Course Astronomy #10",
+    "c": "CrashCourse",
+    "dur": "12:04",
+    "views": "2,818,345 views"
+   }
+  ]
+ },
+ "mercurio": {
+  "es": [],
+  "en": [
+   {
+    "id": "rX_NCCpw5Uo",
+    "t": "Planet Mercury Explained in 10 Minutes | Our Solar System's Planets",
+    "c": "Astrum",
+    "dur": "10:28",
+    "views": "798,970 views"
+   },
+   {
+    "id": "0KBjnNuhRHs",
+    "t": "Mercury 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "3:32",
+    "views": "5,332,376 views"
+   }
+  ]
+ },
+ "venus": {
+  "es": [],
+  "en": [
+   {
+    "id": "djP-IdHFQWU",
+    "t": "What They Didn't Teach You in School about Venus | Our Solar System's Planets",
+    "c": "Astrum",
+    "dur": "14:56",
+    "views": "1,194,628 views"
+   },
+   {
+    "id": "BvXa1n9fjow",
+    "t": "Venus 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "3:29",
+    "views": "5,597,499 views"
+   }
+  ]
+ },
+ "tierra": {
+  "es": [
+   {
+    "id": "th79sDCAh0Q",
+    "t": "La Tierra y sus Movimientos | Videos Educativos para Niños",
+    "c": "Happy Learning Español",
+    "dur": "3:39",
+    "views": "8.644.500 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "JGXi_9A__Vc",
+    "t": "Everything You Need to Know About Planet Earth",
+    "c": "Kurzgesagt – In a Nutshell",
+    "dur": "7:22",
+    "views": "14,086,325 views"
+   },
+   {
+    "id": "HCDVN7DCzYE",
+    "t": "Earth 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "3:33",
+    "views": "7,109,114 views"
+   }
+  ]
+ },
+ "luna": {
+  "es": [],
+  "en": [
+   {
+    "id": "6AviDjR9mmo",
+    "t": "Moon 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "3:06",
+    "views": "6,730,935 views"
+   },
+   {
+    "id": "mCzchPx3yF8",
+    "t": "The Moon: Crash Course Astronomy #12",
+    "c": "CrashCourse",
+    "dur": "9:51",
+    "views": "1,924,700 views"
+   }
+  ]
+ },
+ "marte": {
+  "es": [],
+  "en": [
+   {
+    "id": "D8pnmwOXhoY",
+    "t": "Mars 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "3:41",
+    "views": "4,717,606 views"
+   },
+   {
+    "id": "wFTGP7-n3J8",
+    "t": "What They Didn't Teach You in School About Mars | Our Solar System's Planets 4K",
+    "c": "Astrum",
+    "dur": "18:32",
+    "views": "1,444,798 views"
+   }
+  ]
+ },
+ "jupiter": {
+  "es": [
+   {
+    "id": "xxjIxMeFULk",
+    "t": "Lo que no te enseñaron en la escuela sobre Júpiter | Los planetas de nuestro sistema solar",
+    "c": "Astrum Español",
+    "dur": "13:59",
+    "views": "994.859 visualizaciones"
+   },
+   {
+    "id": "02oQIvTCzNI",
+    "t": "Júpiter, el planeta gigante - El sistema solar en 3D para niños",
+    "c": "Smile and Learn - Español",
+    "dur": "2:25",
+    "views": "1.258.398 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "PtkqwslbLY8",
+    "t": "Jupiter 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "3:17",
+    "views": "35,946,328 views"
+   },
+   {
+    "id": "JRHwq1DIgbI",
+    "t": "What They Didn't Teach You in School About Jupiter | Our Solar System's Planets",
+    "c": "Astrum",
+    "dur": "14:42",
+    "views": "3,648,853 views"
+   }
+  ]
+ },
+ "saturno": {
+  "es": [],
+  "en": [
+   {
+    "id": "epZdZaEQhS0",
+    "t": "Saturn 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "4:07",
+    "views": "5,667,422 views"
+   },
+   {
+    "id": "7qyKZz844o0",
+    "t": "Saturn: The Solar System's Greatest Jewel | BBC Earth Science",
+    "c": "BBC Earth Science",
+    "dur": "25:29",
+    "views": "879,999 views"
+   }
+  ]
+ },
+ "urano": {
+  "es": [
+   {
+    "id": "enkjdmFkgYk",
+    "t": "El Planeta URANO como nunca antes lo habías visto [Documental Astrum Español]",
+    "c": "Astrum Español",
+    "dur": "13:09",
+    "views": "292.148 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "m4NXbFOiOGk",
+    "t": "Uranus 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "4:10",
+    "views": "15,026,555 views"
+   },
+   {
+    "id": "tCmC0XOKO5Q",
+    "t": "The Bizarre Characteristics Of Uranus | Our Solar System's Planets",
+    "c": "Astrum",
+    "dur": "13:39",
+    "views": "2,575,903 views"
+   }
+  ]
+ },
+ "neptuno": {
+  "es": [
+   {
+    "id": "boCOI-Rckp8",
+    "t": "Lo que no te enseñaron en la escuela sobre Neptuno | Los planetas de nuestro Sistema Solar",
+    "c": "Astrum Español",
+    "dur": "13:51",
+    "views": "668.825 visualizaciones"
+   },
+   {
+    "id": "5vcqxZz89Z4",
+    "t": "NEPTUNO, EL PLANETA DEL FRÍO - EL SISTEMA SOLAR EN 3D PARA NIÑOS",
+    "c": "Smile and Learn - Español",
+    "dur": "2:23",
+    "views": "961.567 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "DhLm_4pBrso",
+    "t": "What They Didn't Teach You in School about Neptune | Our Solar System's Planets",
+    "c": "Astrum",
+    "dur": "16:01",
+    "views": "2,233,434 views"
+   },
+   {
+    "id": "NStn7zZKXfE",
+    "t": "Neptune 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "2:58",
+    "views": "4,408,041 views"
+   }
+  ]
+ },
+ "lunas": {
+  "es": [
+   {
+    "id": "xYW2NLpVqUY",
+    "t": "GANIMEDES, la única LUNA con CAMPO MAGNÉTICO del Sistema Solar | Documentales de ciencia Astrum",
+    "c": "Astrum Español",
+    "dur": "10:53",
+    "views": "282.341 visualizaciones"
+   },
+   {
+    "id": "1KSjzIfO2Fk",
+    "t": "El Misterioso Mundo del que no sabes Nada | Rea: Lunas de nuestro Sistema Solar",
+    "c": "Astrum Español",
+    "dur": "14:11",
+    "views": "185.794 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "HaFaf7vbgpE",
+    "t": "Jupiter's Moons: Crash Course Astronomy #17",
+    "c": "CrashCourse",
+    "dur": "10:30",
+    "views": "1,829,550 views"
+   },
+   {
+    "id": "6AviDjR9mmo",
+    "t": "Moon 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "3:06",
+    "views": "6,730,935 views"
+   }
+  ]
+ },
+ "planetas-enanos": {
+  "es": [
+   {
+    "id": "Gz78XTmXtBk",
+    "t": "El descubrimiento que condenó a Plutón",
+    "c": "Astrum Español",
+    "dur": "18:09",
+    "views": "614.710 visualizaciones"
+   },
+   {
+    "id": "eYC0oK5bsYs",
+    "t": "Los Insólitos Mundos descubiertos por la NASA en los confines del Sistema Solar | Cinturón de Kuiper",
+    "c": "Astrum Español",
+    "dur": "18:03",
+    "views": "457.914 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "MHsDI83dZ_s",
+    "t": "The Discovery That Demoted Pluto",
+    "c": "Astrum",
+    "dur": "20:26",
+    "views": "1,042,730 views"
+   },
+   {
+    "id": "-iZio70bd-M",
+    "t": "Pluto 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "4:10",
+    "views": "2,385,262 views"
+   }
+  ]
+ },
+ "asteroides-y-cometas": {
+  "es": [
+   {
+    "id": "7jOI5G0uLgY",
+    "t": "Diferencias entre Asteroides y Cometas | Videos Educativos para Niños",
+    "c": "Happy Learning Español",
+    "dur": "2:19",
+    "views": "478.995 visualizaciones"
+   }
+  ],
+  "en": []
+ },
+ "vida-de-las-estrellas": {
+  "es": [
+   {
+    "id": "pPT_Clef9Xc",
+    "t": "¿Quieres saber cómo se forman las estrellas y planetas?",
+    "c": "Astronomiaweb",
+    "dur": "13:12",
+    "views": "222.894 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "EFO_bsg1sw8",
+    "t": "Stars 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "2:48",
+    "views": "3,786,718 views"
+   },
+   {
+    "id": "fFeV8WxIZLk",
+    "t": "The life cycle of a neutron star - David Lunney",
+    "c": "TED-Ed",
+    "dur": "5:17",
+    "views": "1,421,568 views"
+   }
+  ]
+ },
+ "tipos-de-estrellas": {
+  "es": [
+   {
+    "id": "y37KgZTfVKU",
+    "t": "Tipos de estrellas en el Universo y el Sol vida y evolución",
+    "c": "Astronomiaweb",
+    "dur": "12:06",
+    "views": "213.764 visualizaciones"
+   },
+   {
+    "id": "WqHdIv75x4A",
+    "t": "Por qué las estrellas tienen diferentes colores y parpadean?",
+    "c": "Astronomiaweb",
+    "dur": "13:34",
+    "views": "204.271 visualizaciones"
+   }
+  ],
+  "en": []
+ },
+ "nebulosas": {
+  "es": [
+   {
+    "id": "r5siYu9CuV8",
+    "t": "La Inquietante belleza de las Nebulosas descubiertas por el Hubble",
+    "c": "Astrum Español",
+    "dur": "13:58",
+    "views": "31.986 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "W8UI7F43_Yk",
+    "t": "Nebulae: Crash Course Astronomy #36",
+    "c": "CrashCourse",
+    "dur": "12:16",
+    "views": "1,197,211 views"
+   },
+   {
+    "id": "Mj06h8BeeOA",
+    "t": "White Dwarfs & Planetary Nebulae: Crash Course Astronomy #30",
+    "c": "CrashCourse",
+    "dur": "11:10",
+    "views": "1,183,621 views"
+   }
+  ]
+ },
+ "supernovas": {
+  "es": [
+   {
+    "id": "1P0Zq83TSXk",
+    "t": "¿Qué es una supernova y cómo se forma?",
+    "c": "Astronomiaweb",
+    "dur": "11:55",
+    "views": "158.335 visualizaciones"
+   },
+   {
+    "id": "mlL95J1QA2E",
+    "t": "Vivimos en un Cementerio de Supernovas",
+    "c": "Astrum Español",
+    "dur": "16:26",
+    "views": "156.839 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "q4DF3j4saCE",
+    "t": "The Most Extreme Explosion in the Universe",
+    "c": "Kurzgesagt – In a Nutshell",
+    "dur": "9:29",
+    "views": "11,668,466 views"
+   },
+   {
+    "id": "evUfG3lrk5U",
+    "t": "What if a star explodes near Earth?",
+    "c": "Veritasium",
+    "dur": "19:26",
+    "views": "14,848,360 views"
+   }
+  ]
+ },
+ "agujeros-negros": {
+  "es": [
+   {
+    "id": "TFhRXnE2xck",
+    "t": "¿Qué pasa si nos caemos en un agujero negro?",
+    "c": "En Pocas Palabras – Kurzgesagt",
+    "dur": "11:41",
+    "views": "7.046.142 visualizaciones"
+   },
+   {
+    "id": "H1RzHvpy9hI",
+    "t": "En el Borde de un Agujero Negro Hay un Secreto",
+    "c": "QuantumFracture",
+    "dur": "18:38",
+    "views": "607.661 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "e-P5IFTqB98",
+    "t": "Black Holes Explained – From Birth to Death",
+    "c": "Kurzgesagt – In a Nutshell",
+    "dur": "5:56",
+    "views": "29,830,796 views"
+   },
+   {
+    "id": "kOEDG3j1bjs",
+    "t": "Black Holes 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "3:11",
+    "views": "12,702,132 views"
+   }
+  ]
+ },
+ "estrellas-de-neutrones": {
+  "es": [
+   {
+    "id": "d6cTds_4Vnk",
+    "t": "Diferencias entre cuásar, púlsar y estrella de neutrones",
+    "c": "El Robot de Platón",
+    "dur": "7:39",
+    "views": "1.043.083 visualizaciones"
+   },
+   {
+    "id": "fD69KtLjjfQ",
+    "t": "Estrellas de neutrones: los astros más extremos que no son agujeros negros",
+    "c": "En Pocas Palabras – Kurzgesagt",
+    "dur": "8:00",
+    "views": "2.003.242 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "udFxKZRyQt4",
+    "t": "Neutron Stars – The Most Extreme Things that are not Black Holes",
+    "c": "Kurzgesagt – In a Nutshell",
+    "dur": "7:26",
+    "views": "23,721,158 views"
+   },
+   {
+    "id": "As7vWYmb5L8",
+    "t": "The Boundary Between Black Holes & Neutron Stars",
+    "c": "PBS Space Time",
+    "dur": "15:01",
+    "views": "1,495,288 views"
+   }
+  ]
+ },
+ "exoplanetas-y-vida": {
+  "es": [],
+  "en": [
+   {
+    "id": "EUU0-ZpFoK4",
+    "t": "Exoplanets 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "3:54",
+    "views": "1,567,040 views"
+   },
+   {
+    "id": "k1UcseLVNVc",
+    "t": "Exoplanet Types: Worlds Beyond Our Solar System",
+    "c": "NASA",
+    "dur": "1:43",
+    "views": "264,538 views"
+   }
+  ]
+ },
+ "via-lactea": {
+  "es": [
+   {
+    "id": "fIArCluf4XI",
+    "t": "¿Dónde se encuentra el Sistema Solar en la Vía Láctea?",
+    "c": "Astronomiaweb",
+    "dur": "12:50",
+    "views": "719.988 visualizaciones"
+   },
+   {
+    "id": "i_gzH8JVddA",
+    "t": "Andrómeda Chocará contra la Vía Láctea: ¿Qué Sucederá Exactamente?",
+    "c": "QuantumFracture",
+    "dur": "7:44",
+    "views": "8.676.930 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "tj_QPnO8vpQ",
+    "t": "The Milky Way: Crash Course Astronomy #37",
+    "c": "CrashCourse",
+    "dur": "11:14",
+    "views": "1,516,178 views"
+   },
+   {
+    "id": "wEZBNsU4dMU",
+    "t": "The best Milky Way animation, by Gaia",
+    "c": "European Space Agency, ESA",
+    "dur": "2:14",
+    "views": "1,532,660 views"
+   }
+  ]
+ },
+ "tipos-de-galaxias": {
+  "es": [
+   {
+    "id": "J3SkzUiDxT8",
+    "t": "¿Por qué las Galaxias tienen Forma Espiral?",
+    "c": "QuantumFracture",
+    "dur": "12:50",
+    "views": "615.722 visualizaciones"
+   }
+  ],
+  "en": []
+ },
+ "choques-de-galaxias": {
+  "es": [
+   {
+    "id": "i_gzH8JVddA",
+    "t": "Andrómeda Chocará contra la Vía Láctea: ¿Qué Sucederá Exactamente?",
+    "c": "QuantumFracture",
+    "dur": "7:44",
+    "views": "8.676.930 visualizaciones"
+   },
+   {
+    "id": "Bd8IOQJ2Dw8",
+    "t": "¿Qué pasará cuando la Vía Láctea choque con Andrómeda?",
+    "c": "Astronomiaweb",
+    "dur": "11:51",
+    "views": "259.445 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "I82ADyJC7wE",
+    "t": "Galaxies, part 1: Crash Course Astronomy #38",
+    "c": "CrashCourse",
+    "dur": "12:06",
+    "views": "1,749,490 views"
+   },
+   {
+    "id": "_P1xKh_kZFU",
+    "t": "The Andromeda-Milky Way Collision",
+    "c": "PBS Space Time",
+    "dur": "12:02",
+    "views": "1,657,681 views"
+   }
+  ]
+ },
+ "cumulos-y-estructura": {
+  "es": [
+   {
+    "id": "0leANU4zNLI",
+    "t": "Descubren una Gran Red cósmica ¿Quién o qué la creó?",
+    "c": "Astronomiaweb",
+    "dur": "14:05",
+    "views": "213.682 visualizaciones"
+   }
+  ],
+  "en": []
+ },
+ "big-bang": {
+  "es": [
+   {
+    "id": "In85bmP5rk0",
+    "t": "La Teoría del Big Bang NO HABLA del Big Bang",
+    "c": "QuantumFracture",
+    "dur": "13:27",
+    "views": "3.033.262 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "wNDGgL73ihY",
+    "t": "The Beginning of Everything -- The Big Bang",
+    "c": "Kurzgesagt – In a Nutshell",
+    "dur": "5:55",
+    "views": "15,597,599 views"
+   },
+   {
+    "id": "HdPzOWlLrbE",
+    "t": "Origins of the Universe 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "5:50",
+    "views": "8,429,845 views"
+   }
+  ]
+ },
+ "fondo-cosmico": {
+  "es": [
+   {
+    "id": "n1WyvZG6WB4",
+    "t": "El Mapa más Antiguo del Universo (CMB) Radiación de Fondo de Microondas [Astrum Español]",
+    "c": "Astrum Español",
+    "dur": "6:48",
+    "views": "24.541 visualizaciones"
+   },
+   {
+    "id": "HpgtPM1z12g",
+    "t": "Esta es la Foto Más Antigua del Universo",
+    "c": "QuantumFracture",
+    "dur": "4:47",
+    "views": "2.073.930 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "3tCMd1ytvWg",
+    "t": "Cosmic Microwave Background Explained",
+    "c": "PBS Space Time",
+    "dur": "7:10",
+    "views": "1,421,980 views"
+   },
+   {
+    "id": "C4CKtEQJGMY",
+    "t": "Secrets of the Cosmic Microwave Background",
+    "c": "PBS Space Time",
+    "dur": "17:11",
+    "views": "750,103 views"
+   }
+  ]
+ },
+ "expansion-del-universo": {
+  "es": [
+   {
+    "id": "uCBVfhvJPbs",
+    "t": "¿Hacia Dónde se Expande el Universo? El Cosmos y la Mente Humana",
+    "c": "QuantumFracture",
+    "dur": "8:43",
+    "views": "785.698 visualizaciones"
+   },
+   {
+    "id": "HGOL93zzg9k",
+    "t": "Hubble estaba equivocado, el Universo no se expande como predijo",
+    "c": "Astrum Español",
+    "dur": "18:40",
+    "views": "420.917 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "6PiyUjVxukI",
+    "t": "What is the universe expanding into? - Sajan Saini",
+    "c": "TED-Ed",
+    "dur": "6:07",
+    "views": "1,860,917 views"
+   },
+   {
+    "id": "iUgqNu9cOEA",
+    "t": "The Universe's Expansion No Longer Makes Sense",
+    "c": "Astrum",
+    "dur": "21:42",
+    "views": "1,410,204 views"
+   }
+  ]
+ },
+ "materia-y-energia-oscura": {
+  "es": [
+   {
+    "id": "iYfIL6Xaa7o",
+    "t": "ENERGÍA OSCURA: Todas las Cosas que Podría Ser",
+    "c": "QuantumFracture",
+    "dur": "27:41",
+    "views": "1.320.914 visualizaciones"
+   },
+   {
+    "id": "iLsyUJTCq88",
+    "t": "HOY SÍ que vas a entender la MATERIA OSCURA",
+    "c": "Date un Vlog",
+    "dur": "12:47",
+    "views": "474.553 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "QAa2O_8wBUQ",
+    "t": "What is Dark Matter and Dark Energy?",
+    "c": "Kurzgesagt – In a Nutshell",
+    "dur": "6:21",
+    "views": "12,373,586 views"
+   },
+   {
+    "id": "Sxyps-CIr8A",
+    "t": "Dark Matter Is No Longer Invisible. We’ve Just Seen It.",
+    "c": "Astrum",
+    "dur": "18:45",
+    "views": "1,227,932 views"
+   }
+  ]
+ },
+ "destino-del-universo": {
+  "es": [],
+  "en": [
+   {
+    "id": "FgnjdW-x7mQ",
+    "t": "The Last Thing To Ever Happen In The Universe",
+    "c": "Kurzgesagt – In a Nutshell",
+    "dur": "11:05",
+    "views": "9,973,393 views"
+   },
+   {
+    "id": "HR2C_7G_yRQ",
+    "t": "How To Destroy The Universe",
+    "c": "Kurzgesagt – In a Nutshell",
+    "dur": "10:03",
+    "views": "11,248,279 views"
+   }
+  ]
+ },
+ "carrera-espacial": {
+  "es": [
+   {
+    "id": "RJEI-_EJD_U",
+    "t": "¿Qué hay detrás de la nueva carrera espacial hacia la Luna? | BBC Mundo",
+    "c": "BBC News Mundo",
+    "dur": "7:42",
+    "views": "402.142 visualizaciones"
+   },
+   {
+    "id": "D36Iklgfzxw",
+    "t": "La Verdaderos pioneros del Espacio fueron los Rusos [Top 10 Misiones Espaciales Soviéticas]",
+    "c": "Astrum Español",
+    "dur": "17:52",
+    "views": "78.883 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "FxpC-8f--xo",
+    "t": "Who won the space race?  - Jeff Steers",
+    "c": "TED-Ed",
+    "dur": "4:47",
+    "views": "1,785,766 views"
+   },
+   {
+    "id": "QhULJr-LKbg",
+    "t": "Air Travel and The Space Race: Crash Course History of Science #37",
+    "c": "CrashCourse",
+    "dur": "12:22",
+    "views": "291,913 views"
+   }
+  ]
+ },
+ "apolo-y-la-luna": {
+  "es": [
+   {
+    "id": "DqaNOm08A44",
+    "t": "EL VIAJE A LA LUNA EXPLICADO",
+    "c": "El Robot de Platón",
+    "dur": "10:38",
+    "views": "3.971.804 visualizaciones"
+   },
+   {
+    "id": "h-Z1bTGi5Qs",
+    "t": "Así fue el viaje a la Luna del Apolo 11- con Martí de @cdeciencia",
+    "c": "Date un Vlog",
+    "dur": "21:21",
+    "views": "248.482 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "OCjhCL2iqlQ",
+    "t": "Apollo 11’s journey to the moon, annotated",
+    "c": "Vox",
+    "dur": "5:14",
+    "views": "3,356,309 views"
+   }
+  ]
+ },
+ "sondas-espaciales": {
+  "es": [
+   {
+    "id": "NcWqGXiVvB0",
+    "t": "Los Increíbles Descubrimientos de las Sondas Voyager en el Sistema Solar",
+    "c": "Astrum Español",
+    "dur": "26:29",
+    "views": "1.092.177 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "jiQpudokpzc",
+    "t": "The 7 Coolest Active Space Probes",
+    "c": "SciShow",
+    "dur": "10:10",
+    "views": "240,800 views"
+   },
+   {
+    "id": "pOZhPz92Dic",
+    "t": "The Insane Engineering of the Parker Solar Probe",
+    "c": "Real Engineering",
+    "dur": "19:54",
+    "views": "4,035,858 views"
+   }
+  ]
+ },
+ "telescopios-espaciales": {
+  "es": [
+   {
+    "id": "410N-PcQ1g4",
+    "t": "Guía rápida sobre el telescopio espacial Nancy Grace Roman de la NASA",
+    "c": "NASA en Español",
+    "dur": "5:46",
+    "views": "36.257 visualizaciones"
+   },
+   {
+    "id": "0p55XB9iHFI",
+    "t": "Los científicos no dan abasto con el Telescopio Euclid",
+    "c": "Astrum Español",
+    "dur": "16:01",
+    "views": "113.263 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "csIry_3pbDU",
+    "t": "How does a Space Telescope work?  (Hubble and Webb)",
+    "c": "Jared Owen",
+    "dur": "19:35",
+    "views": "4,547,367 views"
+   },
+   {
+    "id": "CDwemQH2zDU",
+    "t": "Everything You Need To Know About NASA's Roman Space Telescope",
+    "c": "NASA Goddard",
+    "dur": "7:12",
+    "views": "442,773 views"
+   }
+  ]
+ },
+ "estacion-espacial": {
+  "es": [
+   {
+    "id": "0JU4z-iLmGQ",
+    "t": "Un tour de la Estación Espacial Internacional con Frank Rubio",
+    "c": "NASA en Español",
+    "dur": "13:56",
+    "views": "4.706.802 visualizaciones"
+   }
+  ],
+  "en": []
+ },
+ "exploracion-de-marte": {
+  "es": [
+   {
+    "id": "cVO2q1lCEN4",
+    "t": "Historia de exploración de Marte y sus distintas aportaciones a la Misión 2020 Perseverance.",
+    "c": "NASA en Español",
+    "dur": "3:37",
+    "views": "28.756 visualizaciones"
+   },
+   {
+    "id": "Oxjsr9u51PA",
+    "t": "Curiosity cumple 10 años en Marte",
+    "c": "DW Español",
+    "dur": "2:02",
+    "views": "233.975 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "D8pnmwOXhoY",
+    "t": "Mars 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "3:41",
+    "views": "4,717,607 views"
+   },
+   {
+    "id": "wFTGP7-n3J8",
+    "t": "What They Didn't Teach You in School About Mars | Our Solar System's Planets 4K",
+    "c": "Astrum",
+    "dur": "18:32",
+    "views": "1,444,805 views"
+   }
+  ]
+ },
+ "empezar-a-observar": {
+  "es": [],
+  "en": [
+   {
+    "id": "i7930fj3T54",
+    "t": "How do we study the stars? - Yuan-Sen Ting",
+    "c": "TED-Ed",
+    "dur": "4:45",
+    "views": "948,827 views"
+   }
+  ]
+ },
+ "constelaciones": {
+  "es": [
+   {
+    "id": "EaKmbaoa_bk",
+    "t": "¿Por qué hay constelaciones?",
+    "c": "CuriosaMente",
+    "dur": "2:13",
+    "views": "676.383 visualizaciones"
+   },
+   {
+    "id": "SO4PFN_ON8w",
+    "t": "Astronomía para principiantes: Reconocer Constelaciones",
+    "c": "Astronomiaweb",
+    "dur": "14:30",
+    "views": "1.807.937 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "i7930fj3T54",
+    "t": "How do we study the stars? - Yuan-Sen Ting",
+    "c": "TED-Ed",
+    "dur": "4:45",
+    "views": "948,827 views"
+   },
+   {
+    "id": "3P2GVocbw9o",
+    "t": "The Complete Map of All 88 Constellations",
+    "c": "Domain of Science",
+    "dur": "21:25",
+    "views": "91,407 views"
+   }
+  ]
+ },
+ "eclipses": {
+  "es": [
+   {
+    "id": "j-CncJuNCWQ",
+    "t": "¡Queda 1 Año para el Eclipse en España! TIENES que Verlo.",
+    "c": "QuantumFracture",
+    "dur": "14:28",
+    "views": "767.407 visualizaciones"
+   },
+   {
+    "id": "LORLGccN93Y",
+    "t": "Los Eclipses para niños - Eclipse Solar y Eclipse Lunar - ¿Qué es un eclipse?",
+    "c": "Smile and Learn - Español",
+    "dur": "3:26",
+    "views": "4.314.882 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "GnZ3dogED7w",
+    "t": "Solar Eclipse and Lunar Eclipse",
+    "c": "Jared Owen",
+    "dur": "4:06",
+    "views": "1,278,742 views"
+   },
+   {
+    "id": "PRgua7xceDA",
+    "t": "Eclipses: Crash Course Astronomy #5",
+    "c": "CrashCourse",
+    "dur": "10:32",
+    "views": "2,138,256 views"
+   }
+  ]
+ },
+ "telescopios-para-aficionados": {
+  "es": [],
+  "en": [
+   {
+    "id": "mYhy7eaazIk",
+    "t": "Telescopes: Crash Course Astronomy #6",
+    "c": "CrashCourse",
+    "dur": "12:00",
+    "views": "1,750,355 views"
+   },
+   {
+    "id": "5v7bN13PjZ8",
+    "t": "How Do Telescopes Work? | Earth Science",
+    "c": "BBC Earth Science",
+    "dur": "7:54",
+    "views": "376,106 views"
+   }
+  ]
+ },
+ "distancias": {
+  "es": [
+   {
+    "id": "KgvWgBdnaUk",
+    "t": "Tamaños y distancias reales entre Planetas del Sistema Solar",
+    "c": "Astronomiaweb",
+    "dur": "12:12",
+    "views": "495.209 visualizaciones"
+   },
+   {
+    "id": "OjBNmrN3zjs",
+    "t": "¿Que tan grande es el Sistema Solar y el Universo?",
+    "c": "Astronomiaweb",
+    "dur": "14:53",
+    "views": "3.547.970 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "CWMh61yutjU",
+    "t": "Distances: Crash Course Astronomy #25",
+    "c": "CrashCourse",
+    "dur": "11:21",
+    "views": "2,082,511 views"
+   },
+   {
+    "id": "WYQ3O8U6SMY",
+    "t": "How small are we in the scale of the universe? - Alex Hofeldt",
+    "c": "TED-Ed",
+    "dur": "4:08",
+    "views": "1,176,200 views"
+   }
+  ]
+ },
+ "anecdotas": {
+  "es": [],
+  "en": [
+   {
+    "id": "0rHUDWjR5gg",
+    "t": "Introduction to Astronomy: Crash Course Astronomy #1",
+    "c": "CrashCourse",
+    "dur": "12:12",
+    "views": "5,729,174 views"
+   }
+  ]
+ },
+ "falsos-mitos": {
+  "es": [
+   {
+    "id": "QylcH69Lw0w",
+    "t": "Las 20 mentiras de astronomía y ciencia que aún crees...",
+    "c": "Astronomiaweb",
+    "dur": "14:30",
+    "views": "8.223.550 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "XBr4GkRnY04",
+    "t": "Misconceptions About the Universe",
+    "c": "Veritasium",
+    "dur": "5:46",
+    "views": "7,601,473 views"
+   }
+  ]
+ },
+ "estructura-de-la-tierra": {
+  "es": [
+   {
+    "id": "NUU6lPEDIdg",
+    "t": "Las capas de la tierra para niños - Atmósfera, biosfera, hidrosfera y geosfera",
+    "c": "Smile and Learn - Español",
+    "dur": "3:27",
+    "views": "3.807.865 visualizaciones"
+   },
+   {
+    "id": "dzk_HxccUlQ",
+    "t": "La Geosfera - Las capas de la tierra - Ciencias para niños",
+    "c": "Smile and Learn - Español",
+    "dur": "3:07",
+    "views": "1.534.700 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "JGXi_9A__Vc",
+    "t": "Everything You Need to Know About Planet Earth",
+    "c": "Kurzgesagt – In a Nutshell",
+    "dur": "7:22",
+    "views": "14,086,358 views"
+   },
+   {
+    "id": "tquABLc3Hhs",
+    "t": "What's Actually Inside the Earth's Core?",
+    "c": "SciShow",
+    "dur": "12:08",
+    "views": "1,081,021 views"
+   }
+  ]
+ },
+ "tectonica-de-placas": {
+  "es": [],
+  "en": [
+   {
+    "id": "kwfNGatxUJI",
+    "t": "Plate Tectonics Explained",
+    "c": "MinuteEarth",
+    "dur": "2:37",
+    "views": "3,299,392 views"
+   },
+   {
+    "id": "7CPv0NSIG2M",
+    "t": "The Plate Tectonics Revolution: Crash Course Geography #19",
+    "c": "CrashCourse",
+    "dur": "10:58",
+    "views": "834,968 views"
+   }
+  ]
+ },
+ "volcanes": {
+  "es": [
+   {
+    "id": "UqxU00qRwIQ",
+    "t": "¿Qué sabemos de los volcanes?",
+    "c": "CuriosaMente",
+    "dur": "12:08",
+    "views": "285.628 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "VNGUdObDoLk",
+    "t": "Volcanoes 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "4:59",
+    "views": "31,913,349 views"
+   },
+   {
+    "id": "LQwZwKS9RPs",
+    "t": "Volcanic eruption explained - Steven Anderson",
+    "c": "TED-Ed",
+    "dur": "5:34",
+    "views": "2,579,884 views"
+   }
+  ]
+ },
+ "terremotos-y-tsunamis": {
+  "es": [
+   {
+    "id": "zMZ5xY0Gn44",
+    "t": "Terremoto, tsunami y accidente nuclear de Fukushima: a 10 años del triple desastre en Japón",
+    "c": "BBC News Mundo",
+    "dur": "16:52",
+    "views": "969.288 visualizaciones"
+   },
+   {
+    "id": "sk_x58kM_70",
+    "t": "¿Qué es un terremoto? | Vídeos Educativos para Niños",
+    "c": "Happy Learning Español",
+    "dur": "4:10",
+    "views": "3.946.290 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "Wx9vPv-T51I",
+    "t": "How tsunamis work - Alex Gendler",
+    "c": "TED-Ed",
+    "dur": "3:37",
+    "views": "9,288,888 views"
+   },
+   {
+    "id": "WNvAic8KLb0",
+    "t": "Earthquakes Explained: Crash Course Geology #14",
+    "c": "CrashCourse",
+    "dur": "11:07",
+    "views": "46,979 views"
+   }
+  ]
+ },
+ "rocas-y-minerales": {
+  "es": [
+   {
+    "id": "3Z56SCeJeAI",
+    "t": "ROCAS y MINERALES para niños - ¿En qué se diferencian? - Ciencias para niños",
+    "c": "Smile and Learn - Español",
+    "dur": "4:15",
+    "views": "546.622 visualizaciones"
+   },
+   {
+    "id": "x1AlWiWpVJc",
+    "t": "Las rocas y los minerales para niños - Recopilación - Ciencias para niños",
+    "c": "Smile and Learn - Español",
+    "dur": "10:35",
+    "views": "233.661 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "7Bxw4kkeHJ8",
+    "t": "What Are Rocks and How Do They Form? Crash Course Geography #18",
+    "c": "CrashCourse",
+    "dur": "10:57",
+    "views": "1,605,435 views"
+   }
+  ]
+ },
+ "historia-de-la-tierra": {
+  "es": [],
+  "en": [
+   {
+    "id": "rWp5ZpJAIAE",
+    "t": "A Brief History of Geologic Time",
+    "c": "PBS Eons",
+    "dur": "12:08",
+    "views": "4,849,138 views"
+   }
+  ]
+ },
+ "oceanos": {
+  "es": [
+   {
+    "id": "BDgcYavEz-A",
+    "t": "Los OCÉANOS para niños - Geografía para niños",
+    "c": "Smile and Learn - Español",
+    "dur": "5:20",
+    "views": "827.456 visualizaciones"
+   },
+   {
+    "id": "OwXB65-Au_8",
+    "t": "Los CONTINENTES y OCÉANOS para niños | Recopilación | ¿Cuántos continentes y océanos hay?",
+    "c": "Smile and Learn - Español",
+    "dur": "10:11",
+    "views": "1.799.286 visualizaciones"
+   }
+  ],
+  "en": []
+ },
+ "corrientes-y-mareas": {
+  "es": [
+   {
+    "id": "3rRAubswyDo",
+    "t": "INFLUENCIA de la LUNA en la Tierra 🌍🌖 Mareas, inclinación de la Tierra y la estaciones 🌊🌧️",
+    "c": "Smile and Learn - Español",
+    "dur": "5:51",
+    "views": "65.262 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "p4pWafuvdrY",
+    "t": "How do ocean currents work? - Jennifer Verduin",
+    "c": "TED-Ed",
+    "dur": "4:34",
+    "views": "3,694,443 views"
+   },
+   {
+    "id": "mpRJhhbKLFc",
+    "t": "Why are there two tides a day? - Elise Cutts",
+    "c": "TED-Ed",
+    "dur": "5:21",
+    "views": "604,009 views"
+   }
+  ]
+ },
+ "vida-en-las-profundidades": {
+  "es": [
+   {
+    "id": "Zm9Y1y-jT1c",
+    "t": "¿Qué se oculta en el lugar más solitario de la Tierra? La zona abisal.",
+    "c": "En Pocas Palabras – Kurzgesagt",
+    "dur": "11:18",
+    "views": "4.447.671 visualizaciones"
+   },
+   {
+    "id": "fWt3Yl3Idtc",
+    "t": "El rape de profundidad | NATIONAL GEOGRAPHIC ESPAÑA",
+    "c": "National Geographic España",
+    "dur": "2:41",
+    "views": "864.620 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "PaErPyEnDvk",
+    "t": "What’s Hiding at the Most Solitary Place on Earth? The Deep Sea",
+    "c": "Kurzgesagt – In a Nutshell",
+    "dur": "11:20",
+    "views": "25,815,295 views"
+   },
+   {
+    "id": "oaJIkGhAf7U",
+    "t": "The Strangest Creatures of the Ocean | BBC Earth",
+    "c": "BBC Earth",
+    "dur": "19:19",
+    "views": "6,862,617 views"
+   }
+  ]
+ },
+ "rios-y-lagos": {
+  "es": [
+   {
+    "id": "3flu7QerH2A",
+    "t": "🗺️ Los RÍOS de ESPAÑA y sus VERTIENTES | Vídeos Educativos para Niños de PRIMARIA | @HappyLearningES",
+    "c": "Happy Learning Español",
+    "dur": "6:35",
+    "views": "17.445 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "8a3r-cG8Wic",
+    "t": "Why Do Rivers Curve?",
+    "c": "MinuteEarth",
+    "dur": "2:39",
+    "views": "9,446,481 views"
+   }
+  ]
+ },
+ "glaciares-y-hielo": {
+  "es": [
+   {
+    "id": "Uj1ncu56oZI",
+    "t": "Los glaciares del futuro: esperanza sobre hielo fino",
+    "c": "DW Español",
+    "dur": "7:33",
+    "views": "137.988 visualizaciones"
+   },
+   {
+    "id": "CUGy3TzyM9c",
+    "t": "Investigación climática al límite - El campo de hielo de la Patagonia | DW Documental",
+    "c": "DW Documental",
+    "dur": "25:59",
+    "views": "693.207 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "WJgpDyP9ewQ",
+    "t": "Climate 101: Glaciers | National Geographic",
+    "c": "National Geographic",
+    "dur": "4:06",
+    "views": "1,234,083 views"
+   },
+   {
+    "id": "mkt-0ZuTKXU",
+    "t": "What Are Glaciers? Crash Course Geography #26",
+    "c": "CrashCourse",
+    "dur": "11:12",
+    "views": "291,718 views"
+   }
+  ]
+ },
+ "ciclo-del-agua": {
+  "es": [
+   {
+    "id": "3QVj99UGk3Q",
+    "t": "El ciclo del agua para niños - ¿Qué es el ciclo del agua? -  ¿Por qué llueve? - Ciencias para niños",
+    "c": "Smile and Learn - Español",
+    "dur": "3:17",
+    "views": "3.509.419 visualizaciones"
+   },
+   {
+    "id": "QDCohXW6blg",
+    "t": "El Ciclo del Agua | Videos Educativos para Niños",
+    "c": "Happy Learning Español",
+    "dur": "3:35",
+    "views": "7.373.789 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "oaDkph9yQBs",
+    "t": "NASA | Earth's Water Cycle",
+    "c": "NASA Goddard",
+    "dur": "5:53",
+    "views": "969,880 views"
+   }
+  ]
+ },
+ "la-atmosfera": {
+  "es": [
+   {
+    "id": "hnho0KXUF1I",
+    "t": "¿Cómo se formó la atmósfera de la Tierra y otros planetas?",
+    "c": "Astronomiaweb",
+    "dur": "19:06",
+    "views": "355.235 visualizaciones"
+   },
+   {
+    "id": "PbbSHYkAaFo",
+    "t": "La Atmósfera - Las capas de la tierra - Ciencias para niños",
+    "c": "Smile and Learn - Español",
+    "dur": "3:41",
+    "views": "1.376.145 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "11ZI9aqurfA",
+    "t": "What Does the Atmosphere Do? Crash Course Geography #6",
+    "c": "CrashCourse",
+    "dur": "10:42",
+    "views": "522,000 views"
+   },
+   {
+    "id": "VVIesvLJjHE",
+    "t": "How Big is the Atmosphere?",
+    "c": "Jared Owen",
+    "dur": "2:54",
+    "views": "556,282 views"
+   }
+  ]
+ },
+ "tiempo-y-nubes": {
+  "es": [
+   {
+    "id": "VXXqy08Uk2c",
+    "t": "¿Cómo se produce la lluvia y las nubes? ¿Por qué llueve?",
+    "c": "Astronomiaweb",
+    "dur": "12:29",
+    "views": "209.930 visualizaciones"
+   },
+   {
+    "id": "GNxNdlQA_CQ",
+    "t": "¿Qué son las nubes? | Videos Educativos para niños.",
+    "c": "Happy Learning Español",
+    "dur": "3:19",
+    "views": "1.145.832 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "EK_UOLsN72Q",
+    "t": "☁️ What is a Cloud? Crash Course Geography #10",
+    "c": "CrashCourse",
+    "dur": "10:19",
+    "views": "459,538 views"
+   },
+   {
+    "id": "UuW1jhxCgx0",
+    "t": "How did clouds get their names? - Richard Hamblyn",
+    "c": "TED-Ed",
+    "dur": "5:07",
+    "views": "952,376 views"
+   }
+  ]
+ },
+ "tormentas-y-huracanes": {
+  "es": [
+   {
+    "id": "uFsumimqTLg",
+    "t": "¿Qué es un huracán? Huracanes, Tifones y Ciclones | Videos Educativos para niños.",
+    "c": "Happy Learning Español",
+    "dur": "3:14",
+    "views": "4.996.780 visualizaciones"
+   },
+   {
+    "id": "dFEtjw0Zlf4",
+    "t": "DESASTRES NATURALES 🌊🌋 Recopilación 💨⛈️ Huracán, sequía, tsunami, tormenta, terremoto...",
+    "c": "Smile and Learn - Español",
+    "dur": "12:34",
+    "views": "7.129.784 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "LlXVikDkyTg",
+    "t": "Hurricanes 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "2:58",
+    "views": "3,901,320 views"
+   },
+   {
+    "id": "lmWh9jV_1ac",
+    "t": "How do tornadoes form? - James Spann",
+    "c": "TED-Ed",
+    "dur": "4:12",
+    "views": "10,843,597 views"
+   }
+  ]
+ },
+ "climas-del-mundo": {
+  "es": [
+   {
+    "id": "z_dZQuZQTQs",
+    "t": "El clima para niños - Los tipos de clima del mundo",
+    "c": "Smile and Learn - Español",
+    "dur": "4:43",
+    "views": "2.049.485 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "xiGhLGFkJjo",
+    "t": "🥔 How do we Classify Climates? Crash Course Geography #13",
+    "c": "CrashCourse",
+    "dur": "10:56",
+    "views": "249,372 views"
+   }
+  ]
+ },
+ "cambio-climatico": {
+  "es": [
+   {
+    "id": "3ZbRHzimXOA",
+    "t": "Cambio Climático: ¿En Quién Puedes Confiar?",
+    "c": "QuantumFracture",
+    "dur": "5:55",
+    "views": "758.785 visualizaciones"
+   },
+   {
+    "id": "p1EJBEn3HuQ",
+    "t": "¿Es demasiado tarde para frenar el cambio climático? Bueno, es complicado.",
+    "c": "En Pocas Palabras – Kurzgesagt",
+    "dur": "10:00",
+    "views": "1.273.996 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "G4H1N_yXBiA",
+    "t": "Causes and Effects of Climate Change | National Geographic",
+    "c": "National Geographic",
+    "dur": "3:05",
+    "views": "6,297,388 views"
+   },
+   {
+    "id": "9PFhrpyWV-w",
+    "t": "What is Climate Change?: Crash Course Climate & Energy #1",
+    "c": "CrashCourse",
+    "dur": "13:03",
+    "views": "275,555 views"
+   }
+  ]
+ },
+ "auroras-y-fenomenos-opticos": {
+  "es": [],
+  "en": [
+   {
+    "id": "czMh3BnHFHQ",
+    "t": "What is an aurora? - Michael Molina",
+    "c": "TED-Ed",
+    "dur": "4:10",
+    "views": "1,018,082 views"
+   },
+   {
+    "id": "nXxwZVbDt1c",
+    "t": "What Causes Auroras?",
+    "c": "SciShow",
+    "dur": "3:29",
+    "views": "433,743 views"
+   }
+  ]
+ },
+ "origen-de-la-vida": {
+  "es": [
+   {
+    "id": "RFgzDDVFFlM",
+    "t": "5 Hipótesis sobre el Origen de la Vida en la Tierra",
+    "c": "El Robot de Platón",
+    "dur": "11:30",
+    "views": "1.215.335 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "de1hiS_XjWg",
+    "t": "The mysterious origins of life on Earth - Luka Seamus Wright",
+    "c": "TED-Ed",
+    "dur": "4:57",
+    "views": "1,615,584 views"
+   },
+   {
+    "id": "WZCeOUSYb4g",
+    "t": "How Did Life Begin?",
+    "c": "History of the Earth",
+    "dur": "21:31",
+    "views": "1,895,318 views"
+   }
+  ]
+ },
+ "evolucion": {
+  "es": [
+   {
+    "id": "3gT1qH9b1cg",
+    "t": "Teoría de la Evolución: 5 Preguntas Frecuentes",
+    "c": "CuriosaMente",
+    "dur": "6:34",
+    "views": "1.894.620 visualizaciones"
+   },
+   {
+    "id": "WJkbp9kE6TA",
+    "t": "La evolución de todo lo que existe – Clarity",
+    "c": "CuriosaMente",
+    "dur": "13:48",
+    "views": "359.352 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "dyiZaHIRM6w",
+    "t": "How Evolution Works (And How We Figured It Out)",
+    "c": "PBS Eons",
+    "dur": "12:10",
+    "views": "1,753,611 views"
+   },
+   {
+    "id": "hOfRN0KihOU",
+    "t": "How Evolution works",
+    "c": "Kurzgesagt – In a Nutshell",
+    "dur": "11:48",
+    "views": "11,470,099 views"
+   }
+  ]
+ },
+ "biodiversidad": {
+  "es": [],
+  "en": [
+   {
+    "id": "GK_vRtHJZu4",
+    "t": "Why is biodiversity so important? - Kim Preshoff",
+    "c": "TED-Ed",
+    "dur": "4:19",
+    "views": "4,786,329 views"
+   }
+  ]
+ },
+ "bosques-y-selvas": {
+  "es": [],
+  "en": [
+   {
+    "id": "3vijLre760w",
+    "t": "Rainforests 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "3:41",
+    "views": "3,051,943 views"
+   },
+   {
+    "id": "KMdD6TTDZ_g",
+    "t": "Explore the Rainforest! | Ecology for Kids",
+    "c": "SciShow Kids",
+    "dur": "4:08",
+    "views": "1,417,318 views"
+   }
+  ]
+ },
+ "biomas-y-vida-extrema": {
+  "es": [
+   {
+    "id": "Uf9EE8IBFJM",
+    "t": "Los animales de la sabana para niños - Conoce la naturaleza",
+    "c": "Smile and Learn - Español",
+    "dur": "4:29",
+    "views": "751.663 visualizaciones"
+   }
+  ],
+  "en": []
+ },
+ "extinciones": {
+  "es": [
+   {
+    "id": "snjTDlbQn10",
+    "t": "¿Fueron 5 las extinciones masivas en la Tierra?",
+    "c": "El Robot de Platón",
+    "dur": "10:57",
+    "views": "2.029.491 visualizaciones"
+   },
+   {
+    "id": "HD3IBNF5y_4",
+    "t": "Grandes extinciones masivas - Historia de la Tierra, 1 parte",
+    "c": "Astronomiaweb",
+    "dur": "18:24",
+    "views": "356.251 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "pjoQdz0nxf4",
+    "t": "How The Dinosaurs Actually Died",
+    "c": "Kurzgesagt – In a Nutshell",
+    "dur": "11:40",
+    "views": "9,056,572 views"
+   },
+   {
+    "id": "RAdNCIIYXvo",
+    "t": "When will the next mass extinction occur? - Borths, D'Emic, and Pritchard",
+    "c": "TED-Ed",
+    "dur": "5:01",
+    "views": "1,782,564 views"
+   }
+  ]
+ },
+ "continentes-y-paises": {
+  "es": [
+   {
+    "id": "YC76paJ1_Zs",
+    "t": "Los CONTINENTES para niños - Geografía para niños",
+    "c": "Smile and Learn - Español",
+    "dur": "5:16",
+    "views": "2.971.737 visualizaciones"
+   },
+   {
+    "id": "OwXB65-Au_8",
+    "t": "Los CONTINENTES y OCÉANOS para niños | Recopilación | ¿Cuántos continentes y océanos hay?",
+    "c": "Smile and Learn - Español",
+    "dur": "10:11",
+    "views": "1.799.286 visualizaciones"
+   }
+  ],
+  "en": []
+ },
+ "montanas-y-cordilleras": {
+  "es": [
+   {
+    "id": "nOl9y1OeL9k",
+    "t": "Los ACCIDENTES GEOGRÁFICOS para niños - El relieve - Montaña, cordillera, meseta, río, lago, isla",
+    "c": "Smile and Learn - Español",
+    "dur": "6:03",
+    "views": "488.800 visualizaciones"
+   },
+   {
+    "id": "icttaUwZAcU",
+    "t": "Los paisajes de montaña y de llanura. EL RELIEVE⛰| Vídeos Educativos para Niños",
+    "c": "Happy Learning Español",
+    "dur": "2:29",
+    "views": "1.389.125 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "r8uQVRVNV14",
+    "t": "How Do Mountains Form?: Crash Course Geology #11",
+    "c": "CrashCourse",
+    "dur": "9:09",
+    "views": "37,500 views"
+   }
+  ]
+ },
+ "desiertos": {
+  "es": [
+   {
+    "id": "dbYlQ0zUxhI",
+    "t": "¿Cómo se forman los desiertos? | DW Visión futuro",
+    "c": "DW Español",
+    "dur": "2:43",
+    "views": "33.326 visualizaciones"
+   },
+   {
+    "id": "ChN3lmgTGHY",
+    "t": "Desiertos 101 | National Geographic en Español",
+    "c": "National Geographic España",
+    "dur": "3:38",
+    "views": "105.233 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "T6Us1sPXBfA",
+    "t": "Why Does Earth Have Deserts?",
+    "c": "MinuteEarth",
+    "dur": "2:14",
+    "views": "1,593,478 views"
+   },
+   {
+    "id": "n4crvs-KTBw",
+    "t": "Deserts 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "3:53",
+    "views": "1,803,526 views"
+   }
+  ]
+ },
+ "polos": {
+  "es": [
+   {
+    "id": "WWarcHl1oGQ",
+    "t": "Cómo la Desaparición del Polo Norte nos va a Afectar",
+    "c": "QuantumFracture",
+    "dur": "6:05",
+    "views": "725.107 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "Z5VRoGTF60s",
+    "t": "The Arctic vs. the Antarctic - Camille Seaman",
+    "c": "TED-Ed",
+    "dur": "4:25",
+    "views": "4,973,958 views"
+   },
+   {
+    "id": "hpcZmuz2LGY",
+    "t": "The deadly race to the South Pole",
+    "c": "Vox",
+    "dur": "5:37",
+    "views": "3,668,613 views"
+   }
+  ]
+ },
+ "poblacion-y-huella": {
+  "es": [
+   {
+    "id": "B2yyFDApWZk",
+    "t": "Sobrepoblación: la explosión demográfica humana explicada",
+    "c": "En Pocas Palabras – Kurzgesagt",
+    "dur": "6:50",
+    "views": "1.771.845 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "E8dkWQVFAoA",
+    "t": "Human Population Growth - Crash Course Ecology #3",
+    "c": "CrashCourse",
+    "dur": "10:54",
+    "views": "1,556,855 views"
+   },
+   {
+    "id": "QsBT5EQt348",
+    "t": "Overpopulation – The Human Explosion Explained",
+    "c": "Kurzgesagt – In a Nutshell",
+    "dur": "6:40",
+    "views": "13,990,490 views"
+   }
+  ]
+ },
+ "contaminacion": {
+  "es": [],
+  "en": [
+   {
+    "id": "e6rglsLy1Ys",
+    "t": "Air Pollution 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "3:53",
+    "views": "13,340,339 views"
+   }
+  ]
+ },
+ "plasticos": {
+  "es": [
+   {
+    "id": "RTRxZvVcjfM",
+    "t": "Contaminación por plástico: o cómo estamos convirtiendo el mundo en plástico",
+    "c": "En Pocas Palabras – Kurzgesagt",
+    "dur": "9:01",
+    "views": "1.123.161 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "_6xlNyWPpB8",
+    "t": "What really happens to the plastic you throw away - Emma Bryce",
+    "c": "TED-Ed",
+    "dur": "4:07",
+    "views": "5,695,419 views"
+   },
+   {
+    "id": "RS7IzU2VJIQ",
+    "t": "Plastic Pollution: How Humans are Turning the World into Plastic",
+    "c": "Kurzgesagt – In a Nutshell",
+    "dur": "9:02",
+    "views": "10,103,290 views"
+   }
+  ]
+ },
+ "deforestacion": {
+  "es": [
+   {
+    "id": "OW42VbalQqc",
+    "t": "¿Explotar la selva amazónica o salvarla de la deforestación?",
+    "c": "BBC News Mundo",
+    "dur": "3:52",
+    "views": "57.501 visualizaciones"
+   },
+   {
+    "id": "IcBs3P6BKOY",
+    "t": "LA DEFORESTACIÓN | Maneras de cuidar del Medio Ambiente | Happy Learning ♻️🌴🐒",
+    "c": "Happy Learning Español",
+    "dur": "4:22",
+    "views": "129.298 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "Ic-J6hcSKa8",
+    "t": "Climate 101: Deforestation | National Geographic",
+    "c": "National Geographic",
+    "dur": "2:49",
+    "views": "2,099,184 views"
+   },
+   {
+    "id": "B5Fwl4P4EW8",
+    "t": "The Tragedy Of Deforestation | Climate Change: The Facts | BBC Earth",
+    "c": "BBC Earth",
+    "dur": "5:08",
+    "views": "482,487 views"
+   }
+  ]
+ },
+ "energia-y-renovables": {
+  "es": [
+   {
+    "id": "4eEri5RivV8",
+    "t": "Las energías renovables - Tipos de energía para niños",
+    "c": "Smile and Learn - Español",
+    "dur": "3:18",
+    "views": "1.133.331 visualizaciones"
+   },
+   {
+    "id": "NAPAMIpGB-s",
+    "t": "¿Qué es la energía? - Tipos de energía para niños - Energías renovables y no renovables",
+    "c": "Smile and Learn - Español",
+    "dur": "3:42",
+    "views": "3.045.088 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "gLvkWpnzba8",
+    "t": "Can the world rely on renewable energy? | Future Earth | BBC News",
+    "c": "BBC News",
+    "dur": "24:29",
+    "views": "564,509 views"
+   },
+   {
+    "id": "1kUE0BZtTRc",
+    "t": "Renewable Energy 101 | National Geographic",
+    "c": "National Geographic",
+    "dur": "3:17",
+    "views": "2,743,424 views"
+   }
+  ]
+ },
+ "cuidar-el-planeta": {
+  "es": [
+   {
+    "id": "PG_SSR_6H6c",
+    "t": "Una guía para cuidar el planeta. Programa completo",
+    "c": "DW Español",
+    "dur": "26:02",
+    "views": "31.612 visualizaciones"
+   },
+   {
+    "id": "nvUqnpicSd0",
+    "t": "¿Cómo cuidar el medio ambiente? - 10 consejos para cuidar del medio ambiente",
+    "c": "Smile and Learn - Español",
+    "dur": "3:31",
+    "views": "3.774.594 visualizaciones"
+   }
+  ],
+  "en": [
+   {
+    "id": "mH2aE0lk2XM",
+    "t": "Why It's Time to Stop Saving the Planet*",
+    "c": "PBS Terra",
+    "dur": "7:57",
+    "views": "319,346 views"
+   }
+  ]
+ },
+ "simuladores-de-la-tierra": {
+  "es": [],
+  "en": [
+   {
+    "id": "JGXi_9A__Vc",
+    "t": "Everything You Need to Know About Planet Earth",
+    "c": "Kurzgesagt – In a Nutshell",
+    "dur": "7:22",
+    "views": "14,086,363 views"
+   }
+  ]
+ },
+ "lugares-extremos": {
+  "es": [],
+  "en": [
+   {
+    "id": "nZrI14lXFHk",
+    "t": "Death Valley: One of the Most Extreme Places on Earth",
+    "c": "Smithsonian Channel",
+    "dur": "2:27",
+    "views": "617,130 views"
+   }
+  ]
+ },
+ "mitos-de-la-tierra": {
+  "es": [
+   {
+    "id": "iVNt1NuU0hE",
+    "t": "Tierra Plana vs Tierra Esférica | La Batalla Definitiva",
+    "c": "QuantumFracture",
+    "dur": "4:47",
+    "views": "4.057.608 visualizaciones"
+   },
+   {
+    "id": "QylcH69Lw0w",
+    "t": "Las 20 mentiras de astronomía y ciencia que aún crees...",
+    "c": "Astronomiaweb",
+    "dur": "14:30",
+    "views": "8.223.550 visualizaciones"
+   }
+  ],
+  "en": []
+ }
+}

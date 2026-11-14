@@ -421,7 +421,7 @@ La astronomía avanza a toda velocidad. En las últimas décadas, los nuevos tel
 
 ## La primera foto de un agujero negro (2019)
 
-El 10 de abril de 2019, el **Event Horizon Telescope**, una red de radiotelescopios repartidos por todo el planeta que funcionan como uno solo del tamaño de la Tierra, presentó la primera imagen de un agujero negro: el de la galaxia M87, con 6.500 millones de masas solares. En 2022 llegó la foto de **Sagitario A\***, el agujero negro del centro de nuestra galaxia.
+El 10 de abril de 2019, el **Event Horizon Telescope**, una red de radiotelescopios repartidos por todo el planeta que funcionan como uno solo del tamaño de la Tierra, presentó la primera imagen de un agujero negro: el de la galaxia M87, con 6.500 millones de masas solares. En 2022 llegó la foto de **Sagitario A\\***, el agujero negro del centro de nuestra galaxia.
 
 !foto agujero_m87 | El agujero negro de la galaxia M87: el anillo es gas a enorme temperatura que gira a su alrededor.
 
@@ -460,7 +460,7 @@ Astronomy is moving at full speed. In recent decades, new telescopes and probes 
 
 ## The first photo of a black hole (2019)
 
-On 10 April 2019, the **Event Horizon Telescope**, a network of radio telescopes spread across the planet working as one dish the size of Earth, unveiled the first image of a black hole: the one in galaxy M87, with 6.5 billion solar masses. In 2022 came the photo of **Sagittarius A\***, the black hole at the centre of our galaxy.
+On 10 April 2019, the **Event Horizon Telescope**, a network of radio telescopes spread across the planet working as one dish the size of Earth, unveiled the first image of a black hole: the one in galaxy M87, with 6.5 billion solar masses. In 2022 came the photo of **Sagittarius A\\***, the black hole at the centre of our galaxy.
 
 !foto agujero_m87 | The black hole in galaxy M87: the ring is extremely hot gas swirling around it.
 

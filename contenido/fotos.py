@@ -1,10 +1,12 @@
-# Descarga las fotos de Commons a img/universo/ (960 px, JPEG) y guarda los créditos.
-# Uso: python3 contenido/fotos.py [--solo-comprobar]
+# Descarga las fotos de Commons a img/<área>/ (960 px, JPEG) y guarda los créditos.
+# Uso: python3 contenido/fotos.py universo|tierra [--solo-comprobar]
 import json, re, html, sys, time, io, pathlib, urllib.request, urllib.parse
 sys.path.insert(0, str(pathlib.Path(__file__).parent))
-from fotos_universo import FOTOS
+import importlib
+AREA = next((a for a in sys.argv[1:] if not a.startswith("--")), "universo")
+FOTOS = importlib.import_module("fotos_" + AREA).FOTOS
 ROOT = pathlib.Path(__file__).parent.parent
-DEST = ROOT / "img" / "universo"; DEST.mkdir(parents=True, exist_ok=True)
+DEST = ROOT / "img" / AREA; DEST.mkdir(parents=True, exist_ok=True)
 CRED = DEST / "creditos.json"
 UA = {"User-Agent": "PlanetSiteBuilder/1.0 (static educational site)"}
 
