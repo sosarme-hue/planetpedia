@@ -342,9 +342,13 @@ th { font-family: var(--font-display); background: var(--surface); }
 .certificado p { font-family: var(--font-body); font-size: 1.05rem; max-width: 60ch; }
 
 /* Foto de portada (Unsplash, Growtika) */
-.hero.con-foto { background: var(--navy) url("https://images.unsplash.com/photo-1674027444485-cec3da58eef4?w=1600&q=75&fm=jpg&fit=crop") right center / cover no-repeat; }
-.hero.con-foto::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(18,24,61,.96) 0%, rgba(18,24,61,.85) 45%, rgba(18,24,61,.25) 100%); z-index: 0; }
+.hero.con-foto { background: var(--navy) url("https://images.unsplash.com/photo-1674027444485-cec3da58eef4?w=1600&q=80&fm=jpg") right center / auto 100% no-repeat; }
+.hero.con-foto::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--navy) 0%, var(--navy) 45%, rgba(18,24,61,0) 62%); z-index: 0; }
 .hero.con-foto .hero-red { display: none; }
-.hero.con-foto .credito-foto { position: absolute; right: 10px; bottom: 6px; z-index: 1; font-size: .7rem; color: rgba(255,255,255,.6); }
+.hero.con-foto .credito-foto { position: absolute; right: 10px; bottom: 6px; z-index: 1; font-size: .7rem; color: rgba(255,255,255,.7); margin: 0; }
 .hero.con-foto .credito-foto a { color: inherit; }
-@media (max-width: 820px) { .hero.con-foto::before { background: rgba(18,24,61,.86); } }
+@media (max-width: 900px) {
+  .hero.con-foto { background-position: center bottom; background-size: 100% auto; }
+  .hero.con-foto .wrap { padding-bottom: calc(56.25vw + 12px); }
+  .hero.con-foto::before { background: linear-gradient(180deg, var(--navy) 0%, var(--navy) calc(100% - 56.25vw - 10px), rgba(18,24,61,0) calc(100% - 56.25vw + 30px)); }
+}
