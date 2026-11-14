@@ -76,8 +76,8 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 /* Portada */
 .hero { background: var(--navy); color: var(--on-navy); position: relative; overflow: visible; overflow-x: clip; z-index: 2; }
 .hero .wrap { padding-block: 56px 64px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; position: relative; z-index: 1; }
-.sistema { position: absolute; z-index: 0; top: 50%; right: max(-40px, calc((100vw - var(--maxw)) / 2 - 60px)); width: min(560px, 44vw); aspect-ratio: 1; transform: translateY(-50%); }
-@media (max-width: 900px) { .sistema { right: -30%; width: 110vw; max-width: 720px; opacity: .38; pointer-events: none; } }
+.sistema { position: absolute; z-index: 0; top: 38%; right: max(-40px, calc((100vw - var(--maxw)) / 2 - 60px)); width: min(560px, 44vw); aspect-ratio: 1; transform: translateY(-50%); }
+@media (max-width: 900px) { .sistema { top: 50%; right: -30%; width: 110vw; max-width: 720px; opacity: .38; pointer-events: none; } }
 @media (max-width: 560px) { .sistema { top: 6%; right: -45%; width: 130vw; transform: none; opacity: .3; } }
 .eyebrow { font: 600 .78rem/1 var(--font-body); letter-spacing: .14em; text-transform: uppercase; color: var(--teal); }
 .hero h1 { font-size: clamp(2.1rem, 5.4vw, 3.9rem); line-height: 1.05; letter-spacing: -0.025em; max-width: 15ch; font-weight: 800; }
@@ -547,7 +547,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   var ctx = cv.getContext('2d');
   // nombre, periodo orbital (años), radio dibujo, color, anillo
   var P = [
-    ['Mercurio', 0.241, 2.2, '#b9b2a8'], ['Venus', 0.615, 3.4, '#e8c98b'], ['Tierra', 1, 3.6, '#4fa3e0'],
+    ['Mercurio', 0.241, 2.2, '#b9b2a8'], ['Venus', 0.615, 3.4, '#e8c98b'], ['Tierra', 1, 4.4, '#4fa3e0'],
     ['Marte', 1.881, 2.8, '#d9663f'], ['Júpiter', 11.86, 8, '#d8b48a'], ['Saturno', 29.46, 6.8, '#e7d29c', true],
     ['Urano', 84.01, 5, '#9fdfe6'], ['Neptuno', 164.8, 4.8, '#4f7ce8']
   ];
@@ -594,6 +594,15 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       // sombra del lado opuesto al Sol
       ctx.fillStyle = 'rgba(5,15,34,.45)';
       ctx.beginPath(); ctx.arc(x, y, pr, a - 1.57, a + 1.57); ctx.fill();
+      if (j === 2) {
+        // etiqueta de la Tierra, hacia fuera de la órbita
+        var lx = x + Math.cos(a) * (pr + 7 * k), ly = y + Math.sin(a) * (pr + 7 * k);
+        ctx.font = '600 ' + Math.max(11, Math.round(13 * k)) + 'px Inter, system-ui, sans-serif';
+        ctx.textAlign = Math.cos(a) > 0.3 ? 'left' : (Math.cos(a) < -0.3 ? 'right' : 'center');
+        ctx.textBaseline = Math.sin(a) > 0.3 ? 'top' : (Math.sin(a) < -0.3 ? 'bottom' : 'middle');
+        ctx.fillStyle = 'rgba(46,196,196,.95)';
+        ctx.fillText(EN ? 'Earth' : 'Tierra', lx, ly);
+      }
     }
   }
   var visible = true, raf = 0, t0 = performance.now(), parado = 0;
