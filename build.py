@@ -50,6 +50,16 @@ GUIAS = [
     ("Garraf", "garraf.si", "comarca", "garraf.jpg", "Playas, pueblos y viñas de la comarca, con la guía de cada municipio.", "Beaches, villages and vineyards of the district, with a guide to each town.", "Max", "Garraf"),
     ("Eivissa", "eivissa.si", "isla", "eivissa.jpg", "Dalt Vila, calas, ferris y vida local de Eivissa y Formentera.", "Dalt Vila, coves, ferries and local life on Ibiza and Formentera.", "Alejandra Camacho Álvarez", "Ibiza (Eivissa)"),
 ]
+# Webs con versión inglesa en /en/ (comprobado en Hostinger el 14-11-2026)
+CON_INGLES = {"classicapedia.com", "pinacopedia.com", "cinematopedia.com", "newtonpedia.com", "medicapedia.org",
+              "filopedia.com", "mythicapedia.com", "zodiacopedia.com", "celebraciones.org", "culinapedia.com",
+              "worldwinepedia.com", "tenispedia.com", "catdogpedia.com"}
+
+
+def url_web(dom, en):
+    return f"https://{dom}/en/" if en and dom in CON_INGLES else f"https://{dom}/"
+
+
 TIPOS = {"es": {"municipio": "Municipio", "comarca": "Comarca", "isla": "Isla"},
          "en": {"municipio": "Town", "comarca": "District", "isla": "Island"}}
 
@@ -78,7 +88,7 @@ EN = [
     ('<span class="eyebrow">Conocimiento y lugares por descubrir</span>', '<span class="eyebrow">Knowledge and places to discover</span>'),
     ('<h1>Explora tus intereses. <span>Descubre nuevos lugares.</span></h1>', '<h1>Explore your interests. <span>Discover new places.</span></h1>'),
     ('Planetpedia reúne una red de enciclopedias y guías independientes para aprender, seguir tus aficiones y conocer ciudades. Cada web tiene su propio dominio y su propia voz; aquí las encuentras todas.',
-     'Planetpedia brings together a network of independent encyclopedias and guides to learn, follow your hobbies and get to know towns and cities. Each site has its own domain and its own voice; here you can find them all. Most sites are in Spanish.'),
+     'Planetpedia brings together a network of independent encyclopedias and guides to learn, follow your hobbies and get to know towns and cities. Each site has its own domain and its own voice; here you can find them all. Links take you to each site\'s English version where there is one.'),
     ('<strong>Explorar el conocimiento</strong><small>{{N_ENC}} enciclopedias temáticas</small>', '<strong>Explore knowledge</strong><small>{{N_ENC}} subject encyclopedias</small>'),
     ('<strong>Descubrir destinos</strong><small>{{N_GUIAS}} guías locales</small>', '<strong>Discover destinations</strong><small>{{N_GUIAS}} local guides</small>'),
     ('<label for="q">Buscar en la red</label>', '<label for="q">Search the network</label>'),
@@ -161,13 +171,14 @@ def build(lang="es", preview=False):
         cards = []
         for n, dom, d_es, d_en in webs:
             desc = d_en if en else d_es
+            solo_es = ' · <span class="solo-es">in Spanish</span>' if en and dom not in CON_INGLES else ''
             cards.append(f'''<li class="web" data-search="{e((n + ' ' + dom + ' ' + d_es + ' ' + d_en + ' ' + nom_es + ' ' + nom_en).lower())}">
-  <a href="https://{dom}/" class="web-link">
+  <a href="{url_web(dom, en)}" class="web-link">
     <span class="mono mono-{key}" aria-hidden="true">{e(n[0])}</span>
     <span class="web-body">
       <span class="web-name">{e(n)}</span>
       <span class="web-desc">{e(desc)}</span>
-      <span class="web-dom">{e(dom)} <span aria-hidden="true">↗</span></span>
+      <span class="web-dom">{e(dom)}{solo_es} <span aria-hidden="true">↗</span></span>
     </span>
   </a>
 </li>''')
@@ -219,10 +230,10 @@ def build(lang="es", preview=False):
     for web, dom, t_es, tit_es, t_en, tit_en in SELECCION:
         tipo, titulo = (t_en, tit_en) if en else (t_es, tit_es)
         sel_html.append(f'''<li class="pieza">
-  <a href="https://{dom}/">
+  <a href="{url_web(dom, en)}">
     <span class="pieza-tipo">{e(tipo)}</span>
     <span class="pieza-titulo">{e(titulo)}</span>
-    <span class="pieza-origen">{'on' if en else 'en'} {e(web)}{' (in Spanish)' if en else ''}</span>
+    <span class="pieza-origen">{'on' if en else 'en'} {e(web)}{' (in Spanish)' if en and dom not in CON_INGLES else ''}</span>
   </a>
 </li>''')
 

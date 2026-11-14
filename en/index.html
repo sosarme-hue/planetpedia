@@ -121,6 +121,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .web-name { font: 700 1.02rem/1.3 var(--font-display); }
 .web-desc { color: var(--ink-soft); font-size: .92rem; line-height: 1.45; }
 .web-dom { color: var(--teal-ink); font-size: .8rem; font-weight: 500; }
+.solo-es { color: var(--ink-soft); font-weight: 400; }
 .web-link:hover .web-name { color: var(--teal-ink); }
 .mono-musica, .dot-musica { background: var(--c-musica); }
 .mono-ciencia, .dot-ciencia { background: var(--c-ciencia); }
@@ -245,7 +246,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <div class="wrap">
       <span class="eyebrow">Knowledge and places to discover</span>
       <h1>Explore your interests. <span>Discover new places.</span></h1>
-      <p class="lede">Planetpedia brings together a network of independent encyclopedias and guides to learn, follow your hobbies and get to know towns and cities. Each site has its own domain and its own voice; here you can find them all. Most sites are in Spanish.</p>
+      <p class="lede">Planetpedia brings together a network of independent encyclopedias and guides to learn, follow your hobbies and get to know towns and cities. Each site has its own domain and its own voice; here you can find them all. Links take you to each site's English version where there is one.</p>
       <div class="caminos">
         <a class="camino" href="#enciclopedias"><span><strong>Explore knowledge</strong><small>19 subject encyclopedias</small></span><span class="arrow" aria-hidden="true">→</span></a>
         <a class="camino" href="#guias"><span><strong>Discover destinations</strong><small>7 local guides</small></span><span class="arrow" aria-hidden="true">→</span></a>
@@ -356,7 +357,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <p>Composers, painting and film</p>
   </header>
   <ul class="webs"><li class="web" data-search="classicapedia classicapedia.com compositores, obras y épocas de la música clásica, explicados para disfrutarla más. composers, works and periods of classical music, explained so you can enjoy it more. música y artes music and arts">
-  <a href="https://classicapedia.com/" class="web-link">
+  <a href="https://classicapedia.com/en/" class="web-link">
     <span class="mono mono-musica" aria-hidden="true">C</span>
     <span class="web-body">
       <span class="web-name">Classicapedia</span>
@@ -365,7 +366,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     </span>
   </a>
 </li><li class="web" data-search="pinacopedia pinacopedia.com pintores, cuadros y museos: la historia del arte, obra a obra. painters, paintings and museums: art history, one work at a time. música y artes music and arts">
-  <a href="https://pinacopedia.com/" class="web-link">
+  <a href="https://pinacopedia.com/en/" class="web-link">
     <span class="mono mono-musica" aria-hidden="true">P</span>
     <span class="web-body">
       <span class="web-name">Pinacopedia</span>
@@ -374,7 +375,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     </span>
   </a>
 </li><li class="web" data-search="cinematopedia cinematopedia.com películas, directores y géneros para entender y disfrutar el cine. films, directors and genres to understand and enjoy cinema. música y artes music and arts">
-  <a href="https://cinematopedia.com/" class="web-link">
+  <a href="https://cinematopedia.com/en/" class="web-link">
     <span class="mono mono-musica" aria-hidden="true">C</span>
     <span class="web-body">
       <span class="web-name">Cinematopedia</span>
@@ -390,7 +391,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <p>From the lab to the clinic</p>
   </header>
   <ul class="webs"><li class="web" data-search="newtonpedia newtonpedia.com física, química y matemáticas contadas con claridad, de las leyes a sus descubridores. physics, chemistry and maths told clearly, from the laws to the people who found them. ciencia y salud science and health">
-  <a href="https://newtonpedia.com/" class="web-link">
+  <a href="https://newtonpedia.com/en/" class="web-link">
     <span class="mono mono-ciencia" aria-hidden="true">N</span>
     <span class="web-body">
       <span class="web-name">Newtonpedia</span>
@@ -399,7 +400,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     </span>
   </a>
 </li><li class="web" data-search="medicapedia medicapedia.org enfermedades, síntomas y tratamientos explicados en lenguaje claro. diseases, symptoms and treatments explained in plain language. ciencia y salud science and health">
-  <a href="https://medicapedia.org/" class="web-link">
+  <a href="https://medicapedia.org/en/" class="web-link">
     <span class="mono mono-ciencia" aria-hidden="true">M</span>
     <span class="web-body">
       <span class="web-name">Medicapedia</span>
@@ -413,7 +414,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <span class="web-body">
       <span class="web-name">Farmacos.ai</span>
       <span class="web-desc">Medicines: what they are for, how to take them and what to watch out for.</span>
-      <span class="web-dom">farmacos.ai <span aria-hidden="true">↗</span></span>
+      <span class="web-dom">farmacos.ai · <span class="solo-es">in Spanish</span> <span aria-hidden="true">↗</span></span>
     </span>
   </a>
 </li><li class="web" data-search="enfermería sí enfermeria.si recursos, técnicas y oposiciones para profesionales y estudiantes de enfermería. resources, techniques and exam preparation for nurses and nursing students. ciencia y salud science and health">
@@ -422,7 +423,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <span class="web-body">
       <span class="web-name">Enfermería Sí</span>
       <span class="web-desc">Resources, techniques and exam preparation for nurses and nursing students.</span>
-      <span class="web-dom">enfermeria.si <span aria-hidden="true">↗</span></span>
+      <span class="web-dom">enfermeria.si · <span class="solo-es">in Spanish</span> <span aria-hidden="true">↗</span></span>
     </span>
   </a>
 </li></ul>
@@ -433,7 +434,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <p>Ideas, myths and symbols</p>
   </header>
   <ul class="webs"><li class="web" data-search="filopedia filopedia.com filósofos, corrientes y grandes preguntas, de la antigüedad a hoy. philosophers, schools of thought and big questions, from antiquity to today. humanidades humanities">
-  <a href="https://filopedia.com/" class="web-link">
+  <a href="https://filopedia.com/en/" class="web-link">
     <span class="mono mono-humanidades" aria-hidden="true">F</span>
     <span class="web-body">
       <span class="web-name">Filopedia</span>
@@ -442,7 +443,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     </span>
   </a>
 </li><li class="web" data-search="mythicapedia mythicapedia.com dioses, héroes y leyendas de las mitologías del mundo. gods, heroes and legends from the world&#x27;s mythologies. humanidades humanities">
-  <a href="https://mythicapedia.com/" class="web-link">
+  <a href="https://mythicapedia.com/en/" class="web-link">
     <span class="mono mono-humanidades" aria-hidden="true">M</span>
     <span class="web-body">
       <span class="web-name">Mythicapedia</span>
@@ -451,7 +452,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     </span>
   </a>
 </li><li class="web" data-search="zodiacopedia zodiacopedia.com signos, planetas y cartas astrales: la astrología como cultura. signs, planets and birth charts: astrology as culture. humanidades humanities">
-  <a href="https://zodiacopedia.com/" class="web-link">
+  <a href="https://zodiacopedia.com/en/" class="web-link">
     <span class="mono mono-humanidades" aria-hidden="true">Z</span>
     <span class="web-body">
       <span class="web-name">Zodiacopedia</span>
@@ -472,7 +473,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <span class="web-body">
       <span class="web-name">Escolapedia</span>
       <span class="web-desc">Notes and study guides for primary and secondary school.</span>
-      <span class="web-dom">escolapedia.com <span aria-hidden="true">↗</span></span>
+      <span class="web-dom">escolapedia.com · <span class="solo-es">in Spanish</span> <span aria-hidden="true">↗</span></span>
     </span>
   </a>
 </li><li class="web" data-search="leypedia leypedia.com leyes, derechos y trámites explicados para cualquier persona. laws, rights and paperwork explained for everyone. educación y sociedad education and society">
@@ -481,7 +482,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <span class="web-body">
       <span class="web-name">Leypedia</span>
       <span class="web-desc">Laws, rights and paperwork explained for everyone.</span>
-      <span class="web-dom">leypedia.com <span aria-hidden="true">↗</span></span>
+      <span class="web-dom">leypedia.com · <span class="solo-es">in Spanish</span> <span aria-hidden="true">↗</span></span>
     </span>
   </a>
 </li><li class="web" data-search="saber para invertir saberparainvertir.com finanzas personales e inversión, desde lo básico y sin promesas fáciles. personal finance and investing, from the basics and without easy promises. educación y sociedad education and society">
@@ -490,11 +491,11 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <span class="web-body">
       <span class="web-name">Saber para Invertir</span>
       <span class="web-desc">Personal finance and investing, from the basics and without easy promises.</span>
-      <span class="web-dom">saberparainvertir.com <span aria-hidden="true">↗</span></span>
+      <span class="web-dom">saberparainvertir.com · <span class="solo-es">in Spanish</span> <span aria-hidden="true">↗</span></span>
     </span>
   </a>
 </li><li class="web" data-search="celebraciones celebraciones.org fiestas, tradiciones y fechas señaladas, con su origen y cómo celebrarlas. festivals, traditions and special dates, with their origins and how to celebrate them. educación y sociedad education and society">
-  <a href="https://celebraciones.org/" class="web-link">
+  <a href="https://celebraciones.org/en/" class="web-link">
     <span class="mono mono-educacion" aria-hidden="true">C</span>
     <span class="web-body">
       <span class="web-name">Celebraciones</span>
@@ -510,7 +511,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <p>Kitchens and wineries</p>
   </header>
   <ul class="webs"><li class="web" data-search="culinapedia culinapedia.com recetas, ingredientes y técnicas de las cocinas del mundo. recipes, ingredients and techniques from the world&#x27;s cuisines. gastronomía y vino food and wine">
-  <a href="https://culinapedia.com/" class="web-link">
+  <a href="https://culinapedia.com/en/" class="web-link">
     <span class="mono mono-gastronomia" aria-hidden="true">C</span>
     <span class="web-body">
       <span class="web-name">Culinapedia</span>
@@ -519,7 +520,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     </span>
   </a>
 </li><li class="web" data-search="worldwinepedia worldwinepedia.com uvas, regiones y bodegas para conocer el vino de todo el mundo. grapes, regions and wineries to get to know wine from around the world. gastronomía y vino food and wine">
-  <a href="https://worldwinepedia.com/" class="web-link">
+  <a href="https://worldwinepedia.com/en/" class="web-link">
     <span class="mono mono-gastronomia" aria-hidden="true">W</span>
     <span class="web-body">
       <span class="web-name">WorldWinePedia</span>
@@ -535,7 +536,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <p>Sport, games and pets</p>
   </header>
   <ul class="webs"><li class="web" data-search="tenispedia tenispedia.com jugadores, torneos y técnica: el tenis en vivo y en su historia. players, tournaments and technique: tennis live and through its history. aficiones y vida cotidiana hobbies and everyday life">
-  <a href="https://tenispedia.com/" class="web-link">
+  <a href="https://tenispedia.com/en/" class="web-link">
     <span class="mono mono-aficiones" aria-hidden="true">T</span>
     <span class="web-body">
       <span class="web-name">Tenispedia</span>
@@ -544,7 +545,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     </span>
   </a>
 </li><li class="web" data-search="catdogpedia catdogpedia.com razas, salud y cuidados de perros y gatos. breeds, health and care for dogs and cats. aficiones y vida cotidiana hobbies and everyday life">
-  <a href="https://catdogpedia.com/" class="web-link">
+  <a href="https://catdogpedia.com/en/" class="web-link">
     <span class="mono mono-aficiones" aria-hidden="true">C</span>
     <span class="web-body">
       <span class="web-name">Catdogpedia</span>
@@ -558,7 +559,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     <span class="web-body">
       <span class="web-name">Ludicopedia</span>
       <span class="web-desc">Board, card and puzzle games: rules, history and strategy.</span>
-      <span class="web-dom">ludicopedia.com <span aria-hidden="true">↗</span></span>
+      <span class="web-dom">ludicopedia.com · <span class="solo-es">in Spanish</span> <span aria-hidden="true">↗</span></span>
     </span>
   </a>
 </li></ul>
@@ -678,17 +679,17 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       </div>
       <ul class="piezas">
 <li class="pieza">
-  <a href="https://classicapedia.com/">
+  <a href="https://classicapedia.com/en/">
     <span class="pieza-tipo">Biography</span>
     <span class="pieza-titulo">Who Bach was and why he is still the starting point</span>
-    <span class="pieza-origen">on Classicapedia (in Spanish)</span>
+    <span class="pieza-origen">on Classicapedia</span>
   </a>
 </li>
 <li class="pieza">
-  <a href="https://newtonpedia.com/">
+  <a href="https://newtonpedia.com/en/">
     <span class="pieza-tipo">Science</span>
     <span class="pieza-titulo">Gravity explained without formulas</span>
-    <span class="pieza-origen">on Newtonpedia (in Spanish)</span>
+    <span class="pieza-origen">on Newtonpedia</span>
   </a>
 </li>
 <li class="pieza">
