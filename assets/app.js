@@ -262,20 +262,50 @@
   }
 
   // Escuchar términos del diccionario
-  if ("speechSynthesis" in window) {
+  if ("speechSynthesis" in window && "SpeechSynthesisUtterance" in window) {
+    var sintesis = window.speechSynthesis, actual = null, botonActivo = null, voces = [];
+    var cargarVoces = function () { voces = sintesis.getVoices() || []; };
+    cargarVoces();
+    if ("onvoiceschanged" in sintesis) sintesis.addEventListener("voiceschanged", cargarVoces);
+    var elegirVoz = function () {
+      var es = voces.filter(function (v) { return /^es/i.test(v.lang); });
+      return es.filter(function (v) { return /es[-_]ES/i.test(v.lang); })[0] || es[0] || null;
+    };
+    var reiniciar = function () {
+      if (botonActivo) { botonActivo.textContent = "🔊 Escuchar"; botonActivo.classList.remove("sonando"); }
+      botonActivo = null; actual = null;
+    };
     document.querySelectorAll(".termino").forEach(function (t) {
       var h = t.querySelector("h3"); if (!h) return;
+      var nombre = h.firstChild.textContent.trim();
       var b = document.createElement("button");
-      b.type = "button"; b.className = "escuchar"; b.setAttribute("aria-label", "Escuchar «" + h.textContent + "»"); b.textContent = "🔊 Escuchar";
+      b.type = "button"; b.className = "escuchar"; b.setAttribute("aria-label", "Escuchar «" + nombre + "»"); b.textContent = "🔊 Escuchar";
       h.appendChild(b);
+      var aviso = document.createElement("span"); aviso.className = "aviso-voz"; aviso.setAttribute("aria-live", "polite"); h.appendChild(aviso);
       b.addEventListener("click", function () {
-        speechSynthesis.cancel();
-        var texto = h.firstChild.textContent + ". " + [].map.call(t.querySelectorAll("p"), function (p) { return p.textContent; }).join(" ");
+        var eraEste = botonActivo === b;
+        sintesis.cancel(); reiniciar(); aviso.textContent = "";
+        if (eraEste) return;
+        var texto = nombre + ". " + [].map.call(t.querySelectorAll("p"), function (p) { return p.textContent; }).join(" ");
         var u = new SpeechSynthesisUtterance(texto);
-        u.lang = "es-ES"; u.rate = 0.92;
-        var voz = speechSynthesis.getVoices().filter(function (v) { return /^es/i.test(v.lang); })[0];
-        if (voz) u.voice = voz;
-        speechSynthesis.speak(u);
+        u.lang = "es-ES"; u.rate = 0.92; u.volume = 1;
+        try { var voz = elegirVoz(); if (voz) u.voice = voz; } catch (e) {}
+        u.onend = reiniciar;
+        u.onerror = function (ev) {
+          reiniciar();
+          if (ev.error !== "canceled" && ev.error !== "interrupted") aviso.textContent = "Tu navegador no ha podido leerlo en voz alta.";
+        };
+        actual = u; botonActivo = b; b.textContent = "⏹ Parar"; b.classList.add("sonando");
+        setTimeout(function () {
+          if (actual !== u) return;
+          sintesis.resume(); sintesis.speak(u);
+          setTimeout(function () {
+            if (actual === u && !sintesis.speaking && !sintesis.pending) {
+              reiniciar();
+              aviso.textContent = voces.length ? "No se oye nada: revisa el volumen del dispositivo." : "Tu navegador no tiene voces instaladas para leer en voz alta. Prueba con Chrome, Edge o Safari.";
+            }
+          }, 1500);
+        }, 60);
       });
     });
   }
