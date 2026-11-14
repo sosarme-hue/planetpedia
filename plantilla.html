@@ -563,6 +563,35 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   }
   function radio(i) { var c = W / 2; return c * (0.14 + 0.105 * i); }
+  function dibujarSol(c, k, t) {
+    var R = 19 * k, pulso = 1 + 0.04 * Math.sin(t / 900);
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    // halo exterior amplio y suave
+    var h = ctx.createRadialGradient(c, c, R * 0.6, c, c, R * 4.2 * pulso);
+    h.addColorStop(0, 'rgba(255,190,90,.38)'); h.addColorStop(.35, 'rgba(255,140,50,.14)'); h.addColorStop(1, 'rgba(255,120,40,0)');
+    ctx.fillStyle = h; ctx.beginPath(); ctx.arc(c, c, R * 4.2 * pulso, 0, 6.283); ctx.fill();
+    // rayos de corona que giran despacio
+    ctx.translate(c, c); ctx.rotate(t / 24000);
+    for (var n = 0; n < 12; n++) {
+      var largo = R * (1.9 + 0.35 * Math.sin(t / 700 + n * 1.7));
+      var gr = ctx.createLinearGradient(0, 0, largo, 0);
+      gr.addColorStop(0, 'rgba(255,215,130,.32)'); gr.addColorStop(1, 'rgba(255,170,70,0)');
+      ctx.fillStyle = gr;
+      ctx.beginPath(); ctx.moveTo(0, -R * 0.22); ctx.lineTo(largo, 0); ctx.lineTo(0, R * 0.22); ctx.closePath(); ctx.fill();
+      ctx.rotate(6.283 / 12);
+    }
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    // corona cercana
+    var co = ctx.createRadialGradient(c, c, R * 0.9, c, c, R * 1.7);
+    co.addColorStop(0, 'rgba(255,225,150,.55)'); co.addColorStop(1, 'rgba(255,170,70,0)');
+    ctx.fillStyle = co; ctx.beginPath(); ctx.arc(c, c, R * 1.7, 0, 6.283); ctx.fill();
+    ctx.restore();
+    // disco con oscurecimiento hacia el borde
+    var d = ctx.createRadialGradient(c - R * 0.25, c - R * 0.25, R * 0.1, c, c, R);
+    d.addColorStop(0, '#fffbe8'); d.addColorStop(.35, '#ffe48a'); d.addColorStop(.8, '#ffb43c'); d.addColorStop(1, '#f08a24');
+    ctx.fillStyle = d; ctx.beginPath(); ctx.arc(c, c, R, 0, 6.283); ctx.fill();
+  }
   function dibujar(t) {
     var c = W / 2, k = W / 600;
     ctx.clearRect(0, 0, W, W);
@@ -577,10 +606,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       ctx.strokeStyle = i === 2 ? 'rgba(46,196,196,.45)' : 'rgba(255,255,255,.12)';
       ctx.beginPath(); ctx.arc(c, c, radio(i), 0, 6.283); ctx.stroke();
     }
-    var g = ctx.createRadialGradient(c, c, 0, c, c, 46 * k);
-    g.addColorStop(0, 'rgba(255,214,120,.95)'); g.addColorStop(.35, 'rgba(255,170,60,.55)'); g.addColorStop(1, 'rgba(255,140,40,0)');
-    ctx.fillStyle = g; ctx.beginPath(); ctx.arc(c, c, 46 * k, 0, 6.283); ctx.fill();
-    ctx.fillStyle = '#ffd36b'; ctx.beginPath(); ctx.arc(c, c, 17 * k, 0, 6.283); ctx.fill();
+    dibujarSol(c, k, t);
     for (var j = 0; j < 8; j++) {
       var p = P[j], r = radio(j), a = ang[j] + (t / 1000) * (0.9 / Math.pow(p[1], 0.55));
       var x = c + r * Math.cos(a), y = c + r * Math.sin(a), pr = p[2] * k * 1.25;
@@ -594,15 +620,6 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
       // sombra del lado opuesto al Sol
       ctx.fillStyle = 'rgba(5,15,34,.45)';
       ctx.beginPath(); ctx.arc(x, y, pr, a - 1.57, a + 1.57); ctx.fill();
-      if (j === 2) {
-        // etiqueta de la Tierra, hacia fuera de la órbita
-        var lx = x + Math.cos(a) * (pr + 7 * k), ly = y + Math.sin(a) * (pr + 7 * k);
-        ctx.font = '600 ' + Math.max(11, Math.round(13 * k)) + 'px Inter, system-ui, sans-serif';
-        ctx.textAlign = Math.cos(a) > 0.3 ? 'left' : (Math.cos(a) < -0.3 ? 'right' : 'center');
-        ctx.textBaseline = Math.sin(a) > 0.3 ? 'top' : (Math.sin(a) < -0.3 ? 'bottom' : 'middle');
-        ctx.fillStyle = 'rgba(46,196,196,.95)';
-        ctx.fillText(EN ? 'Earth' : 'Tierra', lx, ly);
-      }
     }
   }
   var visible = true, raf = 0, t0 = performance.now(), parado = 0;
