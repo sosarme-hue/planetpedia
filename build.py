@@ -43,20 +43,25 @@ AMBITOS = [
 # (nombre, dominio, tipo, foto, desc ES, desc EN, autor foto, nombre EN)
 GUIAS = [
     ("Sitges", "sitges.si", "municipio", "sitges.jpg", "Playas, la iglesia de la Punta, el Carnaval y la vida del pueblo todo el año.", "Beaches, the church on the Punta, Carnival and town life all year round.", "Howard Walsh", "Sitges"),
-    ("Sant Pere de Ribes", "santperederibes.si", "municipio", None, "Viñas, masías y fiestas mayores entre el Garraf y el Penedès.", "Vineyards, farmhouses and town festivals between the Garraf and the Penedès.", None, "Sant Pere de Ribes"),
+    ("Sant Pere de Ribes", "santperederibes.si", "municipio", "santperederibes.jpg", "Viñas, masías y fiestas mayores entre el Garraf y el Penedès.", "Vineyards, farmhouses and town festivals between the Garraf and the Penedès.", "", "Sant Pere de Ribes"),
     ("Castelldefels", "castelldefels.si", "municipio", "castelldefels.jpg", "Del castillo a la playa: qué ver, dónde comer y la agenda local.", "From the castle to the beach: what to see, where to eat and what's on.", "Manuel Torres Garcia", "Castelldefels"),
-    ("Vilanova i la Geltrú", "vilanova.si", "municipio", "vilanova.jpg", "Puerto, rambla y museos, con los servicios y la agenda ciudadana.", "Harbour, promenade and museums, plus local services and events.", "Chema Photo", "Vilanova i la Geltrú"),
+    ("Vilanova i la Geltrú", "vilanova.si", "municipio", "vilanova.jpg", "Puerto, rambla y museos, con los servicios y la agenda ciudadana.", "Harbour, promenade and museums, plus local services and events.", "", "Vilanova i la Geltrú"),
     ("Sant Cugat", "santcugat.si", "municipio", "santcugat.jpg", "El monasterio, Collserola y una ciudad para vivir y pasear.", "The monastery, Collserola park and a town made for living and walking.", "Manuel Torres Garcia", "Sant Cugat"),
     ("Garraf", "garraf.si", "comarca", "garraf.jpg", "Playas, pueblos y viñas de la comarca, con la guía de cada municipio.", "Beaches, villages and vineyards of the district, with a guide to each town.", "Max", "Garraf"),
-    ("Eivissa", "eivissa.si", "isla", "eivissa.jpg", "Dalt Vila, calas, ferris y vida local de Eivissa y Formentera.", "Dalt Vila, coves, ferries and local life on Ibiza and Formentera.", "Alejandra Camacho Álvarez", "Ibiza (Eivissa)"),
+    ("Eivissa", "eivissa.si", "isla", "eivissa.jpg", "Dalt Vila, calas, ferris y vida local de Eivissa y Formentera.", "Dalt Vila, coves, ferries and local life on Ibiza and Formentera.", "", "Ibiza (Eivissa)"),
 ]
 # Webs con versión inglesa en /en/ (comprobado en Hostinger el 14-11-2026)
 CON_INGLES = {"classicapedia.com", "pinacopedia.com", "cinematopedia.com", "newtonpedia.com", "medicapedia.org",
               "filopedia.com", "mythicapedia.com", "zodiacopedia.com", "celebraciones.org", "culinapedia.com",
-              "worldwinepedia.com", "tenispedia.com", "catdogpedia.com"}
+              "worldwinepedia.com", "tenispedia.com", "catdogpedia.com", "farmacos.ai"}
+
+
+URL_EN = {"farmacos.ai": "https://farmacos.ai/en"}
 
 
 def url_web(dom, en):
+    if en and dom in URL_EN:
+        return URL_EN[dom]
     return f"https://{dom}/en/" if en and dom in CON_INGLES else f"https://{dom}/"
 
 
@@ -144,7 +149,7 @@ EN = [
     ('Copiar dirección', 'Copy address'),
     ('Dirección copiada', 'Address copied'),
     ('<span><strong>Planetpedia</strong> · Conocimiento y lugares por descubrir</span>', '<span><strong>Planetpedia</strong> · Knowledge and places to discover</span>'),
-    ('<span>Fotografías de las guías: autores indicados en cada imagen, vía Unsplash.</span>', '<span>Guide photos: photographers credited on each image, via Unsplash.</span>'),
+    ('<span>Fotografías: las de portada de cada guía y, donde se indica, de Unsplash.</span>', '<span>Photos: each guide\'s own cover photo and, where credited, Unsplash.</span>'),
     ("' enciclopedias y '", "' encyclopedias and '"),
     ("' guías coinciden con «'", "' guides match \"'"),
     ("+ '».'", "+ '\".'"),
