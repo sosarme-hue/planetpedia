@@ -548,7 +548,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
   // nombre, periodo orbital (años), radio dibujo, color, anillo
   var P = [
     ['Mercurio', 0.241, 2.2, '#b9b2a8'], ['Venus', 0.615, 3.4, '#e8c98b'], ['Tierra', 1, 4.4, '#4fa3e0'],
-    ['Marte', 1.881, 2.8, '#d9663f'], ['Júpiter', 11.86, 8, '#d8b48a'], ['Saturno', 29.46, 6.8, '#e7d29c', true],
+    ['Marte', 1.881, 2.8, '#d9663f'], ['Júpiter', 11.86, 8, '#d8b48a'], ['Saturno', 29.46, 7.4, '#e7d29c', true],
     ['Urano', 84.01, 5, '#9fdfe6'], ['Neptuno', 164.8, 4.8, '#4f7ce8']
   ];
   var ang = [0.4, 2.1, 4.0, 5.3, 1.2, 3.4, 0.2, 4.6];
@@ -569,14 +569,14 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     ctx.globalCompositeOperation = 'lighter';
     // halo exterior amplio y suave
     var h = ctx.createRadialGradient(c, c, R * 0.6, c, c, R * 4.2 * pulso);
-    h.addColorStop(0, 'rgba(255,190,90,.38)'); h.addColorStop(.35, 'rgba(255,140,50,.14)'); h.addColorStop(1, 'rgba(255,120,40,0)');
+    h.addColorStop(0, 'rgba(255,230,90,.40)'); h.addColorStop(.35, 'rgba(255,210,60,.15)'); h.addColorStop(1, 'rgba(255,200,40,0)');
     ctx.fillStyle = h; ctx.beginPath(); ctx.arc(c, c, R * 4.2 * pulso, 0, 6.283); ctx.fill();
     // rayos de corona que giran despacio
     ctx.translate(c, c); ctx.rotate(t / 24000);
     for (var n = 0; n < 12; n++) {
       var largo = R * (1.9 + 0.35 * Math.sin(t / 700 + n * 1.7));
       var gr = ctx.createLinearGradient(0, 0, largo, 0);
-      gr.addColorStop(0, 'rgba(255,215,130,.32)'); gr.addColorStop(1, 'rgba(255,170,70,0)');
+      gr.addColorStop(0, 'rgba(255,240,140,.34)'); gr.addColorStop(1, 'rgba(255,220,70,0)');
       ctx.fillStyle = gr;
       ctx.beginPath(); ctx.moveTo(0, -R * 0.22); ctx.lineTo(largo, 0); ctx.lineTo(0, R * 0.22); ctx.closePath(); ctx.fill();
       ctx.rotate(6.283 / 12);
@@ -584,13 +584,38 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     // corona cercana
     var co = ctx.createRadialGradient(c, c, R * 0.9, c, c, R * 1.7);
-    co.addColorStop(0, 'rgba(255,225,150,.55)'); co.addColorStop(1, 'rgba(255,170,70,0)');
+    co.addColorStop(0, 'rgba(255,240,140,.6)'); co.addColorStop(1, 'rgba(255,215,60,0)');
     ctx.fillStyle = co; ctx.beginPath(); ctx.arc(c, c, R * 1.7, 0, 6.283); ctx.fill();
     ctx.restore();
     // disco con oscurecimiento hacia el borde
     var d = ctx.createRadialGradient(c - R * 0.25, c - R * 0.25, R * 0.1, c, c, R);
-    d.addColorStop(0, '#fffbe8'); d.addColorStop(.35, '#ffe48a'); d.addColorStop(.8, '#ffb43c'); d.addColorStop(1, '#f08a24');
+    d.addColorStop(0, '#fffde6'); d.addColorStop(.35, '#fff27a'); d.addColorStop(.8, '#ffd92e'); d.addColorStop(1, '#f5b81c');
     ctx.fillStyle = d; ctx.beginPath(); ctx.arc(c, c, R, 0, 6.283); ctx.fill();
+  }
+  // Saturno: anillos en varias bandas (la mitad trasera detrás del planeta) y planeta con franjas
+  function anillos(x, y, pr, k, desde, hasta) {
+    var bandas = [[1.45, 1.6, 'rgba(201,178,128,.55)'], [1.62, 1.95, 'rgba(236,218,170,.9)'], [2.0, 2.08, 'rgba(160,140,100,.35)'], [2.1, 2.45, 'rgba(214,192,140,.75)']];
+    bandas.forEach(function (b) {
+      ctx.strokeStyle = b[2]; ctx.lineWidth = (b[1] - b[0]) * pr * 0.9;
+      var rm = (b[0] + b[1]) / 2 * pr;
+      ctx.beginPath(); ctx.ellipse(x, y, rm, rm * 0.34, -0.42, desde, hasta); ctx.stroke();
+    });
+  }
+  function dibujarSaturno(x, y, pr, a, k) {
+    anillos(x, y, pr, k, Math.PI, 2 * Math.PI);
+    ctx.save();
+    ctx.beginPath(); ctx.arc(x, y, pr, 0, 6.283); ctx.clip();
+    var gp = ctx.createRadialGradient(x - pr * .4, y - pr * .4, pr * .15, x, y, pr);
+    gp.addColorStop(0, '#fff6dc'); gp.addColorStop(.4, '#ead39a'); gp.addColorStop(1, '#c79f5e');
+    ctx.fillStyle = gp; ctx.fillRect(x - pr, y - pr, pr * 2, pr * 2);
+    ctx.translate(x, y); ctx.rotate(-0.42);
+    ctx.fillStyle = 'rgba(170,125,70,.35)';
+    [-0.55, -0.15, 0.3, 0.62].forEach(function (f, n) { ctx.fillRect(-pr, f * pr, pr * 2, pr * (n % 2 ? 0.12 : 0.18)); });
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.fillStyle = 'rgba(5,15,34,.45)';
+    ctx.beginPath(); ctx.arc(x, y, pr, a - 1.57, a + 1.57); ctx.fill();
+    ctx.restore();
+    anillos(x, y, pr, k, 0, Math.PI);
   }
   function dibujar(t) {
     var c = W / 2, k = W / 600;
@@ -610,10 +635,7 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
     for (var j = 0; j < 8; j++) {
       var p = P[j], r = radio(j), a = ang[j] + (t / 1000) * (0.9 / Math.pow(p[1], 0.55));
       var x = c + r * Math.cos(a), y = c + r * Math.sin(a), pr = p[2] * k * 1.25;
-      if (p[4]) {
-        ctx.strokeStyle = 'rgba(231,210,156,.8)'; ctx.lineWidth = 1.6 * k;
-        ctx.beginPath(); ctx.ellipse(x, y, pr * 2.1, pr * 0.75, -0.45, 0, 6.283); ctx.stroke();
-      }
+      if (p[4]) { dibujarSaturno(x, y, pr, a, k); continue; }
       var gp = ctx.createRadialGradient(x - pr * .4, y - pr * .4, pr * .2, x, y, pr);
       gp.addColorStop(0, '#ffffff'); gp.addColorStop(.25, p[3]); gp.addColorStop(1, p[3]);
       ctx.fillStyle = gp; ctx.beginPath(); ctx.arc(x, y, pr, 0, 6.283); ctx.fill();
