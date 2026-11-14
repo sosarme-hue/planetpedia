@@ -220,6 +220,60 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .pie strong { color: var(--on-navy); font-family: var(--font-display); }
 
 .sin-resultados { padding: 20px; border: 1px dashed var(--line); border-radius: var(--radius); color: var(--ink-soft); }
+
+/* Móvil compacto */
+@media (max-width: 560px) {
+  body { line-height: 1.42; }
+  .sobre p + p { margin-top: 8px; }
+  .top .wrap { padding-block: 8px; gap: 6px; }
+  .logo { font-size: 1.1rem; } .logo svg { width: 28px; height: 28px; }
+  .nav { flex-wrap: nowrap; overflow-x: auto; width: 100%; gap: 16px; font-size: .86rem; scrollbar-width: none; white-space: nowrap; }
+  .nav::-webkit-scrollbar { display: none; }
+  .hero { padding-top: 4px; }
+  .sistema { width: min(66vw, 280px); }
+  .hero .wrap { padding-block: 4px 32px; gap: 16px; }
+  .hero h1 { font-size: 2rem; }
+  .hero .lede { font-size: .96rem; line-height: 1.42; }
+  .caminos { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .camino { padding: 12px 12px; }
+  .camino strong { font-size: .95rem; }
+  .camino small { font-size: .76rem; }
+  .camino .arrow { display: none; }
+  .buscar input { padding-block: 12px; }
+  .buscar-estado { margin-top: 4px; min-height: 0; }
+  .seccion { padding-block: 36px; }
+  .seccion-head { margin-bottom: 18px; }
+  .mundos-head { margin-bottom: 18px; }
+  .mundos { gap: 12px; }
+  .mundo { min-height: 240px; }
+  .mundo-txt { padding: 18px; gap: 4px; }
+  .mundo-txt p { font-size: .9rem; }
+  .temas-bloque + .temas-bloque { margin-top: 32px; }
+  .tema { padding: 10px 0 12px; }
+  .tema span { font-size: .86rem; line-height: 1.32; }
+  .tema { gap: 2px; }
+  .ambitos { gap: 24px; }
+  .web-link { grid-template-columns: 34px 1fr; gap: 10px; padding: 9px 2px; }
+  .mono { width: 34px; height: 34px; border-radius: 9px; font-size: 1rem; }
+  .web-name { font-size: .96rem; }
+  .web-desc { font-size: .84rem; line-height: 1.32; }
+  .web-body { gap: 0; }
+  .guias { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .guia a { grid-template-rows: auto 1fr; }
+  .guia-body { padding: 10px 12px 12px; gap: 2px; align-content: start; }
+  .guia-kicker { display: none; }
+  .guia-name { font-size: 1.02rem; }
+  .guia-desc { font-size: .8rem; line-height: 1.28; }
+  .guia-dom { font-size: .72rem; margin-top: 2px; }
+  .tag { top: 8px; left: 8px; font-size: .62rem; padding: 4px 7px; }
+  .cred { display: none; }
+  .proximas { margin-top: 18px; }
+  .proximas li { padding: 4px 10px; font-size: .8rem; }
+  .pieza a { padding: 12px 0 14px; gap: 4px; }
+  .pieza-titulo { font-size: 1rem; }
+  .sobre { gap: 24px; }
+  .pie .wrap { padding-block: 22px; }
+}
 </style>
 </head>
 <body>
