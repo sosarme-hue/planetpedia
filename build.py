@@ -150,9 +150,6 @@ EN = [
     ('Dirección copiada', 'Address copied'),
     ('<span><strong>Planetpedia</strong> · Conocimiento y lugares por descubrir</span>', '<span><strong>Planetpedia</strong> · Knowledge and places to discover</span>'),
     ('<span>Fotografías: las de portada de cada guía y, donde se indica, de Unsplash.</span>', '<span>Photos: each guide\'s own cover photo and, where credited, Unsplash.</span>'),
-    ("' enciclopedias y '", "' encyclopedias and '"),
-    ("' guías coinciden con «'", "' guides match \"'"),
-    ("+ '».'", "+ '\".'"),
 ]
 
 
