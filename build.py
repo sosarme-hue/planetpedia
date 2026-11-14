@@ -270,6 +270,20 @@ def build(lang="es", preview=False):
     hreflang = ('<link rel="alternate" hreflang="es" href="https://planetpedia.net/">\n'
                 '<link rel="alternate" hreflang="en" href="https://planetpedia.net/en/">\n'
                 '<link rel="alternate" hreflang="x-default" href="https://planetpedia.net/">')
+    url = "https://planetpedia.net/en/" if en else "https://planetpedia.net/"
+    titulo = ("Planetpedia · A network of encyclopedias and local guides" if en
+              else "Planetpedia · Red de enciclopedias y guías locales")
+    desc = re.search(r'<meta name="description" content="([^"]*)">', tpl).group(1)
+    hreflang = (f'<link rel="canonical" href="{url}">\n' + hreflang +
+                '\n<meta property="og:type" content="website">'
+                '\n<meta property="og:site_name" content="Planetpedia">'
+                f'\n<meta property="og:title" content="{titulo}">'
+                f'\n<meta property="og:description" content="{desc}">'
+                f'\n<meta property="og:url" content="{url}">'
+                f'\n<meta property="og:locale" content="{"en_GB" if en else "es_ES"}">'
+                '\n<meta property="og:image" content="https://planetpedia.net/img/universo/campo_webb.jpg">'
+                '\n<meta name="twitter:card" content="summary_large_image">')
+    tpl = tpl.replace("<title>Planetpedia</title>", f"<title>{titulo}</title>")
     out = (tpl.replace("{{ENCICLOPEDIAS}}", "\n".join(enc_html))
               .replace("{{GUIAS}}", "\n".join(guia_html))
               .replace("{{SELECCION}}", "\n".join(sel_html))
