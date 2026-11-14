@@ -4,7 +4,7 @@ import pathlib, html
 
 ROOT = pathlib.Path(__file__).parent
 # Datos del titular. Si se rellenan NOMBRE y NIF, aparecen en el aviso legal.
-NOMBRE = ""
+NOMBRE = "Alejandro Rosàs Navarro"
 NIF = ""
 EMAIL = "partenopides@gmail.com"
 FECHA = ("14 de noviembre de 2026", "14 November 2026")
