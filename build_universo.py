@@ -196,6 +196,7 @@ def pagina(lang, aqui, otra, titulo, desc, claves, contenido, migas, og_img=None
   <div class="wrap">
     <span><a href="{home}"><strong>Planetpedia</strong></a> · {e(t["pie"].split(" · ")[1])}</span>
     <span>{e(t["creditos"])}</span>
+    <span class="legal">{" · ".join(f'<a href="{rel(aqui, p)}">{n}</a>' for p, n in ((("aviso-legal/", "Aviso legal"), ("privacidad/", "Privacidad"), ("cookies/", "Cookies")) if lang == "es" else (("en/legal-notice/", "Legal notice"), ("en/privacy/", "Privacy"), ("en/cookies/", "Cookies"))))}</span>
   </div>
 </footer>
 <script src="{rel(aqui, 'assets/universo.js')}?v={VERSION}" defer></script>

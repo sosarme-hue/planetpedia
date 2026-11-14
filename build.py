@@ -12,10 +12,11 @@ AMBITOS = [
         ("Pinacopedia", "pinacopedia.com", "Pintores, cuadros y museos: la historia del arte, obra a obra.", "Painters, paintings and museums: art history, one work at a time."),
         ("Cinematopedia", "cinematopedia.com", "Películas, directores y géneros para entender y disfrutar el cine.", "Films, directors and genres to understand and enjoy cinema."),
     ]),
-    ("ciencia", "Ciencia y salud", "Del laboratorio a la consulta", "Science and health", "From the lab to the clinic", [
+    ("ciencia", "Ciencia, tecnología y salud", "Del laboratorio a la consulta", "Science, technology and health", "From the lab to the clinic", [
         ("Newtonpedia", "newtonpedia.com", "Física, química y matemáticas contadas con claridad, de las leyes a sus descubridores.", "Physics, chemistry and maths told clearly, from the laws to the people who found them."),
         ("Medicapedia", "medicapedia.org", "Enfermedades, síntomas y tratamientos explicados en lenguaje claro.", "Diseases, symptoms and treatments explained in plain language."),
         ("Farmacos.ai", "farmacos.ai", "Medicamentos: para qué sirven, cómo se toman y qué precauciones tienen.", "Medicines: what they are for, how to take them and what to watch out for."),
+        ("IApedia", "iapedia.si", "Inteligencia artificial explicada con claridad: qué es, cómo funciona y cómo usarla.", "Artificial intelligence explained clearly: what it is, how it works and how to use it."),
         ("Enfermería Sí", "enfermeria.si", "Recursos, técnicas y oposiciones para profesionales y estudiantes de enfermería.", "Resources, techniques and exam preparation for nurses and nursing students."),
     ]),
     ("humanidades", "Humanidades", "Ideas, mitos y símbolos", "Humanities", "Ideas, myths and symbols", [
@@ -163,7 +164,7 @@ EN = [
     ('Copiar dirección', 'Copy address'),
     ('Dirección copiada', 'Address copied'),
     ('<span><strong>Planetpedia</strong> · Conocimiento y lugares por descubrir</span>', '<span><strong>Planetpedia</strong> · Knowledge and places to discover</span>'),
-    ('<span>Fotografías: las de portada de cada guía y, donde se indica, de Unsplash.</span>', '<span>Photos: each guide\'s own cover photo and, where credited, Unsplash.</span>'),
+    ('<a href="aviso-legal/">Aviso legal</a> · <a href="privacidad/">Privacidad</a> · <a href="cookies/">Cookies</a>', '<a href="legal-notice/">Legal notice</a> · <a href="privacy/">Privacy</a> · <a href="cookies/">Cookies</a>'),
 ]
 
 
