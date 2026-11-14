@@ -90,7 +90,6 @@ EN = [
     ('>Planeta Tierra</a>', '>Planet Earth</a>'),
     ('>Enciclopedias</a>', '>Encyclopedias</a>'),
     ('>Guías locales</a>', '>Local guides</a>'),
-    ('>El proyecto</a>', '>The project</a>'),
     ('<span class="eyebrow">Conocimiento y lugares por descubrir</span>', '<span class="eyebrow">Knowledge and places to discover</span>'),
     ('<h1>Explora tus intereses. <span>Descubre nuevos lugares.</span></h1>', '<h1>Explore your interests. <span>Discover new places.</span></h1>'),
     ('Una red de enciclopedias y guías para aprender, seguir tus aficiones y conocer lugares. Aquí las encuentras todas.',
