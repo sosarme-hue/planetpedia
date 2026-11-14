@@ -254,3 +254,8 @@ tr:last-child td { border-bottom: 0; }
 .sim .res > p { grid-column: 1 / -1; margin: 0; }
 .sim label:has(input[type=range]) { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
 .sim label input[type=range] { flex: 1 1 100%; width: 100%; }
+/* Planeta Tierra: acento verde propio */
+[data-area="tierra"] { --teal: #1f9d6b; --teal-ink: #137a52; --deep: #062a24; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) [data-area="tierra"] { --teal: #4cc98a; --teal-ink: #7ad9a6; } }
+:root[data-theme="dark"] [data-area="tierra"] { --teal: #4cc98a; --teal-ink: #7ad9a6; }
+[data-area="tierra"] .uni-hero .eyebrow, [data-area="tierra"] .sec-head .eyebrow, [data-area="tierra"] .secc-txt small { color: #8fe3b0; }

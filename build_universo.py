@@ -176,7 +176,7 @@ def pagina(lang, aqui, otra, titulo, desc, claves, contenido, migas, og_img=None
 <link rel="stylesheet" href="{rel(aqui, 'assets/universo.css')}?v={VERSION}">
 <script type="application/ld+json">{json.dumps(ld_all, ensure_ascii=False)}</script>
 </head>
-<body data-raiz="{rel(aqui, '')}" data-lang="{lang}">
+<body data-raiz="{rel(aqui, '')}" data-lang="{lang}" data-area="{A["pkg"]}">
 <header class="top">
   <div class="wrap">
     <a class="logo" href="{home}" aria-label="Planetpedia">{LOGO}<span>Planet<b>pedia</b></span></a>
