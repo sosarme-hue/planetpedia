@@ -781,3 +781,8 @@ h1, h2, h3 { line-height: 1.12; }
 .resultados-busqueda .sin a { display: inline; padding: 0; color: var(--accent-ink); text-decoration: underline; }
 @media (max-width: 820px) { .con-js .top.abierto .menu { flex: 1 1 100%; } }
 .con-js .top.abierto .menu { align-items: start; }
+
+/* Evita que la portada se ensanche en móvil con textos largos */
+.p-hero-grid > *, .p-hero-texto > *, .p-semana > *, .p-semana-extra > * { min-width: 0; }
+.p-semana, .p-semana a { overflow-wrap: anywhere; }
+@media (max-width: 960px) { .p-hero-grid { grid-template-columns: minmax(0, 1fr); } }
