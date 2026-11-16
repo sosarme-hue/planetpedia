@@ -16,6 +16,20 @@ PAGS = {
 }
 
 
+CC_TXT = {
+    "es": ("Contenido bajo licencia", "salvo indicación en contrario"),
+    "ca": ("Contingut sota llicència", "llevat que s'indiqui el contrari"),
+    "en": ("Content licensed under", "unless otherwise noted"),
+}
+
+
+def cc_line(lang):
+    """Pie de autoría y licencia (CC BY-NC 4.0) en el idioma de la página."""
+    a, b = CC_TXT.get(lang, CC_TXT["es"])
+    return (f'© 2026 Alejandro Rosàs · {a} <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.{lang}" '
+            f'rel="license noopener" style="display:inline">CC BY-NC 4.0</a>, {b}')
+
+
 def titular(lang):
     es = lang == "es"
     filas = []
@@ -141,7 +155,7 @@ footer{{background:var(--navy);color:#b9c8de;font-size:.88rem}}footer .wrap{{pad
 <p class="fecha">{"Última actualización" if es else "Last updated"}: {FECHA[0 if es else 1]}</p>
 {cuerpo(clave, lang)}
 </main>
-<footer><div class="wrap"><span><a href="{home}"><strong>Planetpedia</strong></a></span><span>{enlaces}</span></div></footer>
+<footer><div class="wrap"><span><a href="{home}"><strong>Planetpedia</strong></a></span><span>{enlaces}</span><span style="flex-basis:100%">{cc_line(lang)}</span></div></footer>
 </body>
 </html>
 '''

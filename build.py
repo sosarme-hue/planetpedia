@@ -82,6 +82,8 @@ SELECCION = [
 # Traducción de los textos fijos de la plantilla (la plantilla en español es la maestra).
 EN = [
     ('<html lang="es">', '<html lang="en">'),
+    ('© 2026 Alejandro Rosàs · Contenido bajo licencia <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.es" rel="license noopener" style="display:inline">CC BY-NC 4.0</a>, salvo indicación en contrario',
+     '© 2026 Alejandro Rosàs · Content licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.en" rel="license noopener" style="display:inline">CC BY-NC 4.0</a>, unless otherwise noted'),
     ('content="Planetpedia: una red de enciclopedias temáticas y guías locales independientes para aprender, explorar intereses y conocer lugares."',
      'content="Planetpedia: a network of independent encyclopedias and local guides to learn, follow your interests and discover places."'),
     ('aria-label="Planetpedia, inicio"', 'aria-label="Planetpedia, home"'),

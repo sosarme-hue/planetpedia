@@ -13,6 +13,20 @@ for _cj in sorted(ROOT.glob("img/*/creditos.json")):
         CRED[_k] = _v; FDIR[_k] = _cj.parent.name
 
 
+CC_TXT = {
+    "es": ("Contenido bajo licencia", "salvo indicación en contrario"),
+    "ca": ("Contingut sota llicència", "llevat que s'indiqui el contrari"),
+    "en": ("Content licensed under", "unless otherwise noted"),
+}
+
+
+def cc_line(lang):
+    """Pie de autoría y licencia (CC BY-NC 4.0) en el idioma de la página."""
+    a, b = CC_TXT.get(lang, CC_TXT["es"])
+    return (f'© 2026 Alejandro Rosàs · {a} <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.{lang}" '
+            f'rel="license noopener" style="display:inline">CC BY-NC 4.0</a>, {b}')
+
+
 def imgp(clave):
     return f"img/{FDIR[clave]}/{clave}.jpg"
 
@@ -197,6 +211,7 @@ def pagina(lang, aqui, otra, titulo, desc, claves, contenido, migas, og_img=None
     <span><a href="{home}"><strong>Planetpedia</strong></a> · {e(t["pie"].split(" · ")[1])}</span>
     <span>{e(t["creditos"])}</span>
     <span class="legal">{" · ".join(f'<a href="{rel(aqui, p)}">{n}</a>' for p, n in ((("aviso-legal/", "Aviso legal"), ("privacidad/", "Privacidad"), ("cookies/", "Cookies")) if lang == "es" else (("en/legal-notice/", "Legal notice"), ("en/privacy/", "Privacy"), ("en/cookies/", "Cookies"))))}</span>
+    <span class="legal" style="flex-basis:100%">{cc_line(lang)}</span>
   </div>
 </footer>
 <script src="{rel(aqui, 'assets/universo.js')}?v={VERSION}" defer></script>
