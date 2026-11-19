@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://planetpedia.net/sitemap.xml
+Sitemap: https://planetpedia.net/sitemap-blog.xml
