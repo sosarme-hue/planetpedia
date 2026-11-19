@@ -149,7 +149,7 @@ footer{{background:var(--navy);color:#b9c8de;font-size:.88rem}}footer .wrap{{pad
 </style>
 </head>
 <body>
-<header><div class="wrap"><a href="{home}">Planetpedia</a><a class="idioma" href="{otra}" hreflang="{"en" if es else "es"}">{"EN" if es else "ES"}</a></div></header>
+<header><div class="wrap"><a href="{home}">Planetpedia</a><span><a class="idioma" href="{home}blog/">Blog</a> <a class="idioma" href="{otra}" hreflang="{"en" if es else "es"}">{"EN" if es else "ES"}</a></span></div></header>
 <main class="wrap">
 <h1>{tit}</h1>
 <p class="fecha">{"Última actualización" if es else "Last updated"}: {FECHA[0 if es else 1]}</p>
